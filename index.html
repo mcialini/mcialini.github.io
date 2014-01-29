@@ -1,3 +1,20 @@
+<!-- 
+THINGS I NEED TO ADD
+solution for projects
+	- each project should be in a separate div
+	- do i pull them using .load? or just paste their contents in this file
+	- either way, add in SLIDEDOWN animation, which should be staggered but quick
+change fonts
+add in some kind of graphic or texture to wrapper
+add background image for container
+change resume page
+	- should load up a designed version of the resume in content
+	- but also have a download link for plain pdf at top
+change nav links 
+	- to buttons?
+	- must keep object highlighted while that page is active
+
+-->
 <html>
 <head>
 <style type="text/css">
@@ -45,10 +62,6 @@ ul { list-style-type: none; }
 .nav li {display:inline;}
 </style>
 
-<!-- THINGS TO ADD IN -->
-<!-- instead of content load, use a fadein -->
-<!-- store each project as a separate div -->
-<!-- fadein last div first, once fully opaque then fadein next -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script>
@@ -69,20 +82,20 @@ $(document).ready(function(){
 	<h1><a href="http://www.mattcialini.com">mattCialini</a></h1>
 </div>
 <div class="nav">
-<!-- change the bullet points to button objects with the same appearance and hover over property as current links -->
-<ul>
-	<li><a id="ab" href="http://www.mattcialini.com">about</a></li>
-	<li><a id="pr" href="#">projects</a></li>
-	<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
-	<li><a id="co" href="http://www.mattcialini.com">contact</a></li>
-</ul><br>
+	<ul>
+		<li><a id="ab" href="http://www.mattcialini.com">about</a></li>
+		<li><a id="pr" href="#">projects</a></li>
+		<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
+		<li><a id="co" href="http://www.mattcialini.com">contact</a></li>
+	</ul>
+	<br>
 </div>
 <div class="content">
-<h2>Professional Statement/Intro</h2>
-<p></p>
-
-<h2>Short Biography</h2>
-<p></p>
+	<h2>Professional Statement/Intro</h2>
+	<p></p>
+	
+	<h2>Short Biography</h2>
+	<p></p>
 
 </div></div></div>
 </body>
