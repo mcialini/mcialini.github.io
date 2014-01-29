@@ -44,6 +44,16 @@ ul { list-style-type: none; }
 .nav li {display:inline;}
 </style>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#content").load("projects.html");
+  });
+});
+</script>
+
 <title>Matt Cialini</title>
 
 </head>
@@ -53,6 +63,7 @@ ul { list-style-type: none; }
 <div class="header">
 	<h1>mattCialini</h1>
 </div>
+<div class="content">
 <div class="nav">
 <ul>
 	<li><a href="http://www.mattcialini.com">home</a></li>
@@ -61,24 +72,14 @@ ul { list-style-type: none; }
 	<li><a href="http://www.mattcialini.com">contact</a></li>
 </ul><br>
 </div>
-
+<button>Click to load projects</button>
 <h2>Professional Statement/Intro</h2>
 <p></p>
 
 <h2>Short Biography</h2>
 <p></p>
 
-<h2>Web Portals</h2>
-<p><a href="http://www.github.com/mcialini">Github</a>: 
-<ul>
-	<li><a href="http://www.mattcialini.com/RoutingProtocol">Routing Protocol</a></li>
-	<li><a href="http://www.mattcialini.com/EchoClientServer">Echo Client-Server</a></li>
-	<li><a href="http://www.mattcialini.com/Photoshare">Photoshare</a></li>
-	<li><a href="http://www.mattcialini.com/MicrosoftAcademicSearch">Microsoft Academic Search</a></li>
-</ul>
-
-</p>
-</div></div>
+</div></div></div>
 </body>
 </html>
 
