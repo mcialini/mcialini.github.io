@@ -49,7 +49,7 @@ ul { list-style-type: none; }
 </script>
 <script>
 $(document).ready(function(){
-  $("button").click(function(){
+  $("#pr").click(function(){
     $(".content").load("http://www.mattcialini.com/projects.html");
   });
 });
@@ -66,14 +66,13 @@ $(document).ready(function(){
 </div>
 <div class="nav">
 <ul>
-	<li><a href="http://www.mattcialini.com">home</a></li>
-	<li><a href="http://www.mattcialini.com/projects.html">projects</a></li>
-	<li><a href="http://www.mattcialini.com/resume/">resume</a></li>
-	<li><a href="http://www.mattcialini.com">contact</a></li>
+	<li><a id="ab" href="http://www.mattcialini.com">home</a></li>
+	<li><a id="pr" href="http://www.mattcialini.com/projects.html">projects</a></li>
+	<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
+	<li><a id="co" href="http://www.mattcialini.com">contact</a></li>
 </ul><br>
 </div>
 <div class="content">
-<button>Click to load projects</button>
 <h2>Professional Statement/Intro</h2>
 <p></p>
 
