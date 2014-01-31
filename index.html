@@ -82,11 +82,11 @@ ul { list-style-type: none; }
 <script>
 $(document).ready(function(){
   $("#pr").click(function(){
-  	/*
-  	$("#p3").slideDown(750);
-  	$("#p2").delay(500).slideDown(750);
-  	$("#p1").delay(1000).slideDown(750);
-  	*/
+  	
+  	$("#p3").slideToggle(750);
+  	$("#p2").delay(500).slideToggle(750);
+  	$("#p1").delay(1000).slideToggle(750);
+  	
   	$(".project").slideToggle(1000);
   });
 });
