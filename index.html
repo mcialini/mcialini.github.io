@@ -81,11 +81,13 @@ $(".container").height($(window).height());
 <script>
 $(document).ready(function(){
   $("#b1").click(function(){
-  	
   	$("#p3").slideToggle(600, "linear", function() {});
   	$("#p2").delay(500).slideToggle(600, "linear", function() {});
   	$("#p1").delay(1000).slideToggle(600, "linear", function() {});
   });
+});
+
+$(document).ready(function(){
   $("#b2").click(function() {
   	$(".content").slideToggle(1000, "linear", function() {});
   });
