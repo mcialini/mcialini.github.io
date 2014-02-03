@@ -67,7 +67,6 @@ ul { list-style-type: none; }
 #about { }
 #projects { display:none; }
 #resume {}
-#contact { display:none; }
 
 .project {
 	border-bottom: 3px solid white;
@@ -94,7 +93,6 @@ $(document).ready(function(){
   $("#ab").click(function(){
   	$("#projects").hide();
   	$("#resume").hide();
-  	$("#contact").hide();
   	
   	$("#about").slideDown(600, "linear", function() {});
   });
@@ -102,20 +100,11 @@ $(document).ready(function(){
   $("#pr").click(function(){
   	$("#about").hide();
   	$("#resume").hide();
-  	$("#contact").hide();
   	
   	$("#projects").slideDown(600, "linear", function() {});
   	//$("#p3").slideDown(600, "linear", function() {});
   	//$("#p2").delay(500).slideDown(600, "linear", function() {});
   	//$("#p1").delay(1000).slideDown(600, "linear", function() {});
-  });
-  
-  $("#co").click(function(){
-  	$("#about").hide();
-  	$("#projects").hide();
-  	$("#resume").hide();
-  	
-  	$("#contact").slideDown(600, "linear", function() {});
   });
 });
 </script>
@@ -143,7 +132,6 @@ $(document).ready(function(){
 		<li><a id="ab" href="#">about</a></li>
 		<li><a id="pr" href="#">projects</a></li>
 		<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
-		<li><a id="co" href="#">contact</a></li>
 	</ul>
 	<br>
 	
@@ -153,6 +141,10 @@ $(document).ready(function(){
 <div class="content">
 
 	<div id="about">
+	<ul>
+	<li>Email: matt.cialini@gmail.com</li>
+	<li>Facebook: www.facebook.com/matt.cialini</li>
+	</ul>
 	<p>
 	Hey there, I'm Matt Cialini and I study Computer Science at Boston University. My interest in Computer Science spans many subfieds, but I'd say the areas I'm most excited by are Artificial Intelligence, Web & Mobile Development, UI Design, and Databases. But overall, I'm interested in using computers to generally expand the amount of opportunities available to us as human beings. Computers have limitless potential in automating and optimizing our daily lives, and I want to be an integral part of this technological evolution.
 	</p>
@@ -190,14 +182,6 @@ $(document).ready(function(){
     	</ul><br>
     	<p>Given a graph of 4 nodes with preset edge costs, this code will simulate a distance-vector routing algorithm in which each node communicates to its neighbors all of its current cheapest paths to every other node in the graph. Upon receiving one of these routing packets, a node will update its routing table with the new minimum costs it has seen. If a node uses another node x to reach node y, then the routing packets it sends out to x will have a cost of INFINITY, or 9999, to node y. This is the Split Horizon with Poison Reverse strategy which will eliminate multi-node routing loops.</p>
 	</div></div>
-	
-	<div id="contact">
-	<ul>
-	<li>Email: matt.cialini@gmail.com</li>
-	<li>Facebook: www.facebook.com/matt.cialini</li>
-	<li>Cell: 8456258931</li>
-	</ul>	
-	</div>
 </div>
 
 <div class="footer">
