@@ -1,3 +1,13 @@
+<!--
+Clicking each nav link will slidedown the content
+HTML page height should be set to the full screen height to begin
+if content display extends past full screen, OVERFLOWS
+then the html page height should extend to compensate
+
+keep track of current content heights
+set 
+-->
+
 <html>
 <head>
 <style type="text/css">
@@ -75,6 +85,14 @@ $(document).ready(function(){
   	//$(".project").slideToggle(750);
   });
 });
+
+</script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    alert("Height of div: " + $(".content").height());
+  });
+});
 </script>
 
 <title>Matt Cialini</title>
@@ -94,6 +112,8 @@ $(document).ready(function(){
 		<li><a id="co" href="http://www.mattcialini.com">contact</a></li>
 	</ul>
 	<br>
+	
+<button>Display the height of div</button>
 </div>
 <div class="content">
 	<div id="p1" class="project">
