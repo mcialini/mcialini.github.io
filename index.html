@@ -1,13 +1,3 @@
-<!--
-Clicking each nav link will slidedown the content
-HTML page height should be set to the full screen height to begin
-if content display extends past full screen, OVERFLOWS
-then the html page height should extend to compensate
-
-keep track of current content heights
-set 
--->
-
 <html>
 <head>
 <style type="text/css">
@@ -111,7 +101,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#b0").click(function(){
-	alert("Window: " + $(window).height() + "\nDocument: " + $(document).height() + "\n\nHeader: " + $(".header").height() + "\nNav: " + $(".nav").height() + "\nContent: " + $(".content").height() );
+	alert("Window: " + $(window).height() + "\nDocument: " + $(document).height() + "\n\nHeader: " + $(".header").height() + "\nNav: " + $(".nav").height() + "\nContent: " + $(".content").height() + "\nFooter: " + $(".footer").height());
   });
 });
 </script>
