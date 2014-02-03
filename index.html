@@ -26,7 +26,6 @@ html { width: 100%; height:100vh; }
 }
 .content {
 	width:800px; 
-	display:none;
 }
 body { 
 	font: 16px "Century Gothic"; 
@@ -39,6 +38,7 @@ h1 { font-size: 500%; margin-bottom:0em; }
 a, a:visited { color: #ffffff; text-decoration:none; }
 a:hover { color:red; }
 ul { list-style-type: none; }
+
 .header { text-align: center; }
 .header a:hover { color:#ffffff; }
 .nav { 
@@ -63,6 +63,11 @@ ul { list-style-type: none; }
 .nav a:hover {background-color:white; color: black;}
 .nav li {display:inline;}
 
+#about {}
+#projects { display:none; }
+#resume {}
+#contact { display:none; }
+
 .project {
 	border-bottom: 3px solid white;
 	padding:30px;
@@ -72,7 +77,7 @@ ul { list-style-type: none; }
 .project h2 { float:left; margin:0; font-size:200%; }
 .project ul { padding:0; margin:0; float:right; }
 .project li { display:inline; }
-.last { border-bottom:none; }
+#last { border-bottom:none; }
 
 .footer {  }
 
@@ -87,21 +92,40 @@ $(".container").height($(window).height());
 
 <script>
 $(document).ready(function(){
-  $("#b1").click(function(){
-  	$("#p3").slideToggle(600, "linear", function() {});
-  	$("#p2").delay(500).slideToggle(600, "linear", function() {});
-  	$("#p1").delay(1000).slideToggle(600, "linear", function() {});
+  $("#ab").click(function(){
+  	$("#projects").hide();
+  	$("#resume").hide();
+  	$("#contact").hide();
+  	
+  	$("#about").slideDown(600, "linear", function() {});
   });
 });
 </script>
 
 <script>
 $(document).ready(function(){
-  $("#b2").click(function() {
-  	$(".content").slideToggle(1000, "linear", function() {});
+  $("#pr").click(function(){
+  	$("#about").hide();
+  	$("#resume").hide();
+  	$("#contact").hide();
+  	
+  	$("#p3").slideDown(600, "linear", function() {});
+  	$("#p2").delay(500).slideDown(600, "linear", function() {});
+  	$("#p1").delay(1000).slideDown(600, "linear", function() {});
   });
 });
+</script>
 
+<script>
+$(document).ready(function(){
+  $("#co").click(function(){
+  	$("#about").hide();
+  	$("#projects").hide();
+  	$("#resume").hide();
+  	
+  	$("#contact").slideDown(600, "linear", function() {});
+  });
+});
 </script>
 
 <script>
@@ -124,18 +148,25 @@ $(document).ready(function(){
 </div>
 <div class="nav">
 	<ul>
-		<li><a id="ab" href="http://www.mattcialini.com">about</a></li>
-		<li><a id="pr" href="#">projects</a></li>
+		<li><a id="ab" href="">about</a></li>
+		<li><a id="pr" href="">projects</a></li>
 		<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
-		<li><a id="co" href="http://www.mattcialini.com">contact</a></li>
+		<li><a id="co" href="">contact</a></li>
 	</ul>
 	<br>
 	
 <button id="b0">Display content height</button>
-<button id="b1">Toggle slide projects</button>
-<button id="b2">Toggle slide content</button>
 </div>
+
 <div class="content">
+
+	<div id="about">
+	<p>
+	Hey there, I'm Matt Cialini and I study Computer Science at Boston University. My interest in Computer Science spans many subfieds, but I'd say the areas I'm most excited by are Artificial Intelligence, Web & Mobile Development, UI Design, and Databases. But overall, I'm interested in using computers to generally expand the amount of opportunities available to us as human beings. Computers have limitless potential in automating and optimizing our daily lives, and I want to be an integral part of this technological evolution.
+	</p>
+	</div>
+	
+	<div id="projects">
 	<div id="p1" class="project">
 	<h2>Routing Protocol</h2>		
 	<ul>
@@ -166,6 +197,14 @@ $(document).ready(function(){
     	<li><a href="https://github.com/mcialini/RoutingProtocol">View On <strong>GitHub</strong></a></li>
     	</ul><br>
     	<p>Given a graph of 4 nodes with preset edge costs, this code will simulate a distance-vector routing algorithm in which each node communicates to its neighbors all of its current cheapest paths to every other node in the graph. Upon receiving one of these routing packets, a node will update its routing table with the new minimum costs it has seen. If a node uses another node x to reach node y, then the routing packets it sends out to x will have a cost of INFINITY, or 9999, to node y. This is the Split Horizon with Poison Reverse strategy which will eliminate multi-node routing loops.</p>
+	</div></div>
+	
+	<div id="contact">
+	<ul>
+	<li>Email: matt.cialini@gmail.com</li>
+	<li>Facebook: www.facebook.com/matt.cialini</li>
+	<li>Cell: 8456258931</li>
+	</ul>	
 	</div>
 </div>
 
