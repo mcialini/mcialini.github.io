@@ -75,8 +75,10 @@ ul { list-style-type: none; }
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script>
-$(".wrapper").height($(window).height());
+$(".container").height($(window).height());
+</script>
 
+<script>
 $(document).ready(function(){
   $("#pr").click(function(){
   	
@@ -86,11 +88,16 @@ $(document).ready(function(){
   	
   	//$(".project").slideToggle(750);
   });
-  $("button").click(function(){
-    alert("Height of div: " + $(".content").height());
-  });
 });
 
+</script>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+	alert("Height of div: " + $(".content").height());
+  });
+});
 </script>
 
 
