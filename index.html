@@ -80,13 +80,14 @@ $(".container").height($(window).height());
 
 <script>
 $(document).ready(function(){
-  $("#pr").click(function(){
+  $("#b1").click(function(){
   	
-  	//$("#p3").slideToggle(600, "linear", function() {});
-  	//$("#p2").delay(500).slideToggle(600, "linear", function() {});
-  	//$("#p1").delay(1000).slideToggle(600, "linear", function() {});
-  	
-  	$(".content").slideDown(750);
+  	$("#p3").slideToggle(600, "linear", function() {});
+  	$("#p2").delay(500).slideToggle(600, "linear", function() {});
+  	$("#p1").delay(1000).slideToggle(600, "linear", function() {});
+  });
+  $("#b2").click(function() {
+  	$(".content").slideToggle(1000, "linear", function() {});
   });
 });
 
@@ -94,7 +95,7 @@ $(document).ready(function(){
 
 <script>
 $(document).ready(function(){
-  $("button").click(function(){
+  $("#b0").click(function(){
 	alert("Height of content: " + $(".content").height());
   });
 });
@@ -119,7 +120,9 @@ $(document).ready(function(){
 	</ul>
 	<br>
 	
-<button>Display content height</button>
+<button id="b0">Display content height</button>
+<button id="b1">Toggle slide content</button>
+<button id="b2">Toggle slide projects</button>
 </div>
 <div class="content">
 	<div id="p1" class="project">
