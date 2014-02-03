@@ -76,6 +76,7 @@ ul { list-style-type: none; }
 </script>
 <script>
 $(document).ready(function(){
+  $(document).css("height", $(window).height());
   $("#pr").click(function(){
   	
   	$("#p3").slideToggle(600, "linear", function() {});
@@ -84,22 +85,13 @@ $(document).ready(function(){
   	
   	//$(".project").slideToggle(750);
   });
-});
-
-</script>
-<script>
-$(document).ready(function(){
   $("button").click(function(){
     alert("Height of div: " + $("#p1").height());
   });
 });
+
 </script>
 
-<script>
-$(document).ready(function(){
-	$(document).css("height", $(window).height());
-});
-</script>
 
 <title>Matt Cialini</title>
 
