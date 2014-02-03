@@ -111,7 +111,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#b0").click(function(){
-	alert("Height of content: " + $(".content").height());
+	alert("Window: " + $(window).height() + "\nDocument: " + $(document).height() + "\n\nHeader: " + $(".header").height() + "\nNav: " + $(".nav").height() + "\nContent: " + $(".content").height() );
   });
 });
 </script>
