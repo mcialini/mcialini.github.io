@@ -18,6 +18,14 @@ html { width: 100%; height:100vh; }
 	padding:30px;
 	text-align:left;
 }
+.header { text-align: center; }
+.nav { 
+	margin-top:-5px;  
+	border-bottom: 3px solid white;
+	text-align:center;
+}
+.footer { border-top: 3px solid white; }
+
 body { 
 	font: 16px "Century Gothic"; 
 	color: #ffffff; 
@@ -30,13 +38,7 @@ a, a:visited { color: #ffffff; text-decoration:none; }
 a:hover { color:red; }
 ul { list-style-type: none; padding:0; margin:0; }
 
-.header { text-align: center; }
 .header a:hover { color:#ffffff; }
-.nav { 
-	margin-top:-5px;  
-	border-bottom: 3px solid white;
-	text-align:center;
-}
 .nav ul {
 	float:left; 
 	margin: 0;
@@ -66,7 +68,6 @@ ul { list-style-type: none; padding:0; margin:0; }
 .project li { display:inline; }
 #last { border-bottom:none; }
 
-.footer { border-top: 3px solid white; }
 
 
 </style>
@@ -101,7 +102,13 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
   $("#b0").click(function(){
-	alert("Window: " + $(window).height() + "\nDocument: " + $(document).height() + "\n\nHeader: " + $(".header").height() + "\nNav: " + $(".nav").height() + "\nContent: " + $(".content").height() + "\nFooter: " + $(".footer").height());
+  	var wi = $(window).height();
+  	var doc = $(document).height();
+  	var hea = $(".header").height();
+  	var na = $(".nav").height();
+  	var co = $(".content").height();
+  	var fo = $(".footer").height();
+	alert("Window: " + wi + "\nDocument: " + doc + "\n\nHeader: " + hea + "\nNav: " + na + "\nContent: " + co + "\nFooter: " + fo + "\nSum of page comps: " + (wi+doc+hea+na+co+fo));
   });
 });
 </script>
