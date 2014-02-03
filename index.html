@@ -76,6 +76,7 @@ ul { list-style-type: none; }
 </script>
 <script>
 $(document).height($(window).height());
+
 $(document).ready(function(){
   $("#pr").click(function(){
   	
@@ -86,7 +87,7 @@ $(document).ready(function(){
   	//$(".project").slideToggle(750);
   });
   $("button").click(function(){
-    alert("Height of div: " + $("#p1").height());
+    alert("Height of div: " + $(".content").height());
   });
 });
 
