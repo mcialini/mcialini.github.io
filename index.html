@@ -14,7 +14,7 @@ html { width: 100%; }
 	background-color: #000000;
 }
 #header { 
-	position:fixed;
+	position:relative;
 	top:0;
 	padding:5px; 
 	border-bottom: 3px solid white; 
@@ -49,7 +49,7 @@ html { width: 100%; }
 #content {
 	clear:both;
 	text-align:left;
-	margin-top:76;
+	margin:0 auto 0 auto;
 }
 #about { 
 	margin:5px;  
@@ -58,7 +58,11 @@ html { width: 100%; }
 #projects { margin:5px; }
 #last { border-bottom:none; }
 #resume {}
-#footer { border-top: 3px solid white; }
+#footer { 
+	border-top: 3px solid white; 
+	position:relative;
+	bottom:0;
+}
 
 .head { width:100%; }
 .head td { vertical-align:bottom; }
