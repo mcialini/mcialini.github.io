@@ -114,10 +114,10 @@ $(document).ready(function(){
   $("#b0").click(function(){
   	var wi = $(window).height();
   	var doc = $(document).height();
-  	var hea = $(".header").height();
-  	var na = $(".nav").height();
-  	var co = $(".content").height();
-  	var fo = $(".footer").height();
+  	var hea = $("#header").height();
+  	var na = $("#nav").height();
+  	var co = $("#content").height();
+  	var fo = $("#footer").height();
 	alert("Window: " + wi + "\nDocument: " + doc + "\n\nHeader: " + hea + "\nNav: " + na + "\nContent: " + co + "\nFooter: " + fo + "\nSum of page comps: " + (hea+na+co+fo));
   });
 });
