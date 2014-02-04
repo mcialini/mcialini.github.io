@@ -20,10 +20,12 @@ html { width: 100%; }
 	text-align:left; 
 	margin-bottom:-14px; 
 	font-size:75px; 
+	display:inline-block;
 }
 #title a:hover { color:#ffffff; }
 
 #nav {
+	display:inline-block;
 }
 #nav ul {
 	text-align:right;
@@ -129,17 +131,17 @@ $(document).ready(function(){
 <div id="container">
 <div id="wrapper">
 <div id="header">
-	<table class="head">
-	<tr>
-		<td><h1 id="title"><a href="http://www.mattcialini.com">mattCialini</a></h1></td>
-		<td>
-			<ul id="nav">
-			<li><a id="ab" href="http://www.mattcialini.com#about">about</a></li>
-			<li><a id="pr" href="http://www.mattcialini.com#projects">projects</a></li>
-			<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
-			</ul>
-		</td>
-	</tr></table>
+	<div id="title">
+		<h1><a href="http://www.mattcialini.com">mattCialini</a></h1>	
+	</div>
+	<div id="nav">
+		<ul>
+		<li><a id="ab" href="http://www.mattcialini.com#about">about</a></li>
+		<li><a id="pr" href="http://www.mattcialini.com#projects">projects</a></li>
+		<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
+		</ul>	
+	</div>
+
 </div>
 
 <div id="content">
