@@ -41,7 +41,7 @@ html { width: 100%; height:100vh; }
 .nav li {display:inline;}
 
 #about { }
-#projects { display:none; }
+#projects { }
 #resume {}
 
 .project {
@@ -66,14 +66,10 @@ ul { list-style-type: none; padding:0; margin:0; }
 
 </style>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-</script>
-<script>
-$(".container").height($(window).height());
-</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <script>
-$(document).ready(function(){
+/*$(document).ready(function(){
   $("#ab").click(function(){
   	$("#projects").hide();
   	$("#resume").hide();
@@ -91,6 +87,7 @@ $(document).ready(function(){
   	//$("#p1").delay(1000).slideDown(600, "linear", function() {});
   });
 });
+*/
 </script>
 
 <script>
@@ -120,8 +117,8 @@ $(document).ready(function(){
 		<td><h1 class="title"><a href="http://www.mattcialini.com">mattCialini</a></h1></td>
 		<td>
 			<ul class="nav">
-			<li><a id="ab" href="#">about</a></li>
-			<li><a id="pr" href="#">projects</a></li>
+			<li><a id="ab" href="http://www.mattcialini.com#about">about</a></li>
+			<li><a id="pr" href="http://www.mattcialini.com#projects">projects</a></li>
 			<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
 			</ul>
 		</td>
