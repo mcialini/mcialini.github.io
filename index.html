@@ -22,12 +22,10 @@ html { width: 100%; height:100vh; }
 .header { padding:10px; margin:0; vertical-align:bottom;}
 .footer { border-top: 3px solid white; }
 
-.title { float:left; margin:0; font-size:75px; }
+.title { text-align:left; margin:0; font-size:75px; }
 .title a:hover { color:#ffffff; }
 .nav ul {
-	position:absolute;
-	right:0;
-	bottom:0;
+	text-align:right;
 }
 .nav a {
 	width:6em;
@@ -116,13 +114,17 @@ $(document).ready(function(){
 <body>
 <div class="container"><div class="wrapper">
 <div class="header">
-	<h1 class="title"><a class="title" href="http://www.mattcialini.com">mattCialini</a></h1>
-	
-	<ul class="nav">
-	<li><a id="ab" href="#">about</a></li>
-	<li><a id="pr" href="#">projects</a></li>
-	<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
-	</ul>
+	<table class="head">
+	<tr>
+		<td><h1 class="title"><a href="http://www.mattcialini.com">mattCialini</a></h1></td>
+		<td>
+			<ul class="nav">
+			<li><a id="ab" href="#">about</a></li>
+			<li><a id="pr" href="#">projects</a></li>
+			<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
+			</ul>
+		</td>
+	</tr></table>
 </div>
 
 
