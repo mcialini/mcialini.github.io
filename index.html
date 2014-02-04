@@ -14,11 +14,11 @@ html { width: 100%; }
 	background-color: #000000;
 }
 #header { 
-	position:fixed;
+	position:absolute;
 	top:0;
+	z-index:5;
 	padding:5px; 
 	border-bottom: 3px solid white; 
-	height: 100px;
 }
 #title {
 	text-align:left; 
@@ -51,6 +51,8 @@ html { width: 100%; }
 	clear:both;
 	text-align:left;
 	margin-top:100px;
+	position:relative;
+	z-index:3;
 }
 #about { 
 	margin:5px;  
