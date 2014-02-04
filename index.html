@@ -18,7 +18,8 @@ html { width: 100%; height:100vh; }
 	padding:30px;
 	text-align:left;
 }
-.header { float:left; padding:10px; }
+.header { padding:10px; }
+.title { float:left; text-align:left; font-size:500%; }
 .nav { float:right; text-align:center; }
 .footer { border-top: 3px solid white; }
 
@@ -29,12 +30,11 @@ body {
 	height:100%;
 }
 
-h1 { font-size: 500%; margin-bottom:0em; }
 a, a:visited { color: #ffffff; text-decoration:none; }
 a:hover { color:red; }
 ul { list-style-type: none; padding:0; margin:0; }
 
-.header a:hover { color:#ffffff; }
+.title a:hover { color:#ffffff; }
 .nav ul {
 	float:left; 
 	margin: 0;
@@ -118,16 +118,19 @@ $(document).ready(function(){
 <body>
 <div class="container"><div class="wrapper">
 <div class="header">
+	<div class="title">
 	<h1><a href="http://www.mattcialini.com">mattCialini</a></h1>
-</div>
-<div class="nav">
+	</div>
+	
+	<div class="nav">
 	<ul>
 	<li><a id="ab" href="#">about</a></li>
 	<li><a id="pr" href="#">projects</a></li>
 	<li><a id="re" href="http://www.mattcialini.com/resume/">resume</a></li>
 	</ul>
-	<br>
+	</div>
 </div>
+
 
 <button id="b0">Display heights</button>
 
