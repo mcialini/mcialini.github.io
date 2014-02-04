@@ -19,8 +19,7 @@ html { width: 100%; height:100vh; }
 	padding:30px;
 	text-align:left;
 }
-.header { padding:10px; }
-.header h1 { float:left; font-size:250%; }
+.header { padding:10px; margin:0;}
 .footer { border-top: 3px solid white; }
 
 body { 
@@ -34,11 +33,12 @@ a, a:visited { color: #ffffff; text-decoration:none; }
 a:hover { color:red; }
 ul { list-style-type: none; padding:0; margin:0; }
 
+.title { float:left; font-size:250%; }
 .title a:hover { color:#ffffff; }
 .nav ul {
 	float:left; 
-	margin: 0;
 	width:100%;
+	bottom:0;
 }
 .nav a {
 	width:6em;
@@ -118,7 +118,7 @@ $(document).ready(function(){
 <body>
 <div class="container"><div class="wrapper">
 <div class="header">
-	<h1><a href="http://www.mattcialini.com">mattCialini</a></h1>
+	<h1 class="title"><a href="http://www.mattcialini.com">mattCialini</a></h1>
 	
 	<ul class="nav">
 	<li><a id="ab" href="#">about</a></li>
