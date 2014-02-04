@@ -4,43 +4,44 @@
 
 html { width: 100%; }
 
-.container {
+#container {
 	background-color: #999999;
 }
-.wrapper {
+#wrapper {
 	margin: 0 auto; 
 	width: 800px;
 	background-color: #000000;
 }
-.content {
+#header { 
+	padding:10px; 
+	border-bottom: 3px solid white; 
+}
+#title {
+	
+}
+#nav {
+	
+}
+#content {
 	clear:both;
 	padding:30px;
 	text-align:left;
 }
-.header { padding:10px; border-bottom: 3px solid white; }
-.footer { border-top: 3px solid white; }
+#about { 
+	margin:5px; 
+	padding:5px; 
+	border-bottom: 3px solid white;
+}
+#projects { margin:5px; }
+#last { border-bottom:none; }
+#resume {}
+#footer { border-top: 3px solid white; }
 
 .head { width:100%; }
 .head td { vertical-align:bottom; }
 .title { text-align:left; margin-bottom:-14px; font-size:75px; }
 .title a:hover { color:#ffffff; }
-.nav ul {
-	text-align:right;
-}
-.nav a {
-	text-decoration:none;
-	color:white;
-	background-color:black;
-	padding: 0.2em 1em;
-	border-radius: 10px;
-	font-size: 22px;
-}
-.nav a:hover {background-color:white; color: black;}
-.nav li {display:inline;}
 
-#about { margin:5px; padding:5px; border-bottom: 3px solid white;}
-#projects { margin:5px; }
-#resume {}
 
 .project {
 	border-bottom: 3px solid white;
@@ -50,7 +51,6 @@ html { width: 100%; }
 .project h2 { float:left; margin:0; font-size:200%; }
 .project ul { float:right; }
 .project li { display:inline; }
-#last { border-bottom:none; }
 
 body { 
 	font: 16px "Century Gothic"; 
@@ -109,8 +109,9 @@ $(document).ready(function(){
 </head>
 
 <body>
-<div class="container"><div class="wrapper">
-<div class="header">
+<div id="container">
+<div id="wrapper">
+<div id="header">
 	<table class="head">
 	<tr>
 		<td><h1 class="title"><a href="http://www.mattcialini.com">mattCialini</a></h1></td>
@@ -124,8 +125,7 @@ $(document).ready(function(){
 	</tr></table>
 </div>
 
-<div class="content">
-
+<div id="content">
 	<div id="about">
 	<h2>About Me</h2><br>
 	<ul>
@@ -139,60 +139,59 @@ $(document).ready(function(){
 	
 	<div id="projects">
 	<h2>Completed Projects</h2><br>
-	<div id="p1" class="project">
-	<h2>Photoshare</h2>		
-	<ul>
-        <li><a href="https://github.com/mcialini/Photoshare/zipball/master">Download <strong>ZIP File</strong></a></li>
-        <li><a href="https://github.com/mcialini/Photoshare/tarball/master">Download <strong>TAR Ball</strong></a></li>
-        <li><a href="https://github.com/mcialini/Photoshare">View On <strong>GitHub</strong></a></li>
-        </ul><br>
-        <section>
-        <p>This is a non-live photosharing web application I created for my Databases course. It consists of several java files used to pull files and user information from a database, then jsp files (html and java combined) to handle site organization and user interaction.</p>
-	<p>Photoshare provided functionality to create Albums, Images, Comments, and User accounts. Registered users are able to become friends with other users, and upload albums and pictures. Nonregistered and registered users are both able to post comments and like pictures. It also allows visitors to search all the pictures on the site using a tag system. Users are able to tag photos with as many keywords as they'd like, thus permitting the search of specific kinds of photos.</p>
-	</section>
-	</div>
+		<div id="p1" class="project">
+		<h2>Photoshare</h2>		
+		<ul>
+	        <li><a href="https://github.com/mcialini/Photoshare/zipball/master">Download <strong>ZIP File</strong></a></li>
+	        <li><a href="https://github.com/mcialini/Photoshare/tarball/master">Download <strong>TAR Ball</strong></a></li>
+	        <li><a href="https://github.com/mcialini/Photoshare">View On <strong>GitHub</strong></a></li>
+	        </ul><br>
+	        <section>
+	        <p>This is a non-live photosharing web application I created for my Databases course. It consists of several java files used to pull files and user information from a database, then jsp files (html and java combined) to handle site organization and user interaction.</p>
+		<p>Photoshare provided functionality to create Albums, Images, Comments, and User accounts. Registered users are able to become friends with other users, and upload albums and pictures. Nonregistered and registered users are both able to post comments and like pictures. It also allows visitors to search all the pictures on the site using a tag system. Users are able to tag photos with as many keywords as they'd like, thus permitting the search of specific kinds of photos.</p>
+		</section>
+		</div>
+		
+		<div id="p2" class="project">
+		<h2>Microsoft Academic Search</h2>		
+		<ul>
+	    	<li><a href="https://github.com/mcialini/MicrosoftAcademicSearch/zipball/master">Download <strong>ZIP File</strong></a></li>
+	        <li><a href="https://github.com/mcialini/MicrosoftAcademicSearch/tarball/master">Download <strong>TAR Ball</strong></a></li>
+	    	<li><a href="https://github.com/mcialini/MicrosoftAcademicSearch">View On <strong>GitHub</strong></a></li>
+	    	</ul><br>
+	    	<p>The Microsoft Academic Search is a research database which covers more than 50 million publications and over 19 million authors across a variety of domains. One of the main challenges with providing this service is caused by author-name ambiguity. There are many authors in the database which have unique IDs, but are the same author in reality. Given several csv files (most importantly Author.csv and PaperAuthor.csv), the task of this project is to determine which authors are duplicates.</p>
+		<p>The data mining algorithm I used in this project was extensive, and involved searching for a series of name variations of each author to see if perhaps they were listed under a nickname, or their name was misspelled. For example, one of the heuristics was to check all possible abbreviations of a person's name and see if that was listed under a different ID. So for John Doe Smith, the code would search for John D Smith, J Doe Smith, J D Smith, and J Smith.</p>
+		<p>After applying several of these heuristics, I received a 97.816% accuracy rating.</p>
+		</div>
+		
+		<div id="p3" class="project">
+		<h2>Routing Protocol</h2>		
+		<ul>
+	    	<li><a href="https://github.com/mcialini/RoutingProtocol/zipball/master">Download <strong>ZIP File</strong></a></li>
+	        <li><a href="https://github.com/mcialini/RoutingProtocol/tarball/master">Download <strong>TAR Ball</strong></a></li>
+	    	<li><a href="https://github.com/mcialini/RoutingProtocol">View On <strong>GitHub</strong></a></li>
+	    	</ul><br>
+	    	<p>Given a graph of 4 nodes with preset edge costs, this code will simulate a distance-vector routing algorithm in which each node communicates to its neighbors all of its current cheapest paths to every other node in the graph. Upon receiving one of these routing packets, a node will update its routing table with the new minimum costs it has seen. If a node uses another node x to reach node y, then the routing packets it sends out to x will have a cost of INFINITY, or 9999, to node y. This is the Split Horizon with Poison Reverse strategy which will eliminate multi-node routing loops.</p>
+		</div>
+		
+		<div id="last" class="project">
+		<h2>Echo Client-Server</h2>
+		<ul>
+	        <li><a href="https://github.com/mcialini/EchoClientServer/zipball/master">Download <strong>ZIP File</strong></a></li>
+	        <li><a href="https://github.com/mcialini/EchoClientServer/tarball/master">Download <strong>TAR Ball</strong></a></li>
+	        <li><a href="https://github.com/mcialini/EchoClientServer">View On <strong>GitHub</strong></a></li>
+	        </ul>
+	        <p>The client program will accept a hostname and a port number from the command line which it will use to connect to the server program. Once the connection has been accepted by the server, the client prompts the user for a message to send. This message is expected to be a setup message, and if it is valid, the client will move on to its measurement phase. It will automate either the round trip time or throughputmeasurement based on the parameters specified by the user. Once a termination message is sent to the server, both the server and client close the connection.</p>
+		<p>This server will will bind a socket to the port number input by the user on the local machine. It then will listen for a client program, accept an incoming connection request, and start receiving data. It will then split up the message into variables that are checked for validity based on our defined protocol. If the message contains some part which is not valid, the server will send an error message to the client and then break the connection. If the message is valid, the server will then wait for the amount of time specified by the client, then echo the message back. Once a terminate message is received, it will peacefully close the connection.</p>
+		</div>
+	</div> <!-- projects -->
 	
-	<div id="p2" class="project">
-	<h2>Microsoft Academic Search</h2>		
-	<ul>
-    	<li><a href="https://github.com/mcialini/MicrosoftAcademicSearch/zipball/master">Download <strong>ZIP File</strong></a></li>
-        <li><a href="https://github.com/mcialini/MicrosoftAcademicSearch/tarball/master">Download <strong>TAR Ball</strong></a></li>
-    	<li><a href="https://github.com/mcialini/MicrosoftAcademicSearch">View On <strong>GitHub</strong></a></li>
-    	</ul><br>
-    	<p>The Microsoft Academic Search is a research database which covers more than 50 million publications and over 19 million authors across a variety of domains. One of the main challenges with providing this service is caused by author-name ambiguity. There are many authors in the database which have unique IDs, but are the same author in reality. Given several csv files (most importantly Author.csv and PaperAuthor.csv), the task of this project is to determine which authors are duplicates.</p>
-	<p>The data mining algorithm I used in this project was extensive, and involved searching for a series of name variations of each author to see if perhaps they were listed under a nickname, or their name was misspelled. For example, one of the heuristics was to check all possible abbreviations of a person's name and see if that was listed under a different ID. So for John Doe Smith, the code would search for John D Smith, J Doe Smith, J D Smith, and J Smith.</p>
-	<p>After applying several of these heuristics, I received a 97.816% accuracy rating.</p>
-	</div>
-	
-	<div id="p3" class="project">
-	<h2>Routing Protocol</h2>		
-	<ul>
-    	<li><a href="https://github.com/mcialini/RoutingProtocol/zipball/master">Download <strong>ZIP File</strong></a></li>
-        <li><a href="https://github.com/mcialini/RoutingProtocol/tarball/master">Download <strong>TAR Ball</strong></a></li>
-    	<li><a href="https://github.com/mcialini/RoutingProtocol">View On <strong>GitHub</strong></a></li>
-    	</ul><br>
-    	<p>Given a graph of 4 nodes with preset edge costs, this code will simulate a distance-vector routing algorithm in which each node communicates to its neighbors all of its current cheapest paths to every other node in the graph. Upon receiving one of these routing packets, a node will update its routing table with the new minimum costs it has seen. If a node uses another node x to reach node y, then the routing packets it sends out to x will have a cost of INFINITY, or 9999, to node y. This is the Split Horizon with Poison Reverse strategy which will eliminate multi-node routing loops.</p>
-	</div>
-	
-	<div id="last" class="project">
-	<h2>Echo Client-Server</h2>
-	<ul>
-        <li><a href="https://github.com/mcialini/EchoClientServer/zipball/master">Download <strong>ZIP File</strong></a></li>
-        <li><a href="https://github.com/mcialini/EchoClientServer/tarball/master">Download <strong>TAR Ball</strong></a></li>
-        <li><a href="https://github.com/mcialini/EchoClientServer">View On <strong>GitHub</strong></a></li>
-        </ul>
-        <p>The client program will accept a hostname and a port number from the command line which it will use to connect to the server program. Once the connection has been accepted by the server, the client prompts the user for a message to send. This message is expected to be a setup message, and if it is valid, the client will move on to its measurement phase. It will automate either the round trip time or throughputmeasurement based on the parameters specified by the user. Once a termination message is sent to the server, both the server and client close the connection.</p>
-	<p>This server will will bind a socket to the port number input by the user on the local machine. It then will listen for a client program, accept an incoming connection request, and start receiving data. It will then split up the message into variables that are checked for validity based on our defined protocol. If the message contains some part which is not valid, the server will send an error message to the client and then break the connection. If the message is valid, the server will then wait for the amount of time specified by the client, then echo the message back. Once a terminate message is received, it will peacefully close the connection.</p>
-	</div>
-	</div>
-	
-</div>
-<div class="footer">
+</div> <!-- content -->
+<div id="footer">
 	hello everybody
-</div>
-</div>
-</div>
-</div>
+</div> <!-- footer -->
+</div> <!-- wrapper -->
+</div> <!-- container -->
 </body>
 </html>
 
