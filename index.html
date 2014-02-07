@@ -119,14 +119,16 @@ $(document).ready(function(){
   $("#b0").click(function(){
   	var wi = $(window).height();
   	var doc = $(document).height();
-  	var h = $("#wrapper").height();
-  	var w = $("#wrapper").width();
+  	var winH = $(window).height();
+  	var winW = $(window).width();
+  	var wrapH = $("#wrapper").height();
+  	var wrapW = $("#wrapper").width();
   	var hea = $("#header").height();
   	var na = $("#nav").height();
   	var co = $("#content").height();
   	var fo = $("#footer").height();
 	//alert("Window: " + wi + "\nDocument: " + doc + "\n\nHeader: " + hea + "\nNav: " + na + "\nContent: " + co + "\nFooter: " + fo + "\nSum of page comps: " + (hea+na+co+fo));
-  	alert("wrapper dimensions: " + h + " x " + w);
+  	alert("Window: " + winH + " x " + winW + "\nwrapper dimensions: " + wrapH + " x " + wrapW);
   });
 });
 </script>
