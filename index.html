@@ -119,11 +119,14 @@ $(document).ready(function(){
   $("#b0").click(function(){
   	var wi = $(window).height();
   	var doc = $(document).height();
+  	var h = $("#wrapper").height();
+  	var w = $("#wrapper").width();
   	var hea = $("#header").height();
   	var na = $("#nav").height();
   	var co = $("#content").height();
   	var fo = $("#footer").height();
-	alert("Window: " + wi + "\nDocument: " + doc + "\n\nHeader: " + hea + "\nNav: " + na + "\nContent: " + co + "\nFooter: " + fo + "\nSum of page comps: " + (hea+na+co+fo));
+	//alert("Window: " + wi + "\nDocument: " + doc + "\n\nHeader: " + hea + "\nNav: " + na + "\nContent: " + co + "\nFooter: " + fo + "\nSum of page comps: " + (hea+na+co+fo));
+  	alert("wrapper dimensions: " + h + " x " + w);
   });
 });
 </script>
@@ -172,6 +175,7 @@ $(document).ready(function(){
 </div>
 
 <div id="content">
+	<button id="b0">display dimensions</button>
 	<div id="about">
 	<h2>About Me</h2><br>
 	<ul>
