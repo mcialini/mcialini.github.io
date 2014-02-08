@@ -6,14 +6,14 @@
 html { width: 100%; }
 
 body { 
-	font: 16px "Roboto"; 
+	font: 100% "Roboto"; 
 	color: #000000; 
 	margin: 0;
 	height:100%;
 }
-h1, h2, h3 { margin:0; font-weight:100; }
-h2 { font-size: 40px; }
-h3 { font-size: 30px; display:inline-block;}
+h1, h2, h3 { margin:0; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 2em; display:inline-block;}
 a, a:visited { color: #000000; text-decoration:none; }
 a:hover { color:#44aaff; }
 ul { list-style-type: none; padding:0; margin:0; }
@@ -252,7 +252,7 @@ $(document).ready(function(){
 		</tr>
 		<tr>
 			<td colspan="2"><p>The client program will accept a hostname and a port number from the command line which it will use to connect to the server program. Once the connection has been accepted by the server, the client prompts the user for a message to send. This message is expected to be a setup message, and if it is valid, the client will move on to its measurement phase. It will automate either the round trip time or throughputmeasurement based on the parameters specified by the user. Once a termination message is sent to the server, both the server and client close the connection.</p>
-			<p>This server will will bind a socket to the port number input by the user on the local machine. It then will listen for a client program, accept an incoming connection request, and start receiving data. It will then split up the message into variables that are checked for validity based on our defined protocol. If the message contains some part which is not valid, the server will send an error message to the client and then break the connection. If the message is valid, the server will then wait for the amount of time specified by the client, then echo the message back. Once a terminate message is received, it will peacefully close the connection.</p></td>
+			<p>This server will bind a socket to the port number input by the user on the local machine. It then will listen for a client program, accept an incoming connection request, and start receiving data. It will then split up the message into variables that are checked for validity based on our defined protocol. If the message contains some part which is not valid, the server will send an error message to the client and then break the connection. If the message is valid, the server will then wait for the amount of time specified by the client, then echo the message back. Once a terminate message is received, it will peacefully close the connection.</p></td>
 		</tr></table>
 		</div>
 	</div> <!-- projects -->
