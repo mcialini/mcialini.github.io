@@ -72,10 +72,11 @@ td { vertical-align: bottom; padding:10 0; }
 #resume { display:none; }
 #resume ul { list-style-type: initial; padding-left:40;}
 #footer { 
-	width:70%;
+	width:inherit;
 	position:fixed; 
 	bottom:0;
 	text-align:center;
+	font-size:22px;
 }
 
 .project {
@@ -90,32 +91,14 @@ td { vertical-align: bottom; padding:10 0; }
 
 .last { border:0 !important; }
 
+@media only screen and (max-device-width: 480px) {
+	background-color:black;
+}
+
 
 </style>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script>
-/*$(document).ready(function(){
-  $("#ab").click(function(){
-  	$("#projects").hide();
-  	$("#resume").hide();
-  	
-  	$("#about").slideDown(600, "linear", function() {});
-  });
-  
-  $("#pr").click(function(){
-  	$("#about").hide();
-  	$("#resume").hide();
-  	
-  	$("#projects").slideDown(600, "linear", function() {});
-  	//$("#p3").slideDown(600, "linear", function() {});
-  	//$("#p2").delay(500).slideDown(600, "linear", function() {});
-  	//$("#p1").delay(1000).slideDown(600, "linear", function() {});
-  });
-});
-*/
-</script>
 
 <script>
 $(document).ready(function(){
@@ -392,7 +375,7 @@ $(document).ready(function(){
 
 
 <div id="footer">
-	<a href="http://www.mattcialini.com#header">^ top ^</a>
+	<a href="http://www.mattcialini.com#header">^^^^</a>
 </div> <!-- footer -->
 </div> <!-- wrapper -->
 </div> <!-- container -->
