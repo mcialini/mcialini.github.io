@@ -190,9 +190,7 @@ $(document).ready(function(){
 	<li>Email: matt.cialini@gmail.com</li>
 	<li>Facebook: www.facebook.com/matt.cialini</li>
 	</ul>
-<p>Hey there, I'm Matt Cialini (if you couldn't already guess) and I study Computer Science at Boston University. My interest in Computer Science spans many subfields, but I'd say the areas I'm most excited by are Artificial Intelligence, Web & Mobile Development, UI Design, and Databases. At the heart of it, I simply love to code. To speak the computer's language and use it to create something wonderful&mdash;something that can truly impact a person's life. </p>
-	
-
+	<p>Hey there, I'm Matt Cialini (if you couldn't already guess) and I study Computer Science at Boston University. My interest in Computer Science spans many subfields, but I'd say the areas I'm most excited by are Artificial Intelligence, Web & Mobile Development, UI Design, and Databases. At the heart of it, I simply love to code. To speak the computer's language and use it to create something wonderful&mdash;something that can truly impact a person's life. </p>
 	</div>
 	
 	<div id="projects">
@@ -200,11 +198,11 @@ $(document).ready(function(){
 		<div id="p1" class="project">
 		<table>
 		<tr>
-			<td><h3>Photoshare</h3>	</td>	
+			<td><h3>Photoshare</h3></td>	
 			<td><ul>
-		        <li><a href="https://github.com/mcialini/Photoshare/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/Photoshare/tarball/master"><strong>TAR</strong></a></li>
-		        <li class="last"><a href="https://github.com/mcialini/Photoshare"><strong>GitHub</strong></a></li>
+		        <li><a href="https://github.com/mcialini/photoshare/zipball/master"><strong>ZIP</strong></a></li>
+		        <li><a href="https://github.com/mcialini/photoshare/tarball/master"><strong>TAR</strong></a></li>
+		        <li class="last"><a href="https://github.com/mcialini/photoshare"><strong>GitHub</strong></a></li>
 		        </ul></td>
 	        </tr>
 	        <tr>
@@ -225,9 +223,10 @@ $(document).ready(function(){
 		    	</ul></td>
 		</tr>
 		<tr>
-		    	<td colspan="2"><p>The Microsoft Academic Search is a research database which covers more than 50 million publications and over 19 million authors across a variety of domains. One of the main challenges with providing this service is caused by author-name ambiguity. There are many authors in the database which have unique IDs, but are the same author in reality. Given several csv files (most importantly Author.csv and PaperAuthor.csv), the task of this project is to determine which authors are duplicates.</p>
-			<p>The data mining algorithm I used in this project was extensive, and involved searching for a series of name variations of each author to see if perhaps they were listed under a nickname, or their name was misspelled. For example, one of the heuristics was to check all possible abbreviations of a person's name and see if that was listed under a different ID. So for John Doe Smith, the code would search for John D Smith, J Doe Smith, J D Smith, and J Smith.</p>
-			<p>After applying several of these heuristics, I received a 97.816% accuracy rating.</p></td>
+		    	<td colspan="2">
+<p>The Microsoft Academic Search is a research database which covers more than 50 million publications and over 19 million authors across a variety of domains. One of the main challenges with providing this service is caused by author-name ambiguity. There are many authors in the database which have unique IDs, but are the same author in reality. Given several csv files (most importantly Author.csv and PaperAuthor.csv), the task of this project is to determine which authors are duplicates.</p>
+<p>The data mining algorithm I used in this project was extensive, and involved searching for a series of name variations of each author to see if perhaps they were listed under a nickname, or their name was misspelled. For example, one of the heuristics was to check all possible abbreviations of a person's name and see if that was listed under a different ID. So for John Doe Smith, the code would search for John D Smith, J Doe Smith, J D Smith, and J Smith.</p>
+<p>After applying several of these heuristics, I received a 97.816% accuracy rating.</p></td>
 		</tr></table>
 		</div>
 		
@@ -242,7 +241,8 @@ $(document).ready(function(){
 		    	</ul></td>
 	    	</tr>
 	    	<tr>
-	    		<td colspan="2"><p>Given a graph of 4 nodes with preset edge costs, this code will simulate a distance-vector routing algorithm in which each node communicates to its neighbors all of its current cheapest paths to every other node in the graph. Upon receiving one of these routing packets, a node will update its routing table with the new minimum costs it has seen. If a node uses another node x to reach node y, then the routing packets it sends out to x will have a cost of INFINITY, or 9999, to node y. This is the Split Horizon with Poison Reverse strategy which will eliminate multi-node routing loops.</p></td>
+	    		<td colspan="2">
+<p>Given a graph of 4 nodes with preset edge costs, this code will simulate a distance-vector routing algorithm in which each node communicates to its neighbors all of its current cheapest paths to every other node in the graph. Upon receiving one of these routing packets, a node will update its routing table with the new minimum costs it has seen. If a node uses another node x to reach node y, then the routing packets it sends out to x will have a cost of INFINITY, or 9999, to node y. This is the Split Horizon with Poison Reverse strategy which will eliminate multi-node routing loops.</p></td>
 		</tr></table>
 		</div>
 		
@@ -270,85 +270,75 @@ $(document).ready(function(){
 	<a href="http://www.github.com/mcialini/resume/zipball/master">Download my resume</a>
 	<br><br>
 	<h2>Education</h2>
-	<P><strong>Boston University</strong></P>
-	<P STYLE="margin-left: 2in; text-indent: -2in; line-height: 100%"><FONT SIZE=2><I>September
-	2010-May 2014</I></FONT></FONT></P>
-	<UL>
-		<li><P STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=3>B.A.&shy;
-		in Computer Science, anticipated graduation: May 2014</li>
-	</UL>
-	<UL>
-		<li><P STYLE="margin-bottom: 0.21in; line-height: 100%"><FONT SIZE=3>GPA
-		in major (15 courses): 3.592, Overall GPA: 3.42, Dean's List: Fall
-		2012 and 2013</li>
-		<li><P STYLE="margin-bottom: 0.21in; line-height: 100%"><FONT SIZE=3>Courses:
-		Web Design, Artificial Intelligence, Data Mining, Databases, iOS
-		Programming, Computational Audio, etc.</li>
-	</UL>
+	<P><strong>Boston University</strong></p>
+	<p class="period">September 2010-May 2014</p>
+	<ul>
+		<li>B.A. in Computer Science, anticipated graduation: May 2014</li>
+	</ul>
+	<ul>
+		<li>GPA in major (15 courses): 3.592, Overall GPA: 3.42, Dean's List: Fall 2012 and 2013</li>
+		<li>Courses: Web Design, Artificial Intelligence, Data Mining, Databases, iOS Programming, Computational Audio, 			etc.</li>
+	</ul>
 	<h2>Skills &amp; Abilities</h2>
-	<P>Proficiency in:</P>
-	<UL>
+	<p>Proficiency in:</p>
+	<ul>
 		<li>C, Java, Python, HTML/CSS, SQL</li>
 	</ul>
 	<p>Intermediate/Currently Learning:</p>
 	<ul>
 		<li>Objective-C, Android SDK, JQuery/Javascript</li>
-	</UL>
-	<PAdobe Photoshop, InDesign</P>
-	<UL>
+	</ul>
+	<pAdobe Photoshop, InDesign</p>
+	<ul>
 		<li>Web
 		page designs, style guides, pixel art</li>
-	</UL>
-	<P STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=3>Microsoft
-	Office Suite, Visual Basic</FONT></FONT></P>
-	<UL>
-		<li>Written
-		macros for Excel 2011 on both Mac and PC</li>
-	</UL>
-	<P STYLE="margin-bottom: 0in; line-height: 100%"><FONT SIZE=3>Moderate
-	comprehension of Spanish</FONT></FONT></P>
-	<P STYLE="margin-bottom: 0in; line-height: 100%"><BR>
-	</P>
-	<h2>Work Experience</h2>
-	(<i>can	provide references</i>)
+	</ul>
+	<p>Microsoft Office Suite, Visual Basic</p>
+	<ul>
+		<li>Written macros for Excel 2011 on both Mac and PC</li>
+	</ul>
+	<p>Moderate	comprehension of Spanish</p>
 	
-	<P><strong>Computer Assistant/Programmer</strong>,
-	School of Law, Boston University</P>
-	<P class="period">6-16 hours/week, June 2013-present</P>
-	<UL>
+	<h2>Work Experience</h2>
+	<p><strong>Computer Assistant/programmer</strong>,
+	School of Law, Boston University</p>
+	<p class="period">6-16 hours/week, June 2013-present</p>
+	<ul>
 		<li>troubleshoot faculty and student computer issues both on the phone and in person,
 		write VBA macros for faculty, update/install software and drivers,
 		swap in/out various hardware components, fix various student issues
 		with BU's wireless printing service</li>
-	</UL>
-	<P><strong>Grader for CS460: Databases; CS105: Intro to Databases</strong>, Boston University</P>
-	<P class="period">Fall semester, 2013; Spring semester, 2014</P>
-	<UL>
+	</ul>
+	<p><strong>Grader for CS460: Databases; CS105: Intro to Databases</strong>, Boston University</p>
+	<p class="period">Fall semester, 2013; Spring semester, 2014</p>
+	<ul>
 		<li>graded several written and programming assignments for classes with 60+ of my peers</li>
-	</UL>
-	<P><strong>Library Assistant</strong>, Mugar Memorial Library, Boston University</P>
-	<P class="period">14-20 hours/week, September 2011-present</P>
-	<UL>
+	</ul>
+	<p><strong>Library Assistant</strong>, Mugar Memorial Library, Boston University</p>
+	<p class="period">14-20 hours/week, September 2011-present</p>
+	<ul>
 		<li>sort
 		and distribute interdepartmental mail, hand-delivered packages for
 		library administration to other parts of campus, pick up paper bins
 		for recycling</li>
-	</UL>
-	<P><strong>Intern</strong>, Spellman High Voltage, Valhalla</P>
-	<P class="period">40 hours/week, summers 2008-2012</P>
-	<UL>
+	</ul>
+	<p><strong>Intern</strong>, Spellman High Voltage, Valhalla</p>
+	<p class="period">40 hours/week, summers 2008-2012</p>
+	<ul>
 		<li>reorganized
 		company's stock room, assisted company with large-scale
 		consolidation,  prepared kits for production, prepared items for
 		liquidation, worked with high voltage material, scanned schematics,
 		input schematic data into database</li>
-	</UL>
-	<P><strong>Volunteer Tutor</strong>, John Jay High School</P>
-	<P class="period">5-10 hours/week, 2006-2007</P>
-	<UL>
+	</ul>
+	<p><strong>Volunteer Tutor</strong>, John Jay High School</p>
+	<p class="period">5-10 hours/week, 2006-2007</p>
+	<ul>
 		<li>tutored my peers in Spanish and Mathematics one-on-one to individually meet
 		their academic goals</li>
-	</UL>
+	</ul>
+	
+	(<i>can	provide references</i>)
 </div>
 
 
