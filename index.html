@@ -13,7 +13,7 @@ body {
 }
 h1, h2, h3 { margin:0; }
 h2 { font-size: 2.5em; }
-h3 { font-size: 2em; display:inline-block;}
+h3 { font-size: 1.8em; display:inline-block;}
 a, a:visited { color: #000000; text-decoration:none; }
 a:hover { color:#44aaff; }
 ul { list-style-type: none; padding:0; margin:0; }
@@ -173,7 +173,6 @@ $(document).ready(function(){
 });
 </script>
 
-
 <title>Matt Cialini</title>
 
 </head>
@@ -197,6 +196,7 @@ $(document).ready(function(){
 <div id="innerwrapper">
 <div id="content">
 	<button id="b0">dimensions</button>
+	
 	<div id="about">
 	<h2>About Me</h2><br>
 	<p>Email: matt.cialini@gmail.com</p>
@@ -206,14 +206,21 @@ $(document).ready(function(){
 		
 	</div>
 	
-	<!--<div id="current">
+	<div id="current">
 	<h2>Current Projects</h2>
-		<div id="cp1">
+		<div id="cp1" class="project">
 			<h3>iOS Drum Pad</h3>
 			<p>I'm currently working on a Drum Pad application (currently unnamed and accepting suggestions!) for the iPhone/iPad while I learn Objective-C and how to use Xcode.</p>
-			<p>I intend</p>
+			<p>I intend to add in new features as time passes. The first phase will be a simple configurable drum pad grid, where you can record your own samples or choose from several onboard sounds.</p>
+			<p>Eventually I envision this being a complete song creation tool in your pocket, where you can create loops, sequence them, grab samples from your library's songs, and much much more.</p>
 		</div>
-	</div>-->
+		
+		<div id="cp2" class="project">
+			<h3>Palettize</h3>
+			<p>Palettize is an application I've been developing off and on for a few months. My intention is to release it for Android, however I'm waiting to transform it from Java to the SDK until I have finished learning Objective-C.</p>
+			<p>The goal of this app is to give you the power to capture an accurate color palette of any scene you find yourself in. Based on user-defined palette size and tolerance values, the algorithm will find the most frequent colors in the picture and display them as a palette. Colors that are within the tolerance value of each other will be represented by their mean.</p>
+		</div>
+	</div>
 	
 	<div id="projects">
 	<h2>Completed Projects</h2><br>
