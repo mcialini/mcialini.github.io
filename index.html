@@ -13,11 +13,10 @@ body {
 }
 h1, h2, h3 { margin:0; }
 h2 { font-size: 2.5em; }
-h3 { font-size: 2em; display:inline-block;}
+h3 { font-size: 1.8em; display:inline-block;}
 a, a:visited { color: #000000; text-decoration:none; }
 a:hover { color:#44aaff; }
 ul { list-style-type: none; padding:0; margin:0; }
-table { margin: 20 0; }
 td { vertical-align: bottom; padding:10 0; }
 
 #container {
@@ -25,13 +24,17 @@ td { vertical-align: bottom; padding:10 0; }
 }
 #wrapper {
 	margin: 0 auto; 
-	padding:15px;
+	padding:30;
 	width: 70%;
 	min-width:800px;
 	background: rgba(250,250,250,.75);
 	-webkit-box-shadow: 0px 0px 32px 13px rgba(0,0,0,0.2);
 	-moz-box-shadow: 0px 0px 32px 13px rgba(0,0,0,0.2);
 	box-shadow: 0px 0px 32px 13px rgba(0,0,0,0.2);
+}
+
+#innerwrapper {
+	margin-bottom:40;
 }
 #header { 
 	border-bottom: 3px solid #cccccc; 
@@ -68,12 +71,13 @@ td { vertical-align: bottom; padding:10 0; }
 	padding:10 0;
 	border-bottom: 3px solid #cccccc;
 }
-#projects { margin:5px; }
+#projects { }
 #resume { display:none; margin-bottom:10px;}
 #resume ul { list-style-type: initial; padding-left:40;}
 #resume h2 { border-bottom:3px solid #cccccc; }
 #footer { 
 	width:inherit;
+	min-width:inherit;
 	position:fixed; 
 	bottom:0;
 }
@@ -94,8 +98,7 @@ td { vertical-align: bottom; padding:10 0; }
 
 .project {
 	border-bottom: 3px solid #cccccc;
-	padding:0;
-	margin-bottom:20px;
+	padding:25 0;
 }
 
 .project h3 { font-size:30px; }
@@ -168,7 +171,6 @@ $(document).ready(function(){
 });
 </script>
 
-
 <title>Matt Cialini</title>
 
 </head>
@@ -189,47 +191,56 @@ $(document).ready(function(){
 	</div>
 
 </div>
-
+<div id="innerwrapper">
 <div id="content">
-	<button id="b0">dimensions</button>
+	
 	<div id="about">
 	<h2>About Me</h2><br>
 	<p>Email: matt.cialini@gmail.com</p>
 	<p>Hey there, I'm Matt Cialini (if you couldn't already guess) and I study Computer Science at Boston University. My interest in Computer Science spans many subfields, but I'd say the areas I'm most excited by are Artificial Intelligence, Web & Mobile Development, UI Design, and Databases. At the heart of it, I simply love to code. To speak the computer's language and use it to create something wonderful&mdash;something that can truly impact a person's life. </p>
-	<p>While I'm not coding, I enjoy watching movies, making pixel art, playing PC games, reading the occasional book, and imagining what I want my future to be.</p>
+	<p>While I'm not coding, I enjoy watching movies, making pixel art, playing PC games, reading the occasional book, and imagining what I want my future to be like.</p>
 	<p>Feel free to shoot me an email with a question about my life, request for a job you want done, or critique on my website!</p>
 		
 	</div>
 	
-	<!--<div id="current">
+	<div id="current">
 	<h2>Current Projects</h2>
-		<div id="cp1">
+	<br><br>
+		<div id="cp1" class="project">
 			<h3>iOS Drum Pad</h3>
 			<p>I'm currently working on a Drum Pad application (currently unnamed and accepting suggestions!) for the iPhone/iPad while I learn Objective-C and how to use Xcode.</p>
-			<p>I intend</p>
+			<p>I intend to add in new features as time passes. The first phase will be a simple configurable drum pad grid, where you can record your own samples or choose from several onboard sounds.</p>
+			<p>Eventually I envision this being a complete song creation tool in your pocket, where you can create loops, sequence them, grab samples from your library's songs, and much much more.</p>
 		</div>
-	</div>-->
+		
+		<div id="cp2" class="project">
+			<h3>Palettize</h3>
+			<p>Palettize is an application I've been developing off and on for a few months. My intention is to release it for Android, however I'm waiting to transform it from Java to the SDK until I have finished learning Objective-C.</p>
+			<p>The goal of this app is to give you the power to capture an accurate color palette of any scene you find yourself in. Based on user-defined palette size and tolerance values, the algorithm will find the most frequent colors in the picture and display them as a palette. Colors that are within the tolerance value of each other will be represented by their mean.</p>
+		</div>
+	</div>
 	
 	<div id="projects">
 	<h2>Completed Projects</h2><br>
-		<div id="p1" class="project">
+	
+		<div id="p0" class="project">
 		<table>
 		<tr>
-			<td><h3>Photoshare</h3></td>	
+			<td><h3>M/M/1 Simulator</h3></td>		
 			<td><ul>
-		        <li><a href="https://github.com/mcialini/photoshare/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/photoshare/tarball/master"><strong>TAR</strong></a></li>
-		        <li class="last"><a href="https://github.com/mcialini/photoshare"><strong>GitHub</strong></a></li>
-		        </ul></td>
-	        </tr>
-	        <tr>
-		        <td colspan="2"><p>This is a non-live photosharing web application I created for my Databases course. It consists of several java files used to pull files and user information from a database, then jsp files (html and java combined) to handle site organization and user interaction.</p>
-			<p>Photoshare provided functionality to create Albums, Images, Comments, and User accounts. Registered users are able to become friends with other users, and upload albums and pictures. Nonregistered and registered users are both able to post comments and like pictures. It also allows visitors to search all the pictures on the site using a tag system. Users are able to tag photos with as many keywords as they'd like, thus permitting the search of specific kinds of photos.</p>
-			</td>
+		    	<li><a href="https://github.com/mcialini/MM1/zipball/master"><strong>ZIP</strong></a></li>
+		        <li><a href="https://github.com/mcialini/MM1/tarball/master"><strong>TAR</strong></a></li>
+		    	<li class="last"><a href="https://github.com/mcialini/MM1"><strong>GitHub</strong></a></li>
+		    	</ul></td>
+	    	</tr>
+	    	<tr>
+	    		<td colspan="2">
+<p>This is a simple M/M/1 queue simulator consisting of three classes--Simulator.java, which runs based on hard-coded inputs, Event.java, which is a wrapper class for any event passing through the system, and Controller.java, which does all of the heavy lifting.</p>
+<p>Given an arrival rate lambda, a mean service time Ts, and a run time, the controller will generate arrival events to the system based on a Poisson process--meaning that each arrival time is set as the previous arrival time plus some exponentially distributed random variable with input lambda. When the server is not busy, it changes the birth event in the front of the queue into a death event, with a departure time set at the current time + some exponential centered at 1/Ts, or mu. Additionally, a monitoring event which gathers statistics about the system will be called based on an exponential distribution with some input rate.</p>
 		</tr></table>
 		</div>
-		
-		<div id="p2" class="project">
+
+		<div id="p1" class="project">
 		<table>
 		<tr>
 			<td><h3>Microsoft Academic Search</h3></td>		
@@ -246,6 +257,25 @@ $(document).ready(function(){
 <p>After applying several of these heuristics, I received a 97.816% accuracy rating.</p></td>
 		</tr></table>
 		</div>
+		
+		
+		<div id="p2" class="project">
+		<table>
+		<tr>
+			<td><h3>Photoshare</h3></td>	
+			<td><ul>
+		        <li><a href="https://github.com/mcialini/photoshare/zipball/master"><strong>ZIP</strong></a></li>
+		        <li><a href="https://github.com/mcialini/photoshare/tarball/master"><strong>TAR</strong></a></li>
+		        <li class="last"><a href="https://github.com/mcialini/photoshare"><strong>GitHub</strong></a></li>
+		        </ul></td>
+	        </tr>
+	        <tr>
+		        <td colspan="2"><p>This is a non-live photosharing web application I created for my Databases course. It consists of several java files used to pull files and user information from a database, then jsp files (html and java combined) to handle site organization and user interaction.</p>
+			<p>Photoshare provided functionality to create Albums, Images, Comments, and User accounts. Registered users are able to become friends with other users, and upload albums and pictures. Nonregistered and registered users are both able to post comments and like pictures. It also allows visitors to search all the pictures on the site using a tag system. Users are able to tag photos with as many keywords as they'd like, thus permitting the search of specific kinds of photos.</p>
+			</td>
+		</tr></table>
+		</div>
+		
 		
 		<div id="p3" class="project">
 		<table>
@@ -279,6 +309,7 @@ $(document).ready(function(){
 <p>This server will bind a socket to the port number input by the user on the local machine. It then will listen for a client program, accept an incoming connection request, and start receiving data. It will then split up the message into variables that are checked for validity based on our defined protocol. If the message contains some part which is not valid, the server will send an error message to the client and then break the connection. If the message is valid, the server will then wait for the amount of time specified by the client, then echo the message back. Once a terminate message is received, it will peacefully close the connection.</p></td>
 		</tr></table>
 		</div>
+				
 	</div> <!-- projects -->
 </div> <!-- content -->
 
@@ -305,7 +336,7 @@ $(document).ready(function(){
 	<ul>
 		<li>Objective-C, Android SDK, JQuery/Javascript</li>
 	</ul>
-	<pAdobe Photoshop, InDesign</p>
+	<p>Adobe Photoshop, InDesign</p>
 	<ul>
 		<li>Web
 		page designs, style guides, pixel art</li>
@@ -314,7 +345,7 @@ $(document).ready(function(){
 	<ul>
 		<li>Written macros for Excel 2011 on both Mac and PC</li>
 	</ul>
-	<p>Moderate	comprehension of Spanish</p>
+	<p>Moderate comprehension of Spanish</p>
 	
 	<h2>Work Experience</h2>
 	<p><strong>Computer Assistant/programmer</strong>,
@@ -359,6 +390,7 @@ $(document).ready(function(){
 </div>
 
 
+</div> <!-- innerwrapper -->
 <div id="footer">
 	<a href="http://www.mattcialini.com#header"><img id="totop" src="/images/totop.png"></img></a>
 </div> <!-- footer -->
