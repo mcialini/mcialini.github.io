@@ -222,24 +222,25 @@ $(document).ready(function(){
 	
 	<div id="projects">
 	<h2>Completed Projects</h2><br>
-		<div id="p1" class="project">
+	
+		<div id="p0" class="project">
 		<table>
 		<tr>
-			<td><h3>Photoshare</h3></td>	
+			<td><h3>M/M/1 Simulator</h3></td>		
 			<td><ul>
-		        <li><a href="https://github.com/mcialini/photoshare/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/photoshare/tarball/master"><strong>TAR</strong></a></li>
-		        <li class="last"><a href="https://github.com/mcialini/photoshare"><strong>GitHub</strong></a></li>
-		        </ul></td>
-	        </tr>
-	        <tr>
-		        <td colspan="2"><p>This is a non-live photosharing web application I created for my Databases course. It consists of several java files used to pull files and user information from a database, then jsp files (html and java combined) to handle site organization and user interaction.</p>
-			<p>Photoshare provided functionality to create Albums, Images, Comments, and User accounts. Registered users are able to become friends with other users, and upload albums and pictures. Nonregistered and registered users are both able to post comments and like pictures. It also allows visitors to search all the pictures on the site using a tag system. Users are able to tag photos with as many keywords as they'd like, thus permitting the search of specific kinds of photos.</p>
-			</td>
+		    	<li><a href="https://github.com/mcialini/MM1/zipball/master"><strong>ZIP</strong></a></li>
+		        <li><a href="https://github.com/mcialini/MM1/tarball/master"><strong>TAR</strong></a></li>
+		    	<li class="last"><a href="https://github.com/mcialini/MM1"><strong>GitHub</strong></a></li>
+		    	</ul></td>
+	    	</tr>
+	    	<tr>
+	    		<td colspan="2">
+<p>This is a simple M/M/1 queue simulator consisting of three classes--Simulator.java, which runs based on hard-coded inputs, Event.java, which is a wrapper class for any event passing through the system, and Controller.java, which does all of the heavy lifting.
+Given an arrival rate lambda, a mean service time Ts, and a run time, the controller will generate arrival events to the system based on a Poisson process--meaning that each arrival time is set as the previous arrival time plus some exponentially distributed random variable with input lambda. When the server is not busy, it changes the birth event in the front of the queue into a death event, with a departure time set at the current time + some exponential centered at 1/Ts, or mu. Additionally, a monitoring event which gathers statistics about the system will be called based on an exponential distribution with some input rate.
 		</tr></table>
 		</div>
-		
-		<div id="p2" class="project">
+
+		<div id="p1" class="project">
 		<table>
 		<tr>
 			<td><h3>Microsoft Academic Search</h3></td>		
@@ -256,6 +257,25 @@ $(document).ready(function(){
 <p>After applying several of these heuristics, I received a 97.816% accuracy rating.</p></td>
 		</tr></table>
 		</div>
+		
+		
+		<div id="p2" class="project">
+		<table>
+		<tr>
+			<td><h3>Photoshare</h3></td>	
+			<td><ul>
+		        <li><a href="https://github.com/mcialini/photoshare/zipball/master"><strong>ZIP</strong></a></li>
+		        <li><a href="https://github.com/mcialini/photoshare/tarball/master"><strong>TAR</strong></a></li>
+		        <li class="last"><a href="https://github.com/mcialini/photoshare"><strong>GitHub</strong></a></li>
+		        </ul></td>
+	        </tr>
+	        <tr>
+		        <td colspan="2"><p>This is a non-live photosharing web application I created for my Databases course. It consists of several java files used to pull files and user information from a database, then jsp files (html and java combined) to handle site organization and user interaction.</p>
+			<p>Photoshare provided functionality to create Albums, Images, Comments, and User accounts. Registered users are able to become friends with other users, and upload albums and pictures. Nonregistered and registered users are both able to post comments and like pictures. It also allows visitors to search all the pictures on the site using a tag system. Users are able to tag photos with as many keywords as they'd like, thus permitting the search of specific kinds of photos.</p>
+			</td>
+		</tr></table>
+		</div>
+		
 		
 		<div id="p3" class="project">
 		<table>
@@ -289,6 +309,7 @@ $(document).ready(function(){
 <p>This server will bind a socket to the port number input by the user on the local machine. It then will listen for a client program, accept an incoming connection request, and start receiving data. It will then split up the message into variables that are checked for validity based on our defined protocol. If the message contains some part which is not valid, the server will send an error message to the client and then break the connection. If the message is valid, the server will then wait for the amount of time specified by the client, then echo the message back. Once a terminate message is received, it will peacefully close the connection.</p></td>
 		</tr></table>
 		</div>
+				
 	</div> <!-- projects -->
 </div> <!-- content -->
 
