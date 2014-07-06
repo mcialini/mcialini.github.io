@@ -23,6 +23,8 @@
 
 <style type="text/css">
 
+$footer-height: 100px;
+
 html { width: 100%; }
 
 body { 
@@ -96,11 +98,16 @@ td { vertical-align: bottom; padding:10 0; }
 #resume { display:none; margin-bottom:10px;}
 #resume ul { list-style-type: initial; padding-left:40;}
 #resume h2 { border-bottom:3px solid #cccccc; }
+
+.sticky {
+	height: $footer-height;
+}
 #footer { 
 	width:inherit;
 	min-width:inherit;
 	position:fixed; 
 	bottom:0;
+	height: $footer-height;
 }
 
 #totop { 
@@ -441,9 +448,11 @@ $(document).ready(function(){
 	</ul>
 	<br>
 	(<i>can	provide references</i>)
+	
+
 </div>
 
-
+	<div class="sticky"></div>
 </div> <!-- innerwrapper -->
 <div id="footer">
 	<a href="http://www.mattcialini.com#header"><img id="totop" src="/images/totop.png"></img></a>
