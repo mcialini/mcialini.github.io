@@ -99,13 +99,11 @@ td { vertical-align: bottom; padding:10 0; }
 #resume ul { list-style-type: initial; padding-left:40;}
 #resume h2 { border-bottom:3px solid #cccccc; }
 
-.sticky {
-	height: $footer-height;
-}
 #footer { 
 	width:inherit;
 	min-width:inherit;
-	height: $footer-height;
+	position:fixed;
+	bottom:0;
 }
 
 #totop { 
@@ -450,7 +448,6 @@ $(document).ready(function(){
 
 </div>
 
-	<div class="sticky"></div>
 </div> <!-- innerwrapper -->
 <div id="footer">
 	<a href="http://www.mattcialini.com#header"><img id="totop" src="/images/totop.png"></img></a>
