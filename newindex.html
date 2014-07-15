@@ -44,21 +44,16 @@ body {
 	margin:0 auto;
 }
 
-#top-nav {
-	text-align:center;
-	width:100%;
-	background-color:black;
+nav, nav > ul {
+    width: 100%;
 }
 
-#top-nav li {
-	display:inline;
-	padding:8px 30px;
-	background-color:red;
-	width:25%;
-}
-
-#top-nav a {
-	text-decoration:none;
+nav > ul > li {
+    float: left;
+    width: 25%;
+    width: calc(100% / 4);
+    color: #333;
+    text-align:center;
 }
 
 </style>
@@ -70,14 +65,14 @@ body {
 <body>
 	<div id="container">
 		<div id="wrapper">
-			<div id="top-nav">
+			<nav>
 				<ul>
 					<li><a href="">about</a></li>
 					<li><a href="">projects</a></li>
 					<li><a href="">resume</a></li>
 					<li><a href="">contact</a></li>
 				</ul>
-			</div>
+			</nav>
 		</div>
 		<p>Changes coming soon!</p>
 	</div> <!-- container -->
