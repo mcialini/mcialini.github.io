@@ -81,8 +81,20 @@ header {
 	padding: 15px 25px;
 }
 
+header:before,
+header:after {
+    content: " ";
+    display: table;
+}
+
+header:after {
+    clear: both;
+}
+
+
 #profile-pic {
 	width:40%;
+	float:left;
 }
 
 #blurb {
