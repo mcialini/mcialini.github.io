@@ -2,7 +2,7 @@
 <head>
 <meta name="google-site-verification" content="PY0dOc59_vIWWp7hHrgjVlhR27c3HbsUhuTuR9gLrAM" />
 <meta name=”description” content='I am Matt Cialini and I study Computer Science at Boston University, from which I graduate in May. I am currently seeking a full-time position after graduation as some kind of Software Developer/Engineer in any one of several areas of concentration. I would say the areas I am most inspired by and interested in are Data Mining, Databases, Web and Mobile Development, and UI Design.' />
-<link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'> -->
 <link rel="shortcut icon" href="http://www.mattcialini.com/favicon.png" />
 
 <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
@@ -27,11 +27,10 @@
 	padding:0;
 }
 
-
 body { 
-	font: 100% "Roboto"; 
-	color: #000000; 
-	margin: 0;
+	font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight:200;
+	color: #000000;
 }
 
 #container {
@@ -47,6 +46,7 @@ body {
 	background-color:white;
 }
 
+/* NAVIGATION STYLES */
 nav, nav > ul {
     width: 100%;
     margin:0;
@@ -86,9 +86,18 @@ nav a:hover {
 	background-color:rgba(255,0,0,0.6);
 }
 
+/***************************************/
+
+
 header {
 	padding: 15px 25px;
 	display:table;
+}
+
+header {
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
 }
 
 header:before,
@@ -121,6 +130,22 @@ header:after {
 	-moz-border-radius: 150px;
 }
 
+
+#about {}
+#projects {}
+#resume {}
+#contact {}
+
+.slow {
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+}
+
+.delay {
+	animation-delay: 1.5s;
+	-webkit-animation-delay: 1.5s;
+}
+
 </style>
 
 <title>Matt Cialini</title>
@@ -130,7 +155,7 @@ header:after {
 <body>
 	<div id="container">
 		<div id="wrapper">
-			<header class="animated bounceInDown">
+			<header class="animated bounceInDown slow">
 				<div id="profile-pic">
 					<img class="circular" src="images/portrait.png"></img>
 				</div>
@@ -138,7 +163,7 @@ header:after {
 					<h1>My name is Matt Cialini, and I'm a Web Developer.</h1>
 				</div>
 			</header>
-			<nav>
+			<nav class="animated fadeIn delay">
 				<ul>
 					<li><a href="">about</a></li>
 					<li><a href="">projects</a></li>
@@ -146,6 +171,12 @@ header:after {
 					<li><a href="">contact</a></li>
 				</ul>
 			</nav>
+			<div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec convallis ipsum. Cras eu enim ipsum. Mauris sodales viverra elit, sed molestie turpis dignissim ac. Sed vel dolor sit amet massa suscipit laoreet ac ac nibh. Nam sit amet arcu non erat laoreet gravida. Cras pretium dignissim tellus, nec pulvinar orci lobortis sed. Cras tristique enim odio, non mollis mi dignissim at. Nunc neque enim, dictum ac fringilla eget, porta vel tortor. Phasellus porttitor est ligula, et lacinia felis malesuada quis. Aliquam erat volutpat. Maecenas tincidunt dolor vitae lacus posuere vehicula. Duis euismod augue quis mauris dictum, consectetur lacinia ante porta. Praesent fermentum purus ipsum, a blandit ante hendrerit at.
+					Nullam bibendum aliquet tellus, ut tincidunt nisl bibendum in. Nulla ipsum sapien, vulputate vel egestas vel, tempus vel nibh. Sed vitae orci vel lacus facilisis dapibus. Mauris adipiscing sed neque at pretium. Donec condimentum mattis metus, vitae mattis nisi sagittis quis. Vivamus quis tristique sapien. Nunc eleifend odio quis hendrerit posuere.
+				</p>
+			</div>
 		</div>
 	</div> <!-- container -->
 </body>
