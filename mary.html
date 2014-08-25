@@ -1,16 +1,76 @@
 <html>
 <head>
 	<style>
-		body {
-			position:relative;
-			/*background:linear-gradient(to left, #6e8bff,#183fe3);*/
-			background: url('bear_swing.png'), radial-gradient(farthest-corner at 100% 100%,#6487ff,#183fe3);
-			background-size:contain;
-			background-position:center;
-			background-repeat:no-repeat;
+		html, body {
+			margin:0;
 		}
+
+		body {
+			background:radial-gradient(farthest-corner at 100% 100%,#6487ff,#183fe3);
+			font-family:'Comic Sans MS';
+		}
+
+		#wrapper {
+			margin:0 5%;
+		}
+
+		#main {
+			height: 95%;
+			min-height: 565px;
+			background: url('bear_swing.png');
+			background-size:contain;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		#bottom-nav {
+			height:50px;
+			max-width:900px;
+			margin:0 auto;
+			text-align: justify;
+			background-color:transparent;
+		}
+
+		#bottom-nav > ul {
+		    width: 100%;
+		    margin:0;
+		    padding:0;
+		}
+
+		#bottom-nav > ul > li {
+		    list-style-type:none;
+		    float:left;
+		    width: 33.3333333333%;
+		}
+
+
+		#bottom-nav a {
+			width:100%;
+		   	display:inline-block;
+			text-decoration: none;
+			letter-spacing:4px;
+			color: white;
+		    text-align:center;
+		    padding:10px 0;
+		}
+
+		#bottom-nav li a:hover {
+			color:#aaa;
+		}
+
 	</style>
 </head>
 <body>
+	<div id="wrapper">
+		<div id="main">
+		</div>
+		<div id="bottom-nav">
+			<ul>
+				<li><a href="">Watercolors</a></li>
+				<li><a href="">Photography</a></li>
+				<li><a href="">Apps</a></li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
