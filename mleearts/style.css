@@ -3,11 +3,8 @@ html, body {
 }
 
 body {
-    font-family:'Comic Sans MS';
-}
-
-#page {
     background:radial-gradient(farthest-corner at 100% 70%,#8585E0,#0E2582);
+    font-family:'Comic Sans MS';
 }
 
 #container {
