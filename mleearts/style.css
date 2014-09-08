@@ -3,8 +3,11 @@ html, body {
 }
 
 body {
-    background:radial-gradient(farthest-corner at 100% 70%,#8585E0,#0E2582);
     font-family:'Comic Sans MS';
+}
+
+#page {
+    background:radial-gradient(farthest-corner at 100% 70%,#8585E0,#0E2582);
 }
 
 #container {
@@ -30,20 +33,24 @@ body {
 
 #bottom-nav {
     height:50px;
-    width:100%;
+    margin: 0 auto;
+    /* width:100%; */
 }
 
 #bottom-nav > ul {
-/*    max-width: 1080px;*/
+    /* max-width: 1080px; */
     margin:0 auto;
     padding:0;
+    text-align: center;
 }
 
 #bottom-nav > ul > li {
     list-style-type:none;
-    float:left;
-    width: 20%;
-    min-width:120px;
+    /* float:left; */
+    padding: 0 20px;
+    display: inline-block;
+    /* width: 20%; */
+/*    min-width:120px;*/
     line-height:50px;
     text-align:center;
 }
