@@ -25,6 +25,10 @@ body {
     margin: 0 auto;
 }
 
+#main-image img {
+    width:100%;
+}
+
 #gallery {
     max-width:900px;
     margin: 20px auto;
