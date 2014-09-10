@@ -1,0 +1,17 @@
+body {
+    background:radial-gradient(farthest-corner at 100% 70%,#8585E0,#0E2582);
+}
+
+#container {
+    background: url('stars.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat-x;
+}
+
+#main {
+    background: url('bear_swing_white_logo_drop.png');
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}

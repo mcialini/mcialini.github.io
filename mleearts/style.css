@@ -3,15 +3,10 @@ html, body {
 }
 
 body {
-    background:radial-gradient(farthest-corner at 100% 70%,#8585E0,#0E2582);
     font-family:'Comic Sans MS';
 }
 
 #container {
-    background: url('stars.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: repeat-x;
 }
 
 #wrapper {
@@ -22,10 +17,6 @@ body {
     height: 95%;
     height: calc(100% - 50px);
     min-height: 550px;
-    background: url('bear_swing_white_logo_drop.png');
-    background-size:contain;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 nav {
@@ -35,7 +26,6 @@ nav {
 }
 
 nav > ul {
-    /* max-width: 1080px; */
     margin:0 auto;
     padding:0;
     text-align: center;
@@ -43,19 +33,14 @@ nav > ul {
 
 nav > ul > li {
     list-style-type:none;
-    /* float:left; */
     padding: 0 20px;
     display: inline-block;
-    /* width: 20%; */
-/*    min-width:120px;*/
     line-height:50px;
     text-align:center;
 }
 
-
 nav a {
     width:100%;
-/*		   	display:inline-block;*/
     text-decoration: none;
     letter-spacing:4px;
     color: white;
