@@ -22,15 +22,18 @@ body {
 
 #main-image {
     max-width:900px;
+    margin: 0 auto;
 }
 
 #gallery {
     max-width:900px;
-    margin:20px 0;
+    margin: 20px auto;
+    text-align: center;
 }
 
 #gallery img {
     display:inline-block;
+    max-width: 100px;
     margin:0 10px;
 }
 
