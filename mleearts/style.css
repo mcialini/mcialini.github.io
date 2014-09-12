@@ -44,6 +44,14 @@ body {
     margin:0 10px;
 }
 
+#gallery .overlay {
+    background:rgba(0,0,0,0.5);
+}
+
+#gallery img:hover .overlay {
+    height:100%;
+}
+
 nav {
     height:50px;
     margin: 0 auto;
