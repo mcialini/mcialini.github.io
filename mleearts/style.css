@@ -35,7 +35,7 @@ body {
     text-align: center;
 }
 
-#gallery #img {
+#gallery .img {
     display:inline-block;
     max-width: 100px;
     margin:0 10px;
