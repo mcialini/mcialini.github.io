@@ -37,7 +37,10 @@ body {
 
 #gallery .img {
     display:inline-block;
-    max-width: 100px;
+}
+
+#gallery img {
+    max-height: 100px;
     margin:0 10px;
 }
 
