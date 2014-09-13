@@ -25,13 +25,14 @@ body {
     max-width:900px;
     margin: 0 auto;
     padding: 30px 0;
+    height:80%;
 }
 
 #main-image img {
     width:100%;
 }
 
-#main-image .caption {
+.caption {
     display:block;
     text-align:center;
     color:white;
