@@ -5,13 +5,17 @@
     <script> 
         $(document).ready(function(){
             $("nav").load("nav.html"); 
+
+            $("body").on("click","#gallery img", function() {
+                
+            });
         });
     </script>
 </head>
 <body>
-    <div id="container">
-        <div id="wrapper">
-            <div id="main">
+    <div id="container"> <!-- Wraps the whole screen -->
+        <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
+            <div id="main"> <!-- Wraps top half content -->
                 <div id="main-image">
                     <img src="gallery/paintings/DSC_0054%20copy.JPG">
                 </div>
@@ -38,8 +42,8 @@
                     </div>
                 </div>
             </div>
-            <nav></nav>
         </div>
+        <nav></nav>
     </div>
 </body>
 </html>

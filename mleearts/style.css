@@ -8,6 +8,7 @@ body {
 
 #container {
     background:rgb(0,0,0);
+    background:radial-gradient(farthest-corner at 50% 50%,#222,#000);
 }
 
 #wrapper {
