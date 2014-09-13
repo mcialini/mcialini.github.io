@@ -7,7 +7,7 @@
             $("nav").load("nav.html"); 
 
             $("body").on("click","#gallery .img .helper", function() {
-                var source = $(this).attr("src");
+                var source = $(this).parent().find("img").attr("src");
                 $("#main-image img").attr("src",source);
             });
         });
