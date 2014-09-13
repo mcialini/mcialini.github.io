@@ -12,44 +12,6 @@
             });
         });
     </script>
-    <style>
-    .img {
-        position:relative;
-        width:200px;
-        height:200px;
-    }
-    .img img {
-        width:100%;
-        vertical-align:top;
-    }
-    .img:after, .img:before {
-        position:absolute;
-        opacity:0;
-        transition: all 0.5s;
-        -webkit-transition: all 0.5s;
-    }
-    .img:after {
-        content:'\A';
-        width:100%; height:100%;
-        top:0; left:0;
-        background:rgba(0,0,0,0.6);
-    }
-    .img:before {
-        content: attr(data-content);
-        width:100%;
-        color:#fff;
-        z-index:1;
-        bottom:0;
-        padding:4px 10px;
-        text-align:center;
-        background:red;
-        box-sizing:border-box;
-        -moz-box-sizing:border-box;
-    }
-    .img:hover:after, .img:hover:before {
-        opacity:1;
-    }
-    </style>
 </head>
 <body>
     <div id="container"> <!-- Wraps the whole screen -->
