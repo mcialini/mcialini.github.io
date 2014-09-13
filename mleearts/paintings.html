@@ -6,7 +6,7 @@
         $(document).ready(function(){
             $("nav").load("nav.html"); 
 
-            $("body").on("click","#gallery .img", function() {
+            $("body").on("click","#gallery .img:before", function() {
                 var source = $(this).attr("src");
                 $("#main-image img").attr("src",source);
             });
