@@ -59,6 +59,10 @@ body {
     z-index: 2;
 }
 
+.helper:hover {
+	cursor:pointer;
+}
+
 .img:after, .img:before {
     position:absolute;
     opacity:0;
