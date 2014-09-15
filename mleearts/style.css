@@ -49,23 +49,23 @@ body {
 }
 
 .arrow.next {
-	border-left:30px solid #aaa;
+	border-left:30px solid white;
 	right:-22px;
 }
 
 .arrow.prev {
-	border-right:30px solid #aaa;
+	border-right:30px solid white;
 	left:-22px;
 }
 
 #main-image:hover .arrow.next {
 	opacity:1;
-	right:22px;
+	right:20px;
 }
 
 #main-image:hover .arrow.prev {
 	opacity:1;
-	left:22px;
+	left:20px;
 }
 
 .caption {
