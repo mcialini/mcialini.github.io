@@ -31,6 +31,42 @@ body {
     width:100%;
 }
 
+.arrow {
+	width:0;
+	height:0;
+	border-top:50px solid transparent;
+	border-bottom:50px solid transparent;
+
+	position: absolute; 
+	top: 50%; 
+	z-index: 1; 
+	margin-top: -24px; 
+	-moz-transition: all 0.2s ease-in-out; 
+	-webkit-transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out; 
+	opacity: 0;
+}
+
+.arrow.next {
+	border-left:50px solid #aaa;
+	right:-22px;
+}
+
+.arrow.prev {
+	border-right:50px solid #aaa;
+	left:-22px;
+}
+
+.arrow.next:hover {
+	opacity:1;
+	right:22px;
+}
+
+.arrow.prev:hover {
+	opacity:1;
+	left:22px;
+}
+
 .caption {
     display:block;
     text-align:center;
