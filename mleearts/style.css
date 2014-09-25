@@ -68,6 +68,14 @@ body {
 	left:20px;
 }
 
+.arrow.prev:hover {
+    border-right-color: #ddd;
+}
+
+.arrow.next:hover {
+    border-left-color: #ddd;
+}
+
 .caption {
     display:block;
     text-align:center;
