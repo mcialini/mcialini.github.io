@@ -19,6 +19,8 @@ body {
     height: 95%;
     height: calc(100% - 50px);
     min-height: 550px;
+    text-align: center;
+    position:relative;
 }
 
 #main-image {
@@ -188,4 +190,15 @@ nav a {
 
 nav li a:hover {
     color:#aaa;
+}
+
+#main embed, #main object {
+    height:400px;
+    width:540px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
 }
