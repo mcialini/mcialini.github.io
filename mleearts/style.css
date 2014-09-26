@@ -26,18 +26,24 @@ body {
     margin: 0 auto;
     padding: 30px 0;
     position:relative;
+    height:65%;
 }
 
 #main-image img {
     width:100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
 }
 
 .arrow {
 	width:0;
 	height:0;
-	border-top:30px solid transparent;
-	border-bottom:30px solid transparent;
-
+	border-top:20px solid transparent;
+	border-bottom:20px solid transparent;
 	position: absolute; 
 	top: 50%; 
 	z-index: 1; 
@@ -49,12 +55,12 @@ body {
 }
 
 .arrow.next {
-	border-left:30px solid white;
+	border-left:25px solid white;
 	right:-22px;
 }
 
 .arrow.prev {
-	border-right:30px solid white;
+	border-right:25px solid white;
 	left:-22px;
 }
 
@@ -69,11 +75,11 @@ body {
 }
 
 .arrow.prev:hover {
-    border-right-color: #ddd;
+    border-right-color: #ccc;
 }
 
 .arrow.next:hover {
-    border-left-color: #ddd;
+    border-left-color: #ccc;
 }
 
 .caption {
