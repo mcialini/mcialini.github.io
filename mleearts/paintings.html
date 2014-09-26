@@ -5,9 +5,52 @@
     <script> 
         $(document).ready(function(){
             $("body").on("click","#gallery .img .helper", function() {
-                var source = $(this).parent().find("img").attr("src");
-                $("#main-image img").attr("src",source);
+                var source = $(this).parent().find("img");
+                swapPicture($(source));
             });
+
+            $("body").on("click",  "#main-image .arrow.prev", function() {
+                    var thumbs = $("#gallery img").toArray();
+                    var newimg = $("#main-image img");
+                    var i;
+                    for (i = 0; i < $(thumbs).length; i++) {
+                            if ($(thumbs).eq(i).hasClass("selected")) {
+                                    var newindex = (i - 1) % $(thumbs).length;
+                                    newimg = $(thumbs).eq(newindex);
+                                    swapPicture(newimg);
+                                    break;
+                            }
+                    }
+            });
+
+            $("body").on("click",  "#main-image .arrow.next", function() {
+                    var thumbs = $("#gallery img").toArray();
+                    var newimg = $("#main-image img");
+                    var i;
+                    for (i = 0; i < $(thumbs).length; i++) {
+                            if ($(thumbs).eq(i).hasClass("selected")) {
+                                    var newindex = (i + 1) % $(thumbs).length;
+                                    newimg = $(thumbs).eq(newindex);
+                                    swapPicture(newimg);
+                                    break;
+                            }
+                    }
+            });
+
+            function swapPicture(newpic) {
+                /* UPDATE CURRENTLY SELECTED PICTURE */
+                if (!$(newpic).hasClass("selected")) {
+                        $("#gallery img.selected").removeClass("selected");
+                        $(newpic).addClass("selected");
+
+                        /* MODIFY ATTRIBUTES OF MAIN IMAGE */
+                        var main = $("#main-image img");
+                        $(main).attr("data-content",$(newpic).attr("data-content"));
+                        $(main).attr("src",$(newpic).attr("src"));
+                        $(main).attr("alt",$(newpic).attr("alt"));
+                }
+
+            }
         });
     </script>
 </head>
@@ -28,7 +71,7 @@
                 <div id="gallery">
                     <div class="img" data-content="The White Tiger - 2008">
                         <span class="helper"></span>                        
-                        <img src="gallery/paintings/DSC_0054%20copy.JPG">
+                        <img class="selected" src="gallery/paintings/DSC_0054%20copy.JPG">
                     </div>
                     <div class="img" data-content="The White Tiger - 2008">
                         <span class="helper"></span>

@@ -60,12 +60,12 @@ body {
 
 #main-image:hover .arrow.next {
 	opacity:1;
-	right:20px;
+	right:5px;
 }
 
 #main-image:hover .arrow.prev {
 	opacity:1;
-	left:20px;
+	left:5px;
 }
 
 .arrow.prev:hover {
