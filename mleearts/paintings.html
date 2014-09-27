@@ -2,11 +2,13 @@
 <head>
 	<link href="style.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="scripts/jquery.ui.touch-punch.min.js"></script>
     <script> 
         $(document).ready(function(){
             $("body").on("click","#gallery .img .helper", function() {
                 var source = $(this).parent().find("img");
-                swapPicture($(source));
+                $("#main-image img").attr("src", $source);
+                // swapPicture($(source));
             });
 
             $("body").on("click",  "#main-image .arrow.prev", function() {
