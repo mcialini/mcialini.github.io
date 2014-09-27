@@ -7,8 +7,7 @@
         $(document).ready(function(){
             $("body").on("click","#gallery .img .helper", function() {
                 var source = $(this).parent().find("img");
-                $("#main-image img").attr("src", $source);
-                // swapPicture($(source));
+                swapPicture($(source));
             });
 
             $("body").on("click",  "#main-image .arrow.prev", function() {
