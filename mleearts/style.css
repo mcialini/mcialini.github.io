@@ -17,7 +17,8 @@ body {
 
 #main {
     height: 95%;
-    height: calc(100% - 50px);
+    height: calc(100% - 80px);
+    padding-top:30px;
     min-height: 550px;
     text-align: center;
     position:relative;
@@ -26,19 +27,22 @@ body {
 #main-image {
     max-width:900px;
     margin: 0 auto;
-    padding: 30px 0;
     position:relative;
     height:65%;
 }
 
 #main-image img {
-    width:100%;
+    max-width:100%;
+    max-height:100%;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     position: absolute;
     margin: auto;
+    -webkit-box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow:    0px 10px 13px 0px rgba(0, 0, 0, 0.75);
+    box-shadow:         0px 10px 13px 0px rgba(0, 0, 0, 0.75);
 }
 
 .arrow {
@@ -68,12 +72,12 @@ body {
 
 #main-image:hover .arrow.next {
 	opacity:1;
-	right:5px;
+	right:-30px;
 }
 
 #main-image:hover .arrow.prev {
 	opacity:1;
-	left:5px;
+	left:-30px;
 }
 
 .arrow.prev:hover {
@@ -93,6 +97,8 @@ body {
 
 #gallery {
     text-align: center;
+    height:35%;
+    margin-top: 15px;
 }
 
 #gallery .img {
