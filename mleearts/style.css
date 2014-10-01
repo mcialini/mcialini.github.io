@@ -198,7 +198,7 @@ nav li a:hover {
     color:#aaa;
 }
 
-#main embed, #main object {
+#main embed {
     height:400px;
     width:540px;
     position:absolute;
