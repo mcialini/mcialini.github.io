@@ -93,6 +93,31 @@
                         <span class="helper"></span>
                         <img src="gallery/paintings/DSC_7503_thumb.JPG">
                     </div>
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                    </div>
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                    </div>
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                    </div>
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                    </div>
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                    </div>
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                    </div>
+                    
                 </div>
             </div>
         </div>

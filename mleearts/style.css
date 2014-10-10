@@ -97,7 +97,6 @@ body {
 
 #gallery {
     text-align: center;
-    height:35%;
     margin-top: 15px;
 }
 
@@ -153,7 +152,7 @@ body {
 }
 
 #gallery img {
-    max-height: 100px;
+    /*max-height: 100px;*/
 }
 
 #gallery .overlay {
