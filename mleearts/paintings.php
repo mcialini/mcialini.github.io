@@ -93,31 +93,70 @@
                         <span class="helper"></span>
                         <img src="gallery/paintings/DSC_7503_thumb.JPG">
                     </div>
+
                     <div class="img" data-content="The White Tiger - 2008">
                         <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                        <img src="gallery/paintings/DSC_0018_thumb.JPG">
                     </div>
                     <div class="img" data-content="The White Tiger - 2008">
                         <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                        <img src="gallery/paintings/DSC_0024_thumb.JPG">
                     </div>
                     <div class="img" data-content="The White Tiger - 2008">
                         <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                        <img src="gallery/paintings/DSC_0108_thumb.JPG">
                     </div>
                     <div class="img" data-content="The White Tiger - 2008">
                         <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                        <img src="gallery/paintings/DSC_0145_thumb.JPG">
                     </div>
                     <div class="img" data-content="The White Tiger - 2008">
                         <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                        <img src="gallery/paintings/DSC_0279_thumb.JPG">
                     </div>
                     <div class="img" data-content="The White Tiger - 2008">
                         <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_7503_thumb.JPG">
+                        <img src="gallery/paintings/DSC_0356_thumb.JPG">
                     </div>
-                    
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_3352_thumb.JPG">
+                    </div>
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_3366_thumb.JPG">
+                    </div>
+
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_3870_thumb.JPG">
+                    </div>
+
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_3936_thumb.JPG">
+                    </div>
+
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/DSC_4082_thumb.JPG">
+                    </div>
+
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/Image_2_thumb.JPG">
+                    </div>
+
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/Image_6_thumb.JPG">
+                    </div>
+
+                    <div class="img" data-content="The White Tiger - 2008">
+                        <span class="helper"></span>
+                        <img src="gallery/paintings/newhampshire_journey.JPG">
+                    </div>
+
                 </div>
             </div>
         </div>
