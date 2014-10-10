@@ -12,7 +12,8 @@ body {
 }
 
 #wrapper {
-    margin:0 5%;
+    margin:0 auto;
+    max-width:950px;
 }
 
 #main {
@@ -26,7 +27,7 @@ body {
 
 #main-image {
     max-width:900px;
-    margin: 0 auto;
+    margin: 0 auto 50px;
     position:relative;
     height:65%;
 }
@@ -70,12 +71,12 @@ body {
 	left:-22px;
 }
 
-#main-image:hover .arrow.next {
+#main-image:hover .arrow.next, #gallery:hover .arrow.next {
 	opacity:1;
 	right:-30px;
 }
 
-#main-image:hover .arrow.prev {
+#main-image:hover .arrow.prev, #gallery:hover .arrow.prev {
 	opacity:1;
 	left:-30px;
 }
@@ -96,13 +97,13 @@ body {
 }
 
 #gallery {
+    position:relative;
     text-align: center;
-    margin-top: 15px;
+    height:150px;
 }
 
 #gallery .img {
     display:inline-block;
-    margin-top: 10px;
 }
 
 .img {
