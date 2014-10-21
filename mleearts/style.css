@@ -82,11 +82,11 @@ body {
 }
 
 .arrow.prev:hover {
-    border-right-color: #aaa;
+    border-right-color: #888;
 }
 
 .arrow.next:hover {
-    border-left-color: #aaa;
+    border-left-color: #888;
 }
 
 .caption {
