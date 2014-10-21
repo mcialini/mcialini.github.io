@@ -223,3 +223,6 @@ nav li a:hover {
     margin:auto;
 }
 
+#loader img {
+    box-shadow:none;
+}
