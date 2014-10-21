@@ -12,7 +12,7 @@
 
             $("body").on("click",  "#main-image .arrow.prev", function() {
                 var thumbs = $("#gallery img").toArray();
-                var newimg = $("#main-image img");
+                var newimg = $("#main-image img.hero");
                 var i;
                 for (i = 0; i < $(thumbs).length; i++) {
                     if ($(thumbs).eq(i).hasClass("selected")) {
@@ -26,7 +26,7 @@
 
             $("body").on("click",  "#main-image .arrow.next, #main-image img", function() {
                 var thumbs = $("#gallery img").toArray();
-                var newimg = $("#main-image img");
+                var newimg = $("#main-image img.hero");
                 var i;
                 for (i = 0; i < $(thumbs).length; i++) {
                     if ($(thumbs).eq(i).hasClass("selected")) {
@@ -46,7 +46,7 @@
                     $(newpic).addClass("selected");
 
                     /* MODIFY ATTRIBUTES OF MAIN IMAGE */
-                    var main = $("#main-image img");
+                    var main = $("#main-image img.hero");
                     $("#loader").removeClass("hidden");
                     $(main).attr("data-content",$(newpic).attr("data-content"));
                     $(main).attr("src",newsrc);
@@ -81,7 +81,7 @@
                 }
             });
 
-            $("#main-image img").on("load", function() {
+            $("#main-image img.hero").on("load", function() {
                 $("#loader").addClass("hidden");
             });
         });
@@ -98,7 +98,7 @@
                     <div class="arrow-container">
                         <a class="arrow next"></a>
                     </div>
-                    <img src="gallery/paintings/DSC_0003.jpg">
+                    <img class="hero" src="gallery/paintings/DSC_0003.jpg">
                     <div id="loader" class="hidden">
                         <img src="ajax_loading.gif">
                     </div>
