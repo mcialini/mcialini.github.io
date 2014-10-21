@@ -47,9 +47,11 @@
 
                     /* MODIFY ATTRIBUTES OF MAIN IMAGE */
                     var main = $("#main-image img");
+                    $("#loader").removeClass("hidden");
                     $(main).attr("data-content",$(newpic).attr("data-content"));
                     $(main).attr("src",newsrc);
                     $(main).attr("alt",$(newpic).attr("alt"));
+                    $("#loader").addClass("hidden");
                 }
 
             }
@@ -86,6 +88,7 @@
     <div id="container"> <!-- Wraps the whole screen -->
         <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
             <div id="main"> <!-- Wraps top half content -->
+                <img id="loader" src="ajax_loading.gif" class="hidden">
                 <div id="main-image">
                     <div class="arrow-container">
                         <a class="arrow prev"></a>
