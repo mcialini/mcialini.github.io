@@ -51,7 +51,6 @@
                     $(main).attr("data-content",$(newpic).attr("data-content"));
                     $(main).attr("src",newsrc);
                     $(main).attr("alt",$(newpic).attr("alt"));
-                    $("#loader").addClass("hidden");
                 }
 
             }
@@ -80,6 +79,10 @@
                         break;
                     }
                 }
+            });
+
+            $("#main-image img").on("load", function() {
+                $("#loader").addClass("hidden");
             });
         });
     </script>
