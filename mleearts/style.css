@@ -49,8 +49,8 @@ body {
 .arrow {
 	width:0;
 	height:0;
-	border-top:20px solid transparent;
-	border-bottom:20px solid transparent;
+	border-top:30px solid transparent;
+	border-bottom:30px solid transparent;
 	position: absolute; 
 	top: 50%; 
 	z-index: 1; 
@@ -62,12 +62,12 @@ body {
 }
 
 .arrow.next {
-	border-left:25px solid white;
+	border-left:30px solid white;
 	right:-22px;
 }
 
 .arrow.prev {
-	border-right:25px solid white;
+	border-right:30px solid white;
 	left:-22px;
 }
 
@@ -82,11 +82,11 @@ body {
 }
 
 .arrow.prev:hover {
-    border-right-color: #ccc;
+    border-right-color: #aaa;
 }
 
 .arrow.next:hover {
-    border-left-color: #ccc;
+    border-left-color: #aaa;
 }
 
 .caption {
@@ -100,6 +100,8 @@ body {
     position:relative;
     text-align: center;
     height:150px;
+    max-width:900px;
+    margin:0 auto;
 }
 
 #gallery .img {
@@ -164,6 +166,18 @@ body {
     height:100%;
 }
 
+.hidden {
+    display:none!important;
+}
+
+@media only screen and (max-width:980px) {
+    #gallery {
+        display:none!important;
+    }
+}
+
+
+
 nav {
     height:50px;
     margin: 0 auto;
@@ -208,3 +222,4 @@ nav li a:hover {
     right:0;
     margin:auto;
 }
+

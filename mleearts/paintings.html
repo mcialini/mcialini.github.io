@@ -1,7 +1,6 @@
 <html>
 <head>
 	<link href="style.css" rel="stylesheet" type="text/css">
-    <!-- <link href="style2.css" rel="stylesheet" type="text/css"> -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="scripts/jquery.ui.touch-punch.min.js"></script>
     <script> 
@@ -12,48 +11,74 @@
             });
 
             $("body").on("click",  "#main-image .arrow.prev", function() {
-                    var thumbs = $("#gallery img").toArray();
-                    var newimg = $("#main-image img");
-                    var i;
-                    for (i = 0; i < $(thumbs).length; i++) {
-                            if ($(thumbs).eq(i).hasClass("selected")) {
-                                    var newindex = (i - 1) % $(thumbs).length;
-                                    newimg = $(thumbs).eq(newindex);
-                                    swapPicture(newimg);
-                                    break;
-                            }
+                var thumbs = $("#gallery img").toArray();
+                var newimg = $("#main-image img");
+                var i;
+                for (i = 0; i < $(thumbs).length; i++) {
+                    if ($(thumbs).eq(i).hasClass("selected")) {
+                        var newindex = (i - 1) % $(thumbs).length;
+                        newimg = $(thumbs).eq(newindex);
+                        swapPicture(newimg);
+                        break;
                     }
+                }
             });
 
-            $("body").on("click",  "#main-image .arrow.next", function() {
-                    var thumbs = $("#gallery img").toArray();
-                    var newimg = $("#main-image img");
-                    var i;
-                    for (i = 0; i < $(thumbs).length; i++) {
-                            if ($(thumbs).eq(i).hasClass("selected")) {
-                                    var newindex = (i + 1) % $(thumbs).length;
-                                    newimg = $(thumbs).eq(newindex);
-                                    swapPicture(newimg);
-                                    break;
-                            }
+            $("body").on("click",  "#main-image .arrow.next, #main-image img", function() {
+                var thumbs = $("#gallery img").toArray();
+                var newimg = $("#main-image img");
+                var i;
+                for (i = 0; i < $(thumbs).length; i++) {
+                    if ($(thumbs).eq(i).hasClass("selected")) {
+                        var newindex = (i + 1) % $(thumbs).length;
+                        newimg = $(thumbs).eq(newindex);
+                        swapPicture(newimg);
+                        break;
                     }
+                }
             });
 
             function swapPicture(newpic) {
                 /* UPDATE CURRENTLY SELECTED PICTURE */
                 var newsrc = $(newpic).attr("src").replace('_thumb', '');
                 if (!$(newpic).hasClass("selected")) {
-                        $("#gallery img.selected").removeClass("selected");
-                        $(newpic).addClass("selected");
+                    $("#gallery img.selected").removeClass("selected");
+                    $(newpic).addClass("selected");
 
-                        /* MODIFY ATTRIBUTES OF MAIN IMAGE */
-                        var main = $("#main-image img");
-                        $(main).attr("data-content",$(newpic).attr("data-content"));
-                        $(main).attr("src",newsrc);
-                        $(main).attr("alt",$(newpic).attr("alt"));
+                    /* MODIFY ATTRIBUTES OF MAIN IMAGE */
+                    var main = $("#main-image img");
+                    $(main).attr("data-content",$(newpic).attr("data-content"));
+                    $(main).attr("src",newsrc);
+                    $(main).attr("alt",$(newpic).attr("alt"));
                 }
 
             }
+
+            $("body").on("click", "#gallery .arrow.prev", function() {
+                var thumbgrps = $("#gallery .group").toArray();
+                var i;
+                var len = $(thumbgrps).length;
+                for (i = 0; i < len; i++) {
+                    if ($(thumbgrps).eq(i).hasClass("active")) {
+                        $(thumbgrps).eq(i).removeClass("active").addClass("hidden");
+                        $(thumbgrps).eq((i - 1) % len).removeClass("hidden").addClass("active");
+                        break;
+                    }
+                }
+            });
+
+            $("body").on("click", "#gallery .arrow.next", function() {
+                var thumbgrps = $("#gallery .group").toArray();
+                var i;
+                var len = $(thumbgrps).length;
+                for (i = 0; i < len; i++) {
+                    if ($(thumbgrps).eq(i).hasClass("active")) {
+                        $(thumbgrps).eq(i).removeClass("active").addClass("hidden");
+                        $(thumbgrps).eq((i + 1) % len).removeClass("hidden").addClass("active");
+                        break;
+                    }
+                }
+            });
         });
     </script>
 </head>
@@ -61,7 +86,6 @@
     <div id="container"> <!-- Wraps the whole screen -->
         <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
             <div id="main"> <!-- Wraps top half content -->
-                <a href="paintings2.html" style="display: block;text-align: center;color:white;font-weight:bold;">GO TO LIGHT BACKGROUND</a>
                 <div id="main-image">
                     <div class="arrow-container">
                         <a class="arrow prev"></a>
@@ -72,93 +96,98 @@
                     <img src="gallery/paintings/DSC_0003.jpg">
                 </div>
                 <!-- <span class="caption">The White Tiger - 2008</span> -->
+
                 <div id="gallery">
                     <div class="arrow-container">
                         <a class="arrow prev"></a>
                     </div>
 
-                    <div class="img">
-                        <span class="helper"></span>                        
-                        <img class="selected" src="gallery/paintings/DSC_0003_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_650_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_3015_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_7466_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/paintings/DSC_7503_thumb.jpg">
-                    </div>
-
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_0018_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_0024_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_0108_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_0145_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_0279-2_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_0356_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_3352_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_3366_thumb.jpg">
+                    <div class="group active">
+                        <div class="img">
+                            <span class="helper"></span>                        
+                            <img class="selected" src="gallery/paintings/DSC_0003_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/paintings/DSC_650_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/paintings/DSC_3015_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/paintings/DSC_7466_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/paintings/DSC_7503_thumb.jpg">
+                        </div>
                     </div>
 
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_3870_thumb.jpg">
+                    <div class="group hidden">
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_0018_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_0024_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_0108_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_0145_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_0279-2_thumb.jpg">
+                        </div>
                     </div>
 
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_3936_thumb.jpg">
+                    <div class="group hidden">
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_0356_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_3352_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_3366_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_3870_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_3936_thumb.jpg">
+                        </div>
                     </div>
 
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/DSC_4082_thumb.jpg">
-                    </div>
-
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/Image_2_thumb.jpg">
-                    </div>
-
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/Image_6_thumb.jpg">
-                    </div>
-
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="gallery/watercolors and drawings/newhampshire_journey_thumb.png">
+                    <div class="group hidden">
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/DSC_4082_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/Image_2_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/Image_6_thumb.jpg">
+                        </div>
+                        <div class="img">
+                            <span class="helper"></span>
+                            <img src="gallery/watercolors and drawings/newhampshire_journey_thumb.png">
+                        </div>
                     </div>
 
                     <div class="arrow-container">
