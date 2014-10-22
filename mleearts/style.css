@@ -46,6 +46,27 @@ body {
     box-shadow:         0px 10px 13px 0px rgba(0, 0, 0, 0.75);
 }
 
+.grid .img {
+    display:inline-block;
+    margin:5px;
+}
+
+.grid img {
+    max-width:250px;
+    max-height:145px;
+    transition:height 1s ease-in-out, width 1s ease-in-out;
+}
+
+.grid img.selected {
+    display:block;
+    max-width:100%;
+    max-height:100%;
+}
+
+.grid .img.selected:before, .grid .img.selected:after {
+    display:none;
+}
+
 .arrow {
 	width:0;
 	height:0;
@@ -225,4 +246,11 @@ nav li a:hover {
 
 #loader img {
     box-shadow:none;
+}
+
+@media only screen and (max-width:1080px) {
+    nav ul li {
+        width:100%;
+        padding:0;
+    }
 }

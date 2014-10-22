@@ -1,0 +1,106 @@
+<html>
+<head>
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="scripts/jquery.ui.touch-punch.min.js"></script>
+    <script> 
+        $(document).ready(function(){
+            $("body").on("click", ".grid .img .helper", function() {
+                $(this).parent().addClass("selected");
+                $(this).parent().find("img").addClass("selected");
+                $(this).parent().siblings().addClass("hidden");
+                $(this).addClass("hidden");
+            });
+
+            $("body").on("click", ".grid .img.selected", function() {
+                $(this).find(".helper").removeClass("hidden");
+                $(this).siblings().removeClass("hidden");
+                $(this).removeClass("selected");
+                $(this).find("img").removeClass("selected");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="container"> <!-- Wraps the whole screen -->
+        <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
+            <div id="main"> <!-- Wraps top half content -->
+                <div class="grid">
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0070.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0121.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0145.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0190.jpg">
+                    </div>
+
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0220.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0221.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0259.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0261.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0262.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_0230.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>
+                        <img src="gallery/photos/DSC_2267.jpg">
+                    </div>
+                    <div class="img">
+                        <span class="helper"></span>                        
+                        <img src="gallery/photos/DSC_0013.jpg">
+                    </div>
+                </div>
+                    
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="apps.html">Apps</a>
+                </li>
+                <li>
+                    <a href="animation.html">Island Dogs</a>
+                </li>
+                <li>
+                    <a href="photos.html">Paintings and Drawings</a>
+                </li>
+                <li>
+                    <a href="photos.html">Calendar Photography</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
