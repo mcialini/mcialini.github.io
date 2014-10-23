@@ -4,6 +4,7 @@ html, body {
 
 body {
     font-family:'Comic Sans MS';
+    color:white;
 }
 
 #container {
@@ -252,4 +253,10 @@ nav li a:hover {
         width:100%;
         padding:0;
     }
+}
+
+#about {
+    max-width: 600px;
+    margin:0 auto;
+    text-align: justify;
 }

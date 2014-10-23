@@ -1,0 +1,64 @@
+<html>
+<head>
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="scripts/jquery.ui.touch-punch.min.js"></script>
+    <script> 
+        $(document).ready(function(){
+            $("body").on("click", ".grid .img .helper", function() {
+                $(this).parent().addClass("selected");
+                $(this).parent().find("img").addClass("selected");
+                $(this).parent().siblings().addClass("hidden");
+                $(this).addClass("hidden");
+            });
+
+            $("body").on("click", ".grid .img.selected", function() {
+                $(this).find(".helper").removeClass("hidden");
+                $(this).siblings().removeClass("hidden");
+                $(this).removeClass("selected");
+                $(this).find("img").removeClass("selected");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="container"> <!-- Wraps the whole screen -->
+        <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
+            <div id="main"> <!-- Wraps top half content -->
+                <div id="about">
+                    <p>
+                    Inspired by nature, Mary Lee works in water watercolors, acrylic, pastel, etching, and photography. She gravitates towards whimsical depictions of animals and landscapes. "Red Pony" is an excellent representation of her work, it combines images from nature with an abstract environment, using vivid colors to infuse the painting with a unique energy. Mary Lee works in sophisticated and traditional formats such as watercolors and pastels as well as new, innovative formats like her acrylic on canvas floor cloths, aesthetically pleasing and functional.
+                    </p>
+                    <p>
+                    Mary attended the Corcoran School of Art, in Washington D.C. and also studied in Switzerland and Greece. She exhibits her work throughout New England. Her professional experience started in New York with cards reproduced by George Caspari Inc., and Cranes Paper Company. She also designed the logo for The Boston Cultural Collaborative for Early Leaning, which represented eight museums of Boston. Mary Lee was filmed by WGBH-TV as the art instructor for the A.C.E.S. Project in collaboration with the Museum of Science, the Children's Museum, and Zoo New England. She recently wrote and illustrated Island Dog Books, a series of early learning books, inspired by so many dogs, who find a way to live through extreme hardships.
+                    </p>
+                </div>
+                <div id="contact">
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="apps.html">Apps</a>
+                </li>
+                <li>
+                    <a href="paintings.html">Paintings and Drawings</a>
+                </li>
+                <li>
+                    <a href="photos.html">Calendar Photography</a>
+                </li>
+                <li>
+                    <a href="animation.html">Island Dogs</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
