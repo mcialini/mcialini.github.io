@@ -5,7 +5,7 @@
     <script src="scripts/jquery.ui.touch-punch.min.js"></script>
     <script> 
         $(document).ready(function(){
-            $("body").on("click", ".grid .img .helper", function() {
+            $("body").on("click", ".grid .img .helper, .grid .img img", function() {
                 $(this).parent().addClass("selected");
                 $(this).parent().find("img").addClass("selected");
                 $(this).parent().siblings().addClass("hidden");
