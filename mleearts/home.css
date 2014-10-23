@@ -3,14 +3,14 @@ body {
 }
 
 #container {
-    background: url('stars.png');
+    background: url('images/stars.png');
     background-size: contain;
     background-position: center;
     background-repeat: repeat-x;
 }
 
 #main {
-    background: url('bear_swing_white_logo_drop.png');
+    background: url('images/bear_swing_white_logo_drop.png');
     background-size:contain;
     background-position: center;
     background-repeat: no-repeat;

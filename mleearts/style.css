@@ -48,13 +48,12 @@ body {
 
 .grid .img {
     display:inline-block;
-    margin:5px;
+    margin:10px;
 }
 
 .grid img {
     max-width:250px;
     max-height:145px;
-    transition:height 1s ease-in-out, width 1s ease-in-out;
 }
 
 .grid img.selected {
