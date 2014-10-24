@@ -256,7 +256,16 @@ nav li a:hover {
 }
 
 #about {
-    max-width: 600px;
+    max-width: 800px;
     margin:0 auto;
     text-align: justify;
+}
+
+#about a {
+    color:chocolate;
+    text-decoration: none;
+}
+
+#about a:hover {
+    color:brown;
 }
