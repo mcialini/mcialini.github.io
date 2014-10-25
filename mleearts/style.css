@@ -260,12 +260,12 @@ nav li a:hover {
     box-shadow:none;
 }
 
-@media only screen and (max-width:1080px) {
+/*@media only screen and (max-width:1080px) {
     nav ul li {
         width:100%;
         padding:0;
     }
-}
+}*/
 
 #about {
     max-width: 800px;
