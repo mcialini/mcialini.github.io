@@ -17,7 +17,15 @@
                 $(this).siblings().removeClass("hidden");
                 $(this).removeClass("selected");
                 $(this).find("img").removeClass("selected");
-            })
+            });
+
+
+            $("body").on("touchend", ".grid .img .helper", function() {
+                $(this).parent().addClass("selected");
+                $(this).parent().find("img").addClass("selected");
+                $(this).parent().siblings().addClass("hidden");
+                $(this).addClass("hidden");
+            });
         });
     </script>
 </head>
