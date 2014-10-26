@@ -24,7 +24,7 @@
                 }
             });
 
-            $("body").on("click",  "#main-image .arrow.next, #main-image img", function() {
+            $("body").on("click",  "#main-image .arrow.next", function() {
                 var thumbs = $("#gallery img").toArray();
                 var newimg = $("#main-image img.hero");
                 var i;
@@ -37,6 +37,7 @@
                     }
                 }
             });
+
 
             function swapPicture(newpic) {
                 /* UPDATE CURRENTLY SELECTED PICTURE */
