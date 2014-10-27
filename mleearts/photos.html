@@ -6,7 +6,6 @@
     <script> 
         $(document).ready(function(){
             $("body").on("click", ".grid .img .helper", function() {
-                alert("click helper");
                 $(this).parent().addClass("selected");
                 $(this).parent().find("img").addClass("selected");
                 $(this).parent().siblings().addClass("hidden");
@@ -14,7 +13,6 @@
             });
 
             $("body").on("click", ".grid .img.selected", function() {
-                alert("clicked image");
                 $(this).find(".helper").removeClass("hidden");
                 $(this).siblings().removeClass("hidden");
                 $(this).removeClass("selected");
@@ -23,7 +21,6 @@
 
 
             $("body").on("touchend", ".grid .img .helper", function() {
-                alert("touch end");
                 $(this).parent().addClass("selected");
                 $(this).parent().find("img").addClass("selected");
                 $(this).parent().siblings().addClass("hidden");

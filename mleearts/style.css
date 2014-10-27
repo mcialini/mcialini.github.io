@@ -8,12 +8,12 @@ body {
 }
 
 a {
-    color:chocolate;
+    color:deepskyblue;
     text-decoration: none;
 }
 
 a:hover {
-    color:brown;
+    color:lightskyblue;
 }
 
 nav {
