@@ -184,6 +184,12 @@ nav li a:hover {
     display:inline-block;
 }
 
+@media only screen and (max-width:980px) {
+    #gallery .img {
+        width:100px;
+    }
+}
+
 .img {
     position:relative;
 }
