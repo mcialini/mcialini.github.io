@@ -124,6 +124,10 @@ nav li a:hover {
     display:none;
 }
 
+#main-image .arrow {
+    opacity: 0;
+}
+
 .arrow {
     height: 50px;
     position: absolute; 
@@ -133,7 +137,6 @@ nav li a:hover {
     -moz-transition: all 0.4s ease-in-out; 
     -webkit-transition: all 0.4s ease-in-out; 
     transition: all 0.4s ease-in-out; 
-    opacity: 0;
 }
 
 .arrow.next {
@@ -144,12 +147,12 @@ nav li a:hover {
     left:-22px;
 }
 
-#main-image:hover .arrow.next, #gallery:hover .arrow.next {
+#main-image:hover .arrow.next {
     opacity:1;
     right:-30px;
 }
 
-#main-image:hover .arrow.prev, #gallery:hover .arrow.prev {
+#main-image:hover .arrow.prev {
     opacity:1;
     left:-30px;
 }
