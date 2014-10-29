@@ -4,6 +4,7 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="scripts/jquery.ui.touch-punch.min.js"></script>
+    <script src="scripts/mobile-nav.js"></script>
     <script> 
         $(document).ready(function(){
             $("body").on("click","#gallery .img .helper", function() {
@@ -85,13 +86,6 @@
 
             $("#main-image img.hero").on("load", function() {
                 $("#loader").addClass("hidden");
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function(){
-            $("body").on("click", "#mobile-nav li.top", function() {
-                $("#inner-menu").toggle(250);
             });
         });
     </script>
