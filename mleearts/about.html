@@ -20,6 +20,13 @@
             })
         });
     </script>
+    <script>
+        $(document).ready(function(){
+            $("body").on("click", "#mobile-nav li.top", function() {
+                $("#inner-menu").toggle(250);
+            });
+        });
+    </script>
 </head>
 <body>
     <div id="container"> <!-- Wraps the whole screen -->
@@ -67,6 +74,31 @@
                 </li>
             </ul>
         </nav>
+        <ul id="mobile-nav">
+            <li class="top">
+                <ul id="inner-menu">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="apps.html">Apps</a>
+                    </li>
+                    <li>
+                        <a href="paintings.html">Paintings and Drawings</a>
+                    </li>
+                    <li>
+                        <a href="photos.html">Calendar Photography</a>
+                    </li>
+                    <li>
+                        <a href="animation.html">Island Dogs</a>
+                    </li>
+                </ul>
+                MENU
+            </li>
+        </ul>
     </div>
 </body>
 </html>
