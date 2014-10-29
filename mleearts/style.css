@@ -291,7 +291,7 @@ nav li a:hover {
     vertical-align: middle;
 }
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 600px) {
     #contact img#self, #contact #info {
         width:100%;
     }
