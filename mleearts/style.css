@@ -83,6 +83,12 @@ nav li a:hover {
     overflow-x:hidden;
 }
 
+@media only screen and (max-width:479px) {
+    #main {
+        padding-top:0;
+    }
+}
+
 #main-image {
     max-width:900px;
     margin: 0 auto 50px;
@@ -187,14 +193,27 @@ nav li a:hover {
     display:inline-block;
 }
 
-@media only screen and (max-width:980px) {
+@media only screen and (max-width:800px) {
+    #main-image {
+        height:50%;
+    }
+
     #gallery img {
-        max-height:100px;
+        max-height:60px;
     }
 
     #gallery {
-        height:100px;
+        height:60px;
     }
+
+    #gallery .arrow-container img {
+        max-height:30px;
+    }
+
+    #gallery .arrow {
+        margin-top:-13px;
+    }
+
 }
 
 .img {
@@ -260,8 +279,9 @@ nav li a:hover {
 }
 
 #main video {
-    height:400px;
-    width:540px;
+    max-height:400px;
+    max-width:540px;
+    width:100%;
     position:absolute;
     top:0;
     bottom:0;
@@ -355,6 +375,14 @@ nav li a:hover {
 
     #mobile-nav li.top:hover {
         cursor:pointer;
+    }
+
+    #mobile-nav a {
+        color:white;
+    }
+
+    #mobile-nav a:hover {
+        color: lightskyblue;
     }
 
     #inner-menu {
