@@ -6,6 +6,7 @@ body {
     font-family:'Comic Sans MS';
     color:white;
     background:rgb(0,0,0);
+    overflow:hidden;
 }
 
 a {
@@ -78,6 +79,8 @@ nav li a:hover {
     min-height: 550px;
     text-align: center;
     position:relative;
+    overflow-y:auto;
+    overflow-x:hidden;
 }
 
 #main-image {
