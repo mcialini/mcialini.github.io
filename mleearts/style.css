@@ -355,11 +355,11 @@ nav a {
     }
 
     .arrow.next {
-        right:-16px;
+        right:-16px!important;
     }
 
     .arrow.prev {
-        left:-16px;
+        left:-16px!important;
     }
 
 }
