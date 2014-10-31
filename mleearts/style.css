@@ -121,7 +121,7 @@ nav a {
     height: 95%;
     height: calc(100% - 80px);
     padding:30px 15px 0 15px;
-    min-height: 550px;
+    /*min-height: 550px;*/
     text-align: center;
     position:relative;
     overflow-y:auto;
