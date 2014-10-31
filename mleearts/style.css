@@ -7,7 +7,8 @@ html, body {
 }
 
 body {
-    font-family:'Comic Sans MS', 'Marker Felt', sans-serif;
+    font-family:'Comic Sans MS';
+    src: url(media/comicsans.ttf);
     color:white;
     background:rgb(0,0,0);
     overflow:hidden;
