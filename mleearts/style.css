@@ -5,10 +5,13 @@
 html, body {
     margin:0;
 }
+@font-face {
+    font-family:'Comic Sans MS';
+    src: url(media/comicsans.ttf);
+}
 
 body {
     font-family:'Comic Sans MS';
-    src: url(media/comicsans.ttf);
     color:white;
     background:rgb(0,0,0);
     overflow:hidden;
