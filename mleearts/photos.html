@@ -5,26 +5,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="scripts/jquery.ui.touch-punch.min.js"></script>
     <script src="scripts/mobile-nav.js"></script>
-    <script> 
-        $(document).ready(function(){
-            $("body").on("click touchend", ".grid .img .helper", function() {
-                if (!window.matchMedia('(max-device-width: 479px)').matches) {
-                    $(this).parent().addClass("selected");
-                    $(this).parent().find("img").addClass("selected");
-                    $(this).parent().siblings().addClass("hidden");
-                    $(this).addClass("hidden");
-                }
-                return false;
-            });
-
-            $("body").on("click touchend", ".grid .img.selected", function() {
-                $(this).find(".helper").removeClass("hidden");
-                $(this).siblings().removeClass("hidden");
-                $(this).removeClass("selected");
-                $(this).find("img").removeClass("selected");
-            });
-        });
-    </script>
 </head>
 <body>
     <div id="container"> <!-- Wraps the whole screen -->
@@ -132,5 +112,26 @@
             </li>
         </ul>
     </div>
+
+    <script> 
+        $(document).ready(function(){
+            $("body").on("click touchend", ".grid .img .helper", function() {
+                if (!window.matchMedia('(max-device-width: 479px)').matches) {
+                    $(this).parent().addClass("selected");
+                    $(this).parent().find("img").addClass("selected");
+                    $(this).parent().siblings().addClass("hidden");
+                    $(this).addClass("hidden");
+                }
+                return false;
+            });
+
+            $("body").on("click touchend", ".grid .img.selected", function() {
+                $(this).find(".helper").removeClass("hidden");
+                $(this).siblings().removeClass("hidden");
+                $(this).removeClass("selected");
+                $(this).find("img").removeClass("selected");
+            });
+        });
+    </script>
 </body>
 </html>
