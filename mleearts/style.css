@@ -1,3 +1,7 @@
+.hidden {
+    display:none!important;
+}
+
 html, body {
     margin:0;
 }
@@ -50,17 +54,17 @@ nav a {
     font-size:16px;
 }
 
-nav li a:hover {
+.navigation a {
+    color:white;
+}
+
+.navigation a:hover {
     color:#aaa;
 }
 
 #mobile-nav {
     display:none;
 }
-
-/*#inner-menu {
-    display:none;
-}*/
 
 @media only screen and (max-width:980px) {
     #mobile-nav {
@@ -82,18 +86,11 @@ nav li a:hover {
         cursor:pointer;
     }
 
-    #mobile-nav a {
-        color:white;
-    }
-
-    #mobile-nav a:hover {
-        color: lightskyblue;
-    }
-
     #inner-menu {
         list-style:none;
         padding:0;
         margin:0 auto!important;
+        display:none;
     }
 
     nav {
@@ -131,6 +128,113 @@ nav li a:hover {
     }
 }
 
+
+/* ABOUT STYLES */
+
+#about {
+    margin:0 auto;
+    text-align: justify;
+}
+
+#contact img#self {
+    width:50%;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+#contact #info {
+    width:49%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px) {
+    #contact img#self, #contact #info {
+        width:100%;
+    }
+}
+
+/* END ABOUT STYLES */
+
+
+/* APPS STYLES */
+
+.row {
+    height:200px;
+    margin: 30px 0;
+    clear: both;
+}
+
+.row .img {
+    display:inline-block;
+    height:100%;
+    width:auto;
+    vertical-align: middle;
+}
+
+.row .img:first-child {
+    float: left;
+}
+
+.row .img:last-child {
+    float:right;
+}
+
+.row .img img {
+    height:100%;
+    width:auto;
+}
+
+.row .img:hover {
+    cursor:pointer;
+}
+
+.row .description {
+    display:inline-block;
+    width: calc(100% - 527px);
+    margin: 0 0 20px 30px;
+    float: left;
+    text-align: left;
+}
+
+.row .description ul, .row .description p {
+    margin:0;
+}
+
+@media only screen and (max-width:980px) {
+    .row {
+        height: auto;
+        padding-bottom:20px;
+        border-bottom: 1px solid #333;
+    }
+
+    .row .img {
+        float:none!important;
+        display:block;
+        width:100%;
+        max-width:200px;
+        height:auto;
+        margin:0 auto;
+    }
+
+    .row .img img {
+        width:100%;
+        height:auto;
+    }
+
+    .row .description {
+        display:block;
+        width:90%;
+        margin: 20px auto;
+        float:none;
+    }
+}
+
+/* END APPS STYLES */
+
+
+/* PAINTINGS STYLES */
+
 #main-image {
     max-width:900px;
     margin: 0 auto 50px;
@@ -153,26 +257,6 @@ nav li a:hover {
     -webkit-box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow:    0px 10px 13px 0px rgba(0, 0, 0, 0.75);
     box-shadow:         0px 10px 13px 0px rgba(0, 0, 0, 0.75);
-}
-
-.grid .img {
-    display:inline-block;
-    margin:10px;
-}
-
-.grid img {
-    max-width:250px;
-    max-height:145px;
-}
-
-.grid img.selected {
-    display:block;
-    max-width:100%;
-    max-height:100%;
-}
-
-.grid .img.selected:before, .grid .img.selected:after {
-    display:none;
 }
 
 #main-image .arrow {
@@ -235,6 +319,18 @@ nav li a:hover {
     display:inline-block;
 }
 
+#gallery .overlay {
+    background:rgba(0,0,0,0.5);
+}
+
+#gallery img:hover .overlay {
+    height:100%;
+}
+
+#loader img {
+    box-shadow:none;
+}
+
 @media only screen and (max-width:800px) {
     #main-image {
         height:50%;
@@ -257,6 +353,53 @@ nav li a:hover {
     }
 
 }
+
+/* END PAINTINGS STYLES */
+
+
+/* PHOTOGRAPHY STYLES */
+
+.grid .img {
+    display:inline-block;
+    margin:10px;
+}
+
+.grid img {
+    max-width:250px;
+    max-height:145px;
+}
+
+.grid img.selected {
+    display:block;
+    max-width:100%;
+    max-height:100%;
+}
+
+.grid .img.selected:before, .grid .img.selected:after {
+    display:none;
+}
+
+/* END PHOTOGRAPHY STYLES */
+
+
+/* ANIMATION STYLES */
+
+#main video {
+    max-height:400px;
+    max-width:540px;
+    width:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+/* END ANIMATION STYLES */
+
+
+/* IMAGE HOVER OVER STYLES */
 
 .img {
     position:relative;
@@ -304,92 +447,4 @@ nav li a:hover {
     opacity:1;
 }
 
-#gallery img {
-    /*max-height: 100px;*/
-}
-
-#gallery .overlay {
-    background:rgba(0,0,0,0.5);
-}
-
-#gallery img:hover .overlay {
-    height:100%;
-}
-
-.hidden {
-    display:none!important;
-}
-
-#main video {
-    max-height:400px;
-    max-width:540px;
-    width:100%;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
-}
-
-#loader img {
-    box-shadow:none;
-}
-
-#about {
-    margin:0 auto;
-    text-align: justify;
-}
-
-#contact img#self {
-    width:50%;
-    display:inline-block;
-    vertical-align: middle;
-}
-
-#contact #info {
-    width:49%;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-@media only screen and (max-width: 600px) {
-    #contact img#self, #contact #info {
-        width:100%;
-    }
-}
-
-
-.row {
-    height:200px;
-    margin: 30px 0;
-    clear: both;
-}
-
-.row img.icon {
-    display:inline-block;
-    height:100%;
-    width:auto;
-    vertical-align: middle;
-    float: left;
-}
-
-.row img.screenshot {
-    display:inline-block;
-    height:100%;
-    width:auto;
-    vertical-align: middle;
-    float: right;
-}
-
-.row .description {
-    display:inline-block;
-    width: calc(100% - 527px);
-    margin: 0 0 20px 30px;
-    float: left;
-    text-align: left;
-}
-
-.row .description ul, .row .description p {
-    margin:0;
-}
+/* END IMAGE HOVER OVER STYLES */
