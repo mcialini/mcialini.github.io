@@ -8,10 +8,12 @@
     <script> 
         $(document).ready(function(){
             $("body").on("click touchend", ".grid .img .helper", function() {
-                $(this).parent().addClass("selected");
-                $(this).parent().find("img").addClass("selected");
-                $(this).parent().siblings().addClass("hidden");
-                $(this).addClass("hidden");
+                if (!window.matchMedia('(max-device-width: 479px)').matches) {
+                    $(this).parent().addClass("selected");
+                    $(this).parent().find("img").addClass("selected");
+                    $(this).parent().siblings().addClass("hidden");
+                    $(this).addClass("hidden");
+                }
                 return false;
             });
 
