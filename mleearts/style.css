@@ -347,7 +347,7 @@ nav a {
     }
 
     .arrow-container img {
-        max-height:30px;
+        max-height:30px!important;
     }
 
     .arrow {
