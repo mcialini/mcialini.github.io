@@ -19,6 +19,7 @@ body {
     background-repeat: no-repeat;
 }
 
-#mobile-nav {
+#mobile-nav, nav {
 	background:#0E2582!important;
 }
+
