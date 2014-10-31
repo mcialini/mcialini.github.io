@@ -76,6 +76,7 @@ nav a {
         background:black;
         padding: 0;
         margin: 0;
+        z-index:1;
     }
 
     #mobile-nav li.top {
@@ -91,7 +92,6 @@ nav a {
         padding:0;
         margin:0 auto!important;
         display:none;
-        z-index:100;
     }
 
     nav {
@@ -125,7 +125,7 @@ nav a {
 
 @media only screen and (max-width:479px) {
     #main {
-        padding-top:10px;
+        min-height:0;
     }
 }
 
@@ -380,6 +380,14 @@ nav a {
     display:none;
 }
 
+@media only screen and (max-width:479px) {
+    .grid img {
+        max-width:none;
+        max-height:none;
+        width:100%;
+        height:auto;
+    }
+}
 /* END PHOTOGRAPHY STYLES */
 
 
@@ -448,4 +456,9 @@ nav a {
     opacity:1;
 }
 
+@media only screen and (max-width:479px) {
+    .helper, .img:before, .img:after {
+        display:none;
+    }
+}
 /* END IMAGE HOVER OVER STYLES */
