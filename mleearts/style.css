@@ -457,7 +457,7 @@ nav a {
 }
 
 @media only screen and (max-width:479px) {
-    .helper, .img:before, .img:after {
+    .grid .helper, .grid .img:before, .grid .img:after {
         display:none;
     }
 }
