@@ -12,6 +12,7 @@
                 $(this).parent().find("img").addClass("selected");
                 $(this).parent().siblings().addClass("hidden");
                 $(this).addClass("hidden");
+                return false;
             });
 
             $("body").on("click touchend", ".grid .img.selected", function() {
