@@ -154,6 +154,14 @@ nav a {
     vertical-align: middle;
 }
 
+#copyright {
+    padding:20px;
+}
+
+#copyright a {
+    color:white;
+}
+
 @media only screen and (max-width: 600px) {
     #contact img#self, #contact #info {
         width:100%;
