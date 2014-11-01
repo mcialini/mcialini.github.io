@@ -13,7 +13,7 @@
             });
 
             $("body").on("click",  "#main-image .arrow.prev", function() {
-                var thumbs = $("#gallery img").toArray();
+                var thumbs = $("#gallery .img img").toArray();
                 var newimg = $("#main-image img.hero");
                 var i;
                 for (i = 0; i < $(thumbs).length; i++) {
@@ -27,7 +27,7 @@
             });
 
             $("body").on("click",  "#main-image .arrow.next", function() {
-                var thumbs = $("#gallery img").toArray();
+                var thumbs = $("#gallery .img img").toArray();
                 var newimg = $("#main-image img.hero");
                 var i;
                 for (i = 0; i < $(thumbs).length; i++) {
