@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta name="google-site-verification" content="PY0dOc59_vIWWp7hHrgjVlhR27c3HbsUhuTuR9gLrAM" />
-<meta name=”description” content='I am Matt Cialini and I study Computer Science at Boston University, from which I graduate in May. I am currently seeking a full-time position after graduation as some kind of Software Developer/Engineer in any one of several areas of concentration. I would say the areas I am most inspired by and interested in are Data Mining, Databases, Web and Mobile Development, and UI Design.' />
+<meta name="description" content='I am Matt Cialini and I study Computer Science at Boston University, from which I graduate in May. I am currently seeking a full-time position after graduation as some kind of Software Developer/Engineer in any one of several areas of concentration. I would say the areas I am most inspired by and interested in are Data Mining, Databases, Web and Mobile Development, and UI Design.' />
 <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'> -->
 <link rel="shortcut icon" href="http://www.mattcialini.com/favicon.png" />
 
@@ -19,128 +19,20 @@
 <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
 <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
 <link rel="stylesheet" href="animate.css">
-
-<style>
-
-* {
-	margin:0;
-	padding:0;
-}
-
-body { 
-	font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight:200;
-	color: #000000;
-}
-
-#container {
-	background-image:url("images/pixel_weave3.png");
-	height:100%;
-}
-
-#wrapper {
-	max-width:1024px;
-	min-width:500px;
-	width:80%;
-	margin:0 auto;
-	background-color:white;
-}
-
-/* NAVIGATION STYLES */
-nav, nav > ul {
-    width: 100%;
-    margin:0;
-    padding:0;
-}
-
-nav > ul > li {
-    list-style-type:none;
-    float:left;
-    width: 25%;
-}
-
-
-nav a {
-	width:100%;
-   	display:inline-block;
-	text-decoration: none;
-	letter-spacing:4px;
-	color: #333;
-    text-align:center;
-    
-    background-color:red;
-    padding:10px 0;
-}
-
-nav li:nth-child(1) a { background: rgb(250,128,114); }
-nav li:nth-child(2) a { background: rgb(250,173,114); }
-nav li:nth-child(3) a { background: rgb(250,218,114); }
-nav li:nth-child(4) a { background: rgb(210,240,114); }
-
-nav li a:hover { opacity:0.7; }
-
-/***************************************/
-
-
-header {
-	padding: 15px 25px;
-	display:table;
-}
-
-header {
-  -webkit-animation-duration: 3s;
-  -moz-animation-duration: 3s;
-  animation-duration: 3s;
-}
-
-header:before,
-header:after {
-    content: " ";
-    display: table;
-}
-    
-header:after {
-    clear: both;
-}
-
-#profile-pic {
-	float:left;
-}
-
-#blurb {
-	display:table-cell;
-	vertical-align:middle;
-	padding:30px;
-	width:60%;
-}
-
-.circular {
-	width: 300px;
-	height: 300px;
-	border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 150px;
-}
-
-
-#about {}
-#projects {}
-#resume {}
-#contact {}
-
-.slow {
-	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
-}
-
-.delay {
-	animation-delay: 1.5s;
-	-webkit-animation-delay: 1.5s;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <title>Matt Cialini</title>
+
+<script>
+    $(document).ready(function(){
+    	$("body").on("click", "nav a", function() {
+    		var sec = $(this).attr("id").slice(0,-5);
+    		$("#" + sec).removeClass("hidden");
+    	});
+    });
+</script>
 
 </head>
 
@@ -149,7 +41,7 @@ header:after {
 		<div id="wrapper">
 			<header class="animated bounceInDown slow">
 				<div id="profile-pic">
-					<img class="circular" src="images/portrait.png"></img>
+					<img class="circular" src="images/portrait-front.png"></img>
 				</div>
 				<div id="blurb">
 					<h1>My name is Matt Cialini, and I'm a Web Developer.</h1>
@@ -157,20 +49,55 @@ header:after {
 			</header>
 			<nav class="animated fadeIn delay">
 				<ul>
-					<li><a href="">about</a></li>
-					<li><a href="">projects</a></li>
-					<li><a href="">resume</a></li>
-					<li><a href="">contact</a></li>
+					<li><a id="about-link">about</a></li>
+					<li><a id="resume-link">resume</a></li>
+					<li><a id="contact-link">contact</a></li>
 				</ul>
 			</nav>
-			<div>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec convallis ipsum. Cras eu enim ipsum. Mauris sodales viverra elit, sed molestie turpis dignissim ac. Sed vel dolor sit amet massa suscipit laoreet ac ac nibh. Nam sit amet arcu non erat laoreet gravida. Cras pretium dignissim tellus, nec pulvinar orci lobortis sed. Cras tristique enim odio, non mollis mi dignissim at. Nunc neque enim, dictum ac fringilla eget, porta vel tortor. Phasellus porttitor est ligula, et lacinia felis malesuada quis. Aliquam erat volutpat. Maecenas tincidunt dolor vitae lacus posuere vehicula. Duis euismod augue quis mauris dictum, consectetur lacinia ante porta. Praesent fermentum purus ipsum, a blandit ante hendrerit at.
-					Nullam bibendum aliquet tellus, ut tincidunt nisl bibendum in. Nulla ipsum sapien, vulputate vel egestas vel, tempus vel nibh. Sed vitae orci vel lacus facilisis dapibus. Mauris adipiscing sed neque at pretium. Donec condimentum mattis metus, vitae mattis nisi sagittis quis. Vivamus quis tristique sapien. Nunc eleifend odio quis hendrerit posuere.
-				</p>
+			<div id="content">
+				<div id="about" class="section">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec convallis ipsum. Cras eu enim ipsum. Mauris sodales viverra elit, sed molestie turpis dignissim ac. Sed vel dolor sit amet massa suscipit laoreet ac ac nibh. Nam sit amet arcu non erat laoreet gravida. Cras pretium dignissim tellus, nec pulvinar orci lobortis sed. Cras tristique enim odio, non mollis mi dignissim at. Nunc neque enim, dictum ac fringilla eget, porta vel tortor. Phasellus porttitor est ligula, et lacinia felis malesuada quis. 
+					</p>
+				</div>
+				<div id="resume" class="section hidden">
+					<ul>s
+						<li>hey</li>
+						<li>whats</li>
+						<li>up</li>
+					</ul>
+					<ul>s
+						<li>hey</li>
+						<li>whats</li>
+						<li>up</li>
+					</ul>
+					<ul>s
+						<li>hey</li>
+						<li>whats</li>
+						<li>up</li>
+					</ul>
+				</div>
+				<div id="contact" class="section">
+					<p>
+						matt.cialini@gmail.com
+					</p>
+				</div>
 			</div>
 		</div>
 	</div> <!-- container -->
 </body>
 </html>
+
+
+<!--
+1. A brief bio of who i am, what kind of work i do, whether im available for work.
+2. Page with contact information and social buttons.
+3. Resume/Work page where I list 
+	ecovent
+	tsne
+	mary's site
+	mytweeter
+	drum pad
+
+-->
 

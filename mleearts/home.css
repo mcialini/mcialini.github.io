@@ -1,4 +1,6 @@
 body {
+    background:#0E2582;
+    background:-webkit-radial-gradient(100% 70%, #8585E0,#0E2582);
     background:radial-gradient(farthest-corner at 100% 70%,#8585E0,#0E2582);
 }
 
@@ -19,7 +21,20 @@ body {
     background-repeat: no-repeat;
 }
 
-#mobile-nav, nav {
-	background:#0E2582!important;
+nav {
+    background:transparent;
+}
+#mobile-nav {
+	background:#0E2582;
 }
 
+
+@media only screen and (max-width:479px) {
+    body {
+        background:black;
+    }
+ 
+    #mobile-nav {
+        background:#111;
+    }
+}

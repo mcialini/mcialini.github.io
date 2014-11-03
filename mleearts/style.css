@@ -11,7 +11,7 @@ html, body {
 }
 
 body {
-    font-family:'Comic Sans MS';
+    font-family: 'Brush Script MT', cursive;
     color:white;
     background:rgb(0,0,0);
     overflow:hidden;
@@ -78,7 +78,7 @@ nav a {
         bottom:0;
         width:100%;
         text-align: center;
-        background:black;
+        background:#111;
         padding: 0;
         margin: 0;
         z-index:1;
@@ -105,7 +105,11 @@ nav a {
 }
 
 #container {
+    background:black;
+    background:-webkit-radial-gradient(50% 50%,#222,#000);
     background:radial-gradient(farthest-corner at 50% 50%,#222,#000);
+    overflow-y:auto;
+    overflow-x:hidden;
 }
 
 #wrapper {
@@ -124,8 +128,6 @@ nav a {
     /*min-height: 550px;*/
     text-align: center;
     position:relative;
-    overflow-y:auto;
-    overflow-x:hidden;
 }
 
 @media only screen and (max-width:479px) {

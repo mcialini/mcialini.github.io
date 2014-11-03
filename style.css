@@ -1,0 +1,118 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body { 
+	font: 16px 'Roboto', sans-serif;/*
+	font-weight:200;*/
+	color: #000000;
+}
+
+#container {
+	background-image:url("images/pixel_weave3.png");
+	height:100%;
+}
+
+#wrapper {
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	background-color:white;
+}
+
+/* NAVIGATION STYLES */
+nav, nav > ul {
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+nav > ul > li {
+    list-style-type:none;
+    float:left;
+    width: 33.3333%;
+}
+
+
+nav a {
+	width:100%;
+   	display:inline-block;
+	text-decoration: none;
+	letter-spacing:4px;
+	color: #333;
+    text-align:center;
+    
+    background-color:red;
+    padding:10px 0;
+}
+
+nav li:nth-child(1) a { background: rgb(250,128,114); }
+nav li:nth-child(2) a { background: rgb(250,173,114); }
+nav li:nth-child(3) a { background: rgb(250,218,114); }
+
+nav li:hover { opacity:0.7; }
+
+/***************************************/
+
+
+header {
+	padding: 15px 25px;
+	display:table;
+}
+
+header {
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
+}
+
+header:before,
+header:after {
+    content: " ";
+    display: table;
+}
+    
+header:after {
+    clear: both;
+}
+
+#profile-pic {
+	float:left;
+}
+
+#blurb {
+	display:table-cell;
+	vertical-align:middle;
+	padding:30px;
+	width:60%;
+}
+
+.circular {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+
+#about {}
+#projects {}
+#resume {}
+#contact {}
+
+.slow {
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+}
+
+.delay {
+	animation-delay: 1.5s;
+	-webkit-animation-delay: 1.5s;
+}
+
+.hidden {
+	display:none!important;
+}
