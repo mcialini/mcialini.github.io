@@ -28,8 +28,9 @@
 <script>
     $(document).ready(function(){
     	$("body").on("click", "nav a", function() {
+    		$(".section.active").removeClass("active");
     		var sec = $(this).attr("id").slice(0,-5);
-    		$("#" + sec).removeClass("hidden");
+    		$("#" + sec).addClass("active");
     	});
     });
 </script>
@@ -49,20 +50,18 @@
 			</header>
 			<nav class="animated fadeIn delay">
 				<ul>
-					<li><a id="about-link">about</a></li>
-					<li><a id="resume-link">resume</a></li>
-					<li><a id="contact-link">contact</a></li>
+					<li><a id="about-link">about</a></li><li><a id="resume-link">resume</a></li><li><a id="contact-link">contact</a></li>
 				</ul>
 			</nav>
-			<div id="content">
-				<div id="about" class="section">
+			<div id="content" class="animated fadeIn delay">
+				<div id="about" class="section active">
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec convallis ipsum. Cras eu enim ipsum. Mauris sodales viverra elit, sed molestie turpis dignissim ac. Sed vel dolor sit amet massa suscipit laoreet ac ac nibh. Nam sit amet arcu non erat laoreet gravida. Cras pretium dignissim tellus, nec pulvinar orci lobortis sed. Cras tristique enim odio, non mollis mi dignissim at. Nunc neque enim, dictum ac fringilla eget, porta vel tortor. Phasellus porttitor est ligula, et lacinia felis malesuada quis. 
+						<span class="highlight">Lorem ipsum dolor</span> sit amet, consectetur adipiscing elit. Phasellus nec convallis ipsum. Cras eu enim ipsum. Mauris sodales viverra elit, sed molestie turpis dignissim ac. Sed vel <span class="highlight">dolor sit</span> amet massa suscipit laoreet ac ac nibh. Nam sit amet arcu non erat laoreet gravida. Cras pretium dignissim tellus, nec pulvinar orci lobortis sed. Cras tristique enim odio, non mollis mi dignissim at. Nunc neque enim, dictum ac fringilla eget, porta vel tortor. Phasellus porttitor est ligula, et lacinia felis malesuada quis. 
 					</p>
 				</div>
-				<div id="resume" class="section hidden">
+				<div id="resume" class="section">
 					<ul>s
-						<li>hey</li>
+						<li><span class="highlight">hey</span></li>
 						<li>whats</li>
 						<li>up</li>
 					</ul>
