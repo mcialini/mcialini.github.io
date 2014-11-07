@@ -119,15 +119,19 @@ header:after {
 	display:block;
 }
 
-#about .highlight {
+em {
+	font-style:normal;
+}
+
+#about em {
 	border-bottom:2px solid #788FC3;
 }
 
-#resume .highlight {
+#resume em {
 	border-bottom:2px solid #435888;
 }
 
-#contact .highlight {
+#contact em {
 	border-bottom:2px solid #1D2C4E;
 }
 

@@ -88,18 +88,6 @@ nav a {
         line-height:50px;
     }
 
-    #mobile-nav li > ul {
-        display:none;
-    }
-
-    #mobile-nav li.top:hover {
-        cursor:pointer;
-    }
-
-    #mobile-nav li.top:hover > ul {
-        display:block;
-    }
-
     #inner-menu {
         list-style:none;
         padding:0;

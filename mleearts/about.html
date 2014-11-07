@@ -5,7 +5,7 @@
 	<link href="style.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="scripts/jquery.ui.touch-punch.min.js"></script>
-    <!--<script src="scripts/mobile-nav.js"></script>-->
+    <script src="scripts/mobile-nav.js"></script>
     <script> 
         $(document).ready(function(){
             $("body").on("click", ".grid .img .helper", function() {
@@ -58,16 +58,40 @@
                 </div>
                 <div id="copyright">
                     <p>
-                    &copy; Copyright Mary R. Lee, 2014
+                    Site made by <a href="www.mattcialini.com" target="_blank">Matt Cialini</a>
                     </p>
                     <p>
-                    Site made by <a href="www.mattcialini.com" target="_blank">Matt Cialini</a>
+                    &copy; Copyright Mary R. Lee, 2014
                     </p>
                 </div>
             </div>
         </div>
-        <nav class="navigation">
-            <ul>
+    </div>
+    <nav class="navigation">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="apps.html">Apps</a>
+            </li>
+            <li>
+                <a href="paintings.html">Paintings and Drawings</a>
+            </li>
+            <li>
+                <a href="photos.html">Calendar Photography</a>
+            </li>
+            <li>
+                <a href="animation.html">Island Dogs</a>
+            </li>
+        </ul>
+    </nav>
+    <ul id="mobile-nav" class="navigation">
+        <li class="top">
+            <ul id="inner-menu">
                 <li>
                     <a href="index.html">Home</a>
                 </li>
@@ -87,32 +111,8 @@
                     <a href="animation.html">Island Dogs</a>
                 </li>
             </ul>
-        </nav>
-        <ul id="mobile-nav" class="navigation">
-            <li class="top">
-                <ul id="inner-menu">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="apps.html">Apps</a>
-                    </li>
-                    <li>
-                        <a href="paintings.html">Paintings and Drawings</a>
-                    </li>
-                    <li>
-                        <a href="photos.html">Calendar Photography</a>
-                    </li>
-                    <li>
-                        <a href="animation.html">Island Dogs</a>
-                    </li>
-                </ul>
-                <a id="menu-link">MENU</a>
-            </li>
-        </ul>
-    </div>
+            <a id="menu-link">MENU</a>
+        </li>
+    </ul>
 </body>
 </html>
