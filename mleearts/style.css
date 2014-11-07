@@ -119,18 +119,9 @@ nav a {
 }
 
 #main {
-    height: 95%;
-    height: calc(100% - 80px);
     padding:30px 15px 0 15px;
-    /*min-height: 550px;*/
     text-align: center;
     position:relative;
-}
-
-@media only screen and (max-width:479px) {
-    #main {
-        min-height:0;
-    }
 }
 
 
