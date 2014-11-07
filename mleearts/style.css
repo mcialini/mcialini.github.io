@@ -237,6 +237,12 @@ nav a {
 /* END APPS STYLES */
 
 
+/* ANIMATION STYLES */
+#main #video {
+    height:95%;
+    height:calc(100% - 50px);
+}
+
 /* PAINTINGS STYLES */
 
 #main-image {
