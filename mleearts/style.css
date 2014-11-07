@@ -104,6 +104,7 @@ nav a {
     background:black;
     background:-webkit-radial-gradient(50% 50%,#222,#000);
     background:radial-gradient(farthest-corner at 50% 50%,#222,#000);
+    height:calc(100% - 50px);
     overflow-y:auto;
     overflow-x:hidden;
 }
