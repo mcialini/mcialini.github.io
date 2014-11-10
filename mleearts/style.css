@@ -88,6 +88,10 @@ nav a {
         line-height:50px;
     }
 
+    #mobile-nav li.top:hover {
+        cursor:pointer;
+    }
+
     #inner-menu {
         list-style:none;
         padding:0;
@@ -105,8 +109,7 @@ nav a {
     background:-webkit-radial-gradient(50% 50%,#222,#000);
     background:radial-gradient(farthest-corner at 50% 50%,#222,#000);
     height:calc(100% - 50px);
-    overflow-y:auto;
-    overflow-x:hidden;
+    overflow:auto;
 }
 
 #wrapper {
@@ -285,21 +288,21 @@ nav a {
 }
 
 .arrow.next {
-    right:-22px;
+    right:-15px;
 }
 
 .arrow.prev {
-    left:-22px;
+    left:-15px;
 }
 
 #main-image:hover .arrow.next {
     opacity:1;
-    right:-30px;
+    right:-15px;
 }
 
 #main-image:hover .arrow.prev {
     opacity:1;
-    left:-30px;
+    left:-15px;
 }
 
 .arrow.prev:hover {
@@ -363,11 +366,11 @@ nav a {
     }
 
     .arrow.next {
-        right:-16px!important;
+        right:-15px!important;
     }
 
     .arrow.prev {
-        left:-16px!important;
+        left:-15px!important;
     }
 
 }

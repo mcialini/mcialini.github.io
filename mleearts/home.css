@@ -26,10 +26,10 @@ body {
 nav {
     background:transparent;
 }
+
 #mobile-nav {
 	background:#0E2582;
 }
-
 
 @media only screen and (max-width:479px) {
     body {
