@@ -1,0 +1,150 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body { 
+	font: 16px 'Helvetica Neue', sans-serif;/*
+	font-weight:200;*/
+	color: #000000;
+}
+
+#container {
+	background-image:url("images/swirl_pattern.png");
+	height:100%;
+}
+
+#wrapper {
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	background-color:white;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow:    0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+	box-shadow:         0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* NAVIGATION STYLES */
+nav, nav > ul {
+    width: 100%;
+}
+
+nav > ul {
+    width: 100%;
+    margin:0;
+    padding:0;
+	display:flex;
+}
+
+nav > ul > li {
+    list-style-type:none;
+    width: 33.3333%;
+    display: inline-block;
+}
+
+
+nav a {
+	width:100%;
+   	display:inline-block;
+	text-decoration: none;
+	letter-spacing:4px;
+	color: white;
+    text-align:center;
+    padding:10px 0;
+}
+
+nav li:nth-child(1) a { background: #788FC3; }
+nav li:nth-child(2) a { background: #435888; }
+nav li:nth-child(3) a { background: #1D2C4E; }
+
+nav li:hover { 
+	opacity:0.7;
+	cursor: pointer; 
+}
+
+/***************************************/
+
+
+header {
+	padding: 15px 25px;
+	display:table;
+}
+
+header {
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  animation-duration: 3s;
+}
+
+header:before,
+header:after {
+    content: " ";
+    display: table;
+}
+    
+header:after {
+    clear: both;
+}
+
+#profile-pic {
+	float:left;
+}
+
+#blurb {
+	display:table-cell;
+	vertical-align:middle;
+	padding:30px;
+	width:60%;
+}
+
+.circular {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}
+
+#content {
+	padding:30px;
+}
+
+.section {
+	display:none;
+}
+
+.section.active {
+	display:block;
+}
+
+em {
+	font-style:normal;
+}
+
+#about em {
+	border-bottom:2px solid #788FC3;
+}
+
+#resume em {
+	border-bottom:2px solid #435888;
+}
+
+#contact em {
+	border-bottom:2px solid #1D2C4E;
+}
+
+.slow {
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+}
+
+.delay {
+	animation-delay: 1.5s;
+	-webkit-animation-delay: 1.5s;
+}
+
+.hidden {
+	display:none!important;
+}
