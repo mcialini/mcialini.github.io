@@ -10,11 +10,17 @@ html, body {
     src: url(media/comicsans.ttf);
 }
 
+@font-face {
+    font-family: 'Comic Neue';
+    src: url(media/comic-neue/ComicNeue-Regular.ttf);
+}
+
 body {
-    font-family: 'Comic Sans MS';
+    font-family: 'Comic Neue';
     color:white;
     background:rgb(0,0,0);
-    /*overflow:hidden;*/
+    font-size:18px;
+    line-height:25px;
 }
 
 a {

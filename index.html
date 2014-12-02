@@ -1,459 +1,67 @@
 <html>
 <head>
-<meta name="google-site-verification" content="PY0dOc59_vIWWp7hHrgjVlhR27c3HbsUhuTuR9gLrAM" />
-<meta name=”description” content='I am Matt Cialini and I study Computer Science at Boston University, from which I graduate in May. I am currently seeking a full-time position after graduation as some kind of Software Developer/Engineer in any one of several areas of concentration. I would say the areas I am most inspired by and interested in are Data Mining, Databases, Web and Mobile Development, and UI Design.' />
-<link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
-<link rel="shortcut icon" href="http://www.mattcialini.com/favicon.png" />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+	<meta name="description" content='I am Matt Cialini and I study Computer Science at Boston University, from which I graduate in May. I am currently seeking a full-time position after graduation as some kind of Software Developer/Engineer in any one of several areas of concentration. I would say the areas I am most inspired by and interested in are Data Mining, Databases, Web and Mobile Development, and UI Design.' />
+	<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'> -->
+	<link rel="shortcut icon" href="http://www.mattcialini.com/favicon.png" />
 
-<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
-<link rel="icon" type="image/png" href="favicons/favicon-196x196.png" sizes="196x196">
-<link rel="icon" type="image/png" href="favicons/favicon-160x160.png" sizes="160x160">
-<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
-<link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
-<meta name="msapplication-TileColor" content="#44aaff">
-<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
+	<link rel="icon" type="image/png" href="favicons/favicon-196x196.png" sizes="196x196">
+	<link rel="icon" type="image/png" href="favicons/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="stylesheet" href="animate.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-<style type="text/css">
+	<script>
+	    $(document).ready(function(){
+			var g = {
+				'purple-red': {'background': 'linear-gradient(#442755,#D9535E)'},
+				'gray-silver': {'background': 'linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%)'},
+				'forest-yellow': {'background': 'linear-gradient(#F1F2B5, #135058)'},
+				'orange-pink': {'background': 'linear-gradient(#FF512F, #DD2476)'}
+			}
 
-$footer-height: 100px;
+			$('nav#gradients a').on('click', function() {
+				$('body').css(g[$(this).attr('data-content')]);
+			});
+		});
+	</script>
 
-html { width: 100%; }
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-body { 
-	font: 100% "Roboto"; 
-	color: #000000; 
-	margin: 0;
-	height:100%;
-}
+	ga('create', 'UA-57259632-1', 'auto');
+	ga('send', 'pageview');
 
-h1, h2, h3 { margin:0; }
-h2 { font-size: 2.5em; }
-h3 { font-size: 1.8em; display:inline-block;}
-a, a:visited { color: #000000; text-decoration:none; }
-a:hover { color:#44aaff; }
-ul { list-style-type: none; padding:0; margin:0; }
-td { vertical-align: bottom; padding:10 0; }
-
-#container {
-	background-image:url("images/pixel_weave3.png");
-}
-#wrapper {
-	margin: 0 auto; 
-	padding:30;
-	width: 70%;
-	min-width:800px;
-	background: rgba(250,250,250,.75);
-	-webkit-box-shadow: 0px 0px 32px 13px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 0px 32px 13px rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 32px 13px rgba(0,0,0,0.2);
-}
-
-#innerwrapper {
-	margin-bottom:40;
-}
-#header { 
-	border-bottom: 3px solid #cccccc; 
-}
-#title {
-	text-align:left; 
-	margin-bottom:-14px;  
-	display:inline-block;
-}
-#title h1, #title a { font-size:85px; letter-spacing:8px; }
-#title a:hover { color:#000000; }
-
-#nav {
-	display:inline-block;
-	float:right;
-	margin-top:68px;
-}
-#nav ul {
-}
-#nav a {
-	text-decoration:none;
-	padding: 0.2em .6em;
-	border-radius: 10px;
-	font-size: 22px;
-}
-#nav li { display:inline; }
-
-#content {
-	clear:both;
-	text-align:left;
-}
-#about { 
-	margin:5px; 
-	padding:10 0;
-	border-bottom: 3px solid #cccccc;
-}
-#projects h2 { padding-top:25px; }
-#resume { display:none; margin-bottom:10px;}
-#resume ul { list-style-type: initial; padding-left:40;}
-#resume h2 { border-bottom:3px solid #cccccc; }
-
-#footer { 
-	width:inherit;
-	min-width:inherit;
-	position:fixed;
-	bottom:0;
-}
-
-#totop { 
-	opacity:0.05; 
-	display:block; 
-	margin:0 auto;
-	width:70px;
-}
-
-#totop:hover {opacity:0.4; }
-
-.period { 
-	font-size:14px;
-	font-style: italic;
-}
-
-.project {
-	border-bottom: 3px solid #cccccc;
-	padding:25 0;
-}
-
-.project h3 { font-size:30px; }
-.project ul { float:right;  }
-.project li { display:inline; padding:0 10; border-right:1px solid #cccccc;}
-
-.last { border:0 !important; }
-
-@media only screen and (max-device-width: 1000px) {
-	background-color:black;
-}
-
-
-</style>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script>
-$(document).ready(function(){
-  $("#b0").click(function(){
-  	var wi = $(window).height();
-  	var doc = $(document).height();
-  	var winH = $(window).height();
-  	var winW = $(window).width();
-  	var wrapH = $("#wrapper").height();
-  	var wrapW = $("#wrapper").width();
-  	var hea = $("#header").height();
-  	var na = $("#nav").height();
-  	var co = $("#content").height();
-  	var fo = $("#footer").height();
-	//alert("Window: " + wi + "\nDocument: " + doc + "\n\nHeader: " + hea + "\nNav: " + na + "\nContent: " + co + "\nFooter: " + fo + "\nSum of page comps: " + (hea+na+co+fo));
-  	alert("Window: " + winH + " x " + winW + "\nwrapper dimensions: " + wrapH + " x " + wrapW);
-  });
-});
-</script>
-
-<script>
-$(document).ready(function(){
-  $("#b2").click(function(){
-  	$("#container").css("background-image","url(bgs/grey_wash_wall.png)");
-  });
-  $("#b3").click(function(){
-  	$("#container").css("background-image","url(bgs/pixel_weave.png)");
-  });
-  $("#b6").click(function(){
-  	$("#container").css("background-image","url(bgs/subtle_stripes.png)");
-  });
-  $("#b7").click(function(){
-  	$("#container").css("background-image","url(bgs/pixel_weave2.png)");
-  });
-  $("#b8").click(function(){
-  	$("#container").css("background-image","url(bgs/pixel_weave3.png)");
-  });
-
-});
-</script>
-
-<script>
-$(document).ready(function(){
-  $("#re").click(function(){
-  	$("#content").hide();
-  	$("#resume").show();
-  	//$("#resume").slideDown(600, linear, function(){});
-  });
-  
-  $("#ab,#pr").click(function() {
-  	$("#resume").hide();
-  	$("#content").show();	
-  });
-});
-</script>
-
-<title>Matt Cialini</title>
-
+	</script>
 </head>
-
 <body>
-<div id="container">
-<div id="wrapper">
-<div id="header">
-	<div id="title">
-		<h1><a href="http://www.mattcialini.com">mattCialini</a></h1>	
-	</div>
-	<div id="nav">
-		<ul>
-		<li><a id="ab" href="http://www.mattcialini.com#about">about</a></li>
-		<li><a id="pr" href="http://www.mattcialini.com#projects">projects</a></li>
-		<li><a id="re" href="http://www.mattcialini.com#resume">resume</a></li>
-		</ul>	
-	</div>
-
-</div>
-<div id="innerwrapper">
-<div id="content">
-	
-	<div id="about">
-	<h2>About Me</h2><br>
-	<p>Email: <a href="mailto:matt.cialini@gmail.com" target="_top">matt.cialini@gmail.com</a>
-	<br>Github: <a href="http://www.github.com/mcialini">github.com/mcialini</a></p>
-	<p>Welcome! I'm Matt Cialini and I study Computer Science at Boston University, from which I graduate in May. I am currently seeking a full-time position after graduation as some kind of Software Developer/Engineer in any one of several areas of concentration. I'd say the areas I'm most inspired by and interested in are Data Mining, Databases, Web & Mobile Development, and UI Design. </p>
-	<p>At the heart of it, I simply love to code. To speak the computer's language and use it to create something wonderful&mdash;something that can truly impact a person's life. </p>
-	<p>While I'm not coding, I enjoy watching movies, making pixel art, playing PC games, reading the occasional book, and imagining what I want my future to be like.</p>
-	<p>Feel free to send me an email with any job opportunities, personal questions, or constructive criticism!</p>
-		
-	</div>
-	
-	<div id="current">
-	<h2>Current Projects</h2>
-	
-		<div id="cp0" class="project">
-			<h3>Data Scraping and Analysis Tool</h3>
-			<p>I am writing a web scraping tool to aid in the creation and development of a proposed data transparency website. I am working with Professor of Journalism Maggie Mulvihill as part of a new Computer Science and Journalism dual-major initiative at Boston University. Our goal is to create a website that provides easily accessible and searchable data about the annual enforcement actions taken by branches of our state government against large banks and corporations, with more areas of interest in the future.</p>
-			<p>The code is mostly written in Python using the scraping library Scrapy, along with the PDFMiner module and some Shell script usage. The phase I'm currently working on is interpreting table data in a pdf file programmatically by converting the files to XML. In XML, I am using the position attributes of the words to infer table structure.</p>
-			<p></p>
-		</div>
-		<div id="cp1" class="project">
-			<h3>iOS Drum Pad</h3>
-			<p>I'm currently working on a Drum Pad application (currently unnamed and accepting suggestions!) for the iPhone/iPad while I learn Objective-C and how to use Xcode.</p>
-			<p>I intend to add in new features as time passes. The first phase will be a simple configurable drum pad grid, where you can record your own samples or choose from several onboard sounds.</p>
-			<p>Eventually I envision this being a complete song creation tool in your pocket, where you can create loops, sequence them, grab samples from your library's songs, and much much more.</p>
-		</div>
-		
-		<div id="cp2" class="project">
-			<h3>Palettize</h3>
-			<p>Palettize is an application I've been developing off and on for a few months. My intention is to release it for Android, however I'm waiting to transform it from Java to the SDK until I have finished learning Objective-C.</p>
-			<p>The goal of this app is to give you the power to capture an accurate color palette of any scene you find yourself in. Based on user-defined palette size and tolerance values, the algorithm will find the most frequent colors in the picture and display them as a palette. Colors that are within the tolerance value of each other will be represented by their mean.</p>
-		</div>
-	</div>
-	
-	<div id="projects">
-	<h2>Completed Projects</h2>
-	
-		<div id="p0" class="project">
-		<table>
-		<tr>
-			<td><h3><a href="https://github.com/mcialini/MyTweeter">MyTweeter iOS Twitter Client</a></h3></td>		
-			<td><ul>
-		    	<li><a href="https://github.com/mcialini/MyTweeter/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/MyTweeter/tarball/master"><strong>TAR</strong></a></li>
-		    	<li class="last"><a href="https://github.com/mcialini/MyTweeter"><strong>GitHub</strong></a></li>
-		    	</ul></td>
-	    	</tr>
-	    	<tr>
-	    		<td colspan="2">
-<p>This Twitter client written in Objective-C interfaces with the Twitter API in order to retrieve and send tweets on the logged in user's behalf via HTTP. There are four main views in the application: <strong>contacts, tweets, web browser, and map</strong>.  
-<p>The contacts view is simply an alphabetical listing of the followed users whose tweets were retrieved by the home_timeline request. These users are displayed in rows of a table view&mdash;selecting one will push that user's tweets into an additional tweet view. </p>
-<p>The recents view just displays the last 50 or more tweets retrieved by HTTP in decreasing chronological order. If a single tweet is clicked and that tweet has a link in it's text, the program will extract the link and push a new web view of that web page, fitted with back and forward navigation buttons. 
-<p>There is also a map view, which displays a pin for all the user's contacts that have some associated location. The program uses geocoding to find specific coordinates for a location, then places a pin on the map at that location. If the pin is clicked, a callout view displays, which when clicked will push that user's tweets to the page.</p>
-<p>Finally, an additional color picker view will allow the user to select a background color for all views using the hue saturation brightness (HSB) model.</p>	    			
-	    		</td>
-		</tr></table>
-		</div>
-	    	
-		
-		
-		
-		<div id="p1" class="project">
-		<table>
-		<tr>
-			<td><h3><a href="https://github.com/mcialini/MM1">M/M/1 Simulator</a></h3></td>		
-			<td><ul>
-		    	<li><a href="https://github.com/mcialini/MM1/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/MM1/tarball/master"><strong>TAR</strong></a></li>
-		    	<li class="last"><a href="https://github.com/mcialini/MM1"><strong>GitHub</strong></a></li>
-		    	</ul></td>
-	    	</tr>
-	    	<tr>
-	    		<td colspan="2">
-<p>This is a simple M/M/1 queue simulator consisting of three classes&mdash;Simulator.java, which runs based on hard-coded inputs, Event.java, which is a wrapper class for any event passing through the system, and Controller.java, which does all of the heavy lifting.</p>
-<p>Given an arrival rate lambda, a mean service time Ts, and a run time, the controller will generate arrival events to the system based on a Poisson process&mdash;meaning that each arrival time is set as the previous arrival time plus some exponentially distributed random variable with input lambda. When the server is not busy, it changes the birth event in the front of the queue into a death event, with a departure time set at the current time + some exponential centered at 1/Ts, or mu. Additionally, a monitoring event which gathers statistics about the system will be called based on an exponential distribution with some input rate.</p>
-		</tr></table>
-		</div>
-
-		<div id="p2" class="project">
-		<table>
-		<tr>
-			<td><h3><a href="https://github.com/mcialini/MicrosoftAcademicSearch">Microsoft Academic Search</a></h3></td>		
-			<td><ul>
-		    	<li><a href="https://github.com/mcialini/MicrosoftAcademicSearch/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/MicrosoftAcademicSearch/tarball/master"><strong>TAR</strong></a></li>
-		    	<li class="last"><a href="https://github.com/mcialini/MicrosoftAcademicSearch"><strong>GitHub</strong></a></li>
-		    	</ul></td>
-		</tr>
-		<tr>
-		    	<td colspan="2">
-<p>The Microsoft Academic Search is a research database which covers more than 50 million publications and over 19 million authors across a variety of domains. One of the main challenges with providing this service is caused by author-name ambiguity. There are many authors in the database which have unique IDs, but are the same author in reality. Given several csv files (most importantly Author.csv and PaperAuthor.csv), the task of this project is to determine which authors are duplicates.</p>
-<p>The data mining algorithm I used in this project was extensive, and involved searching for a series of name variations of each author to see if perhaps they were listed under a nickname, or their name was misspelled. For example, one of the heuristics was to check all possible abbreviations of a person's name and see if that was listed under a different ID. So for John Doe Smith, the code would search for John D Smith, J Doe Smith, J D Smith, and J Smith.</p>
-<p>After applying several of these heuristics, I received a 97.816% accuracy rating.</p></td>
-		</tr></table>
-		</div>
-		
-		
-		<div id="p3" class="project">
-		<table>
-		<tr>
-			<td><h3><a href="https://github.com/mcialini/photoshare">Photoshare</a></h3></td>	
-			<td><ul>
-		        <li><a href="https://github.com/mcialini/photoshare/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/photoshare/tarball/master"><strong>TAR</strong></a></li>
-		        <li class="last"><a href="https://github.com/mcialini/photoshare"><strong>GitHub</strong></a></li>
-		        </ul></td>
-	        </tr>
-	        <tr>
-		        <td colspan="2"><p>This is a non-live photosharing web application I created for my Databases course. It consists of several java files used to pull files and user information from a database, then jsp files (html and java combined) to handle site organization and user interaction.</p>
-			<p>Photoshare provided functionality to create Albums, Images, Comments, and User accounts. Registered users are able to become friends with other users, and upload albums and pictures. Nonregistered and registered users are both able to post comments and like pictures. It also allows visitors to search all the pictures on the site using a tag system. Users are able to tag photos with as many keywords as they'd like, thus permitting the search of specific kinds of photos.</p>
-			</td>
-		</tr></table>
-		</div>
-		
-		
-		
-		<div id="p4" class="project">
-		<table>
-		<tr>
-			<td><h3><a href="https://github.com/mcialini/RoutingProtocol">Routing Protocol</a></h3></td>		
-			<td><ul>
-		    	<li><a href="https://github.com/mcialini/RoutingProtocol/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/RoutingProtocol/tarball/master"><strong>TAR</strong></a></li>
-		    	<li class="last"><a href="https://github.com/mcialini/RoutingProtocol"><strong>GitHub</strong></a></li>
-		    	</ul></td>
-	    	</tr>
-	    	<tr>
-	    		<td colspan="2">
-<p>Given a graph of 4 nodes with preset edge costs, this code will simulate a distance-vector routing algorithm in which each node communicates to its neighbors all of its current cheapest paths to every other node in the graph. Upon receiving one of these routing packets, a node will update its routing table with the new minimum costs it has seen. If a node uses another node x to reach node y, then the routing packets it sends out to x will have a cost of INFINITY, or 9999, to node y. This is the Split Horizon with Poison Reverse strategy which will eliminate multi-node routing loops.</p></td>
-		</tr></table>
-		</div>
-		
-		<div id="p5" class="project last">
-		<table>
-		<tr>
-			<td><h3><a href="https://github.com/mcialini/EchoClientServer">Echo Client-Server</a></h3></td>
-			<td><ul>
-		        <li><a href="https://github.com/mcialini/EchoClientServer/zipball/master"><strong>ZIP</strong></a></li>
-		        <li><a href="https://github.com/mcialini/EchoClientServer/tarball/master"><strong>TAR</strong></a></li>
-		        <li class="last"><a href="https://github.com/mcialini/EchoClientServer"><strong>GitHub</strong></a></li>
-		        </ul></td>
-		</tr>
-		<tr>
-			<td colspan="2">
-<p>The client program will accept a hostname and a port number from the command line which it will use to connect to the server program. Once the connection has been accepted by the server, the client prompts the user for a message to send. This message is expected to be a setup message, and if it is valid, the client will move on to its measurement phase. It will automate either the round trip time or throughput measurement based on the parameters specified by the user. Once a termination message is sent to the server, both the server and client close the connection.</p>
-<p>This server will bind a socket to the port number input by the user on the local machine. It then will listen for a client program, accept an incoming connection request, and start receiving data. It will then split up the message into variables that are checked for validity based on our defined protocol. If the message contains some part which is not valid, the server will send an error message to the client and then break the connection. If the message is valid, the server will then wait for the amount of time specified by the client, then echo the message back. Once a terminate message is received, it will peacefully close the connection.</p></td>
-		</tr></table>
-		</div>
-				
-	</div> <!-- projects -->
-</div> <!-- content -->
-
-<div id="resume">
-	<br>
-	<a href="http://www.github.com/mcialini/resume/zipball/master">Download my resume</a>
-	<br><br>
-	<h2>Education</h2>
-	<P><strong>Boston University</strong></p>
-	<p class="period">September 2010-May 2014</p>
-	<ul>
-		<li>B.A. in Computer Science, anticipated graduation: May 2014</li>
-	</ul>
-	<ul>
-		<li>GPA in major (15 courses): 3.592, Overall GPA: 3.42, Dean's List: Fall 2012 and 2013</li>
-		<li>Courses: Web Design, Artificial Intelligence, Data Mining, Databases, iOS Programming, Computational Audio, 			etc.</li>
-	</ul><br>
-	<h2>Skills &amp; Abilities</h2>
-	<p>Proficiency in:</p>
-	<ul>
-		<li>C, Java, Python, HTML/CSS, SQL</li>
-	</ul>
-	<p>Intermediate/Currently Learning:</p>
-	<ul>
-		<li>Objective-C, Android SDK, JQuery/Javascript</li>
-	</ul>
-	<p>Adobe Photoshop, InDesign</p>
-	<ul>
-		<li>Web
-		page designs, style guides, pixel art</li>
-	</ul>
-	<p>Microsoft Office Suite, Visual Basic</p>
-	<ul>
-		<li>Written macros for Excel 2011 on both Mac and PC</li>
-	</ul>
-	<p>Moderate comprehension of Spanish</p>
-	
-	<h2>Work Experience</h2>
-	<p><strong>Computer Assistant/programmer</strong>,
-	School of Law, Boston University</p>
-	<p class="period">6-16 hours/week, June 2013-present</p>
-	<ul>
-		<li>troubleshoot faculty and student computer issues both on the phone and in person,
-		write VBA macros for faculty, update/install software and drivers,
-		swap in/out various hardware components, fix various student issues
-		with BU's wireless printing service</li>
-	</ul>
-	<p><strong>Grader for CS460: Databases; CS105: Intro to Databases</strong>, Boston University</p>
-	<p class="period">Fall semester, 2013; Spring semester, 2014</p>
-	<ul>
-		<li>graded several written and programming assignments for classes with 60+ of my peers</li>
-	</ul>
-	<p><strong>Library Assistant</strong>, Mugar Memorial Library, Boston University</p>
-	<p class="period">14-20 hours/week, September 2011-present</p>
-	<ul>
-		<li>sort
-		and distribute interdepartmental mail, hand-delivered packages for
-		library administration to other parts of campus, pick up paper bins
-		for recycling</li>
-	</ul>
-	<p><strong>Intern</strong>, Spellman High Voltage, Valhalla</p>
-	<p class="period">40 hours/week, summers 2008-2012</p>
-	<ul>
-		<li>reorganized
-		company's stock room, assisted company with large-scale
-		consolidation,  prepared kits for production, prepared items for
-		liquidation, worked with high voltage material, scanned schematics,
-		input schematic data into database</li>
-	</ul>
-	<p><strong>Volunteer Tutor</strong>, John Jay High School</p>
-	<p class="period">5-10 hours/week, 2006-2007</p>
-	<ul>
-		<li>tutored my peers in Spanish and Mathematics one-on-one to individually meet
-		their academic goals</li>
-	</ul>
-	<br>
-	(<i>can	provide references</i>)
-	
-
-</div>
-
-</div> <!-- innerwrapper -->
-<div id="footer">
-	<a href="http://www.mattcialini.com#header"><img id="totop" src="/images/totop.png"></img></a>
-</div> <!-- footer -->
-</div> <!-- wrapper -->
-</div> <!-- container -->
+	<section>
+		<h1><em>MATT CIALINI</em></h1>
+		<p>I make sleek and functional websites.</p>
+		<p>Contact me for work at</p>
+		<p><em>matt.cialini@gmail.com</em></p>
+<!-- 		<nav id="gradients">
+			<a data-content="purple-red">Gradient 1</a>
+			<a data-content="gray-silver">Gradient 2</a>
+			<a data-content="forest-yellow">Gradient 3</a>
+			<a data-content="orange-pink">Gradient 4</a>
+		</nav> -->
+	</section>
 </body>
 </html>
-

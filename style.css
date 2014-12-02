@@ -1,15 +1,30 @@
+@font-face {
+	font-family: 'Bebas';
+	src:url(fonts/BebasNeue-Regular.ttf);
+}
 body {
-	font-family: 'Lato', sans-serif;
-	background: linear-gradient(#442755,#D9535E);
+	font-family: 'Lato';
+	background: linear-gradient(#F1F2B5, #135058);
 }
 
 h1 {
-	font-size: 4em;
+	font-size: 5em;
+	margin:0.5em 0;
 }
 
 h1 em {
 	font-style: normal;
-	letter-spacing: 5px;
+	letter-spacing: 7px;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+p em {
+	font-style: normal;
+	font-weight:bold;
+	letter-spacing:2px;
 }
 
 section {
@@ -19,4 +34,31 @@ section {
 	transform: translate(-50%, -50%);
 	text-align: center;
 	width: 100%;
+}
+
+nav#gradients a {
+	padding:20px;
+	display:inline-block;
+	border:3px solid black;
+	background:transparent;
+}
+
+nav#gradients a:hover {
+	cursor:pointer;
+}
+
+nav#gradients a[data-content="purple-red"]:hover {
+	background: linear-gradient(#442755,#D9535E);
+}
+
+nav#gradients a[data-content="gray-silver"]:hover {
+	background: linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%);
+}
+
+nav#gradients a[data-content="forest-yellow"]:hover {
+	background: linear-gradient(#F1F2B5, #135058);
+}
+
+nav#gradients a[data-content="orange-pink"]:hover {
+	background: linear-gradient(#FF512F, #DD2476);
 }
