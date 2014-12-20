@@ -2,41 +2,19 @@
 <head>
 
 <style type="text/css">
-
-body { 
+.hex {
+    width: 40px;
+    height: 70px;
+    margin: 20px;
+    overflow: hidden;
 }
-
-#nav {
-	background-color:red;
-    height:5%;
-}
-
-#main {
-	background-color:blue;
-    height:90%;
-    position:relative;
-}
-
-#main #ourimg {
-    max-height:80%;
-    max-width:80%;
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
-    margin:auto;
-    text-align:center;
-}
-
-#main img {
-    max-width:80%;
-    max-height:80%;
-}
-    
-#bottom {
-	background-color:green;
-    height:5%;
+.hex .box {
+    -moz-transform: rotate(45deg);
+    background: #f00;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 10px -5px 10px -5px;
 }
 
 </style>
@@ -44,17 +22,10 @@ body {
 
 <body>
 
-<div id="nav">helllllooooo</div>
-<div id="main">
-    <div id="ourimg">
-        <a href="">
-            <img src="images/portrait.png">
-        </a>
-        <br>
-        <span>Here is a caption for my picture.</span>
+<div class="hex">
+    <div class="box">
     </div>
 </div>
-<div id="bottom">up</div>
 	
 	
 </body>

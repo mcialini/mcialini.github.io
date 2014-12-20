@@ -8,8 +8,14 @@ body {
 }
 
 h1 {
-	font-size: 5em;
+	font-size: 9vw;
 	margin:0.5em 0;
+}
+
+@media (min-width:768px) {
+	h1 {
+		font-size:5em;
+	}
 }
 
 h1 em {
@@ -19,6 +25,8 @@ h1 em {
 
 p {
 	font-size: 1.2em;
+	-webkit-animation-delay:1s;
+	-moz-animation-delay:1s;
 }
 
 p em {
@@ -31,10 +39,31 @@ section {
 	position:fixed;
 	top:50%;
 	left:50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	text-align: center;
 	width: 100%;
 }
+
+img.self.circular {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	-webkit-animation-delay:.5s;
+	-moz-animation-delay:.5s;
+}
+
+@media (max-width:476px) {
+	img.self.circular {
+		width:200px;
+		height:200px;
+		border-radius: 100px;
+		-webkit-border-radius: 100px;
+		-moz-border-radius: 100px;
+	}
 
 nav#gradients a {
 	padding:20px;
@@ -61,12 +90,4 @@ nav#gradients a[data-content="forest-yellow"]:hover {
 
 nav#gradients a[data-content="orange-pink"]:hover {
 	background: linear-gradient(#FF512F, #DD2476);
-}
-
-img.self.circular {
-	width: 300px;
-	height: 300px;
-	border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 150px;
 }
