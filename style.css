@@ -4,29 +4,29 @@
 }
 body {
 	font-family: 'Lato';
-	/*background: linear-gradient(#F1F2B5, #135058);*/
+	background: linear-gradient(#F1F2B5, #135058);
 }
 
 body{
   margin:0;
   padding:0; 
-  background-color: rgb(255,137,107);
+  /*background-color: rgb(255,137,107);*/
   overflow:hidden;
   text-align:center;
   font-family:Helvetica, sans-serif;
 }
 
 
-@-webkit-keyframes gradient{
+/*@-webkit-keyframes gradient{
   0%{
     left:100%;
   }
   100%{
     left:-500%;
   }
-}
+}*/
 
-body:after{
+/*body:after{
   content:"";
   width:500%;
   height:100%;
@@ -39,7 +39,7 @@ body:after{
   background-image: -ms-linear-gradient(left top, rgba(94, 199, 204, 0.00) 0%, rgba(110, 44, 167, 1) 50%, rgba(238, 238, 238, 0.00) 100%);
   background-image: linear-gradient(left top, rgba(94, 199, 204, 0.00) 0%, rgba(110, 44, 167, 1) 50%, rgba(238, 238, 238, 0.00) 100%);
 
-	/*background-image: -ms-linear-gradient(right, #7E75FF 0%, #EF4141 100%);
+	background-image: -ms-linear-gradient(right, #7E75FF 0%, #EF4141 100%);
 
 	background-image: -moz-linear-gradient(right, #7E75FF 0%, #EF4141 100%);
 
@@ -49,10 +49,10 @@ body:after{
 
 	background-image: -webkit-linear-gradient(right, #7E75FF 0%, #EF4141 100%);
 
-	background-image: linear-gradient(to left, #7E75FF 0%, #EF4141 100%);*/
+	background-image: linear-gradient(to left, #7E75FF 0%, #EF4141 100%);
   -webkit-animation: gradient 10s infinite;
   animation: gradient 10s infinite;
-}
+}*/
 
 h1 {
 	font-size: 9vw;
