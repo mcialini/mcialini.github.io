@@ -24,52 +24,52 @@
                 <div class="grid">
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0070.jpg">
+                        <img src="images/photos/DSC_0070_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0121.jpg">
+                        <img src="images/photos/DSC_0121_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0145.jpg">
+                        <img src="images/photos/DSC_0145_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0190.jpg">
+                        <img src="images/photos/DSC_0190_thumb.jpg">
                     </div>
 
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0259.jpg">
+                        <img src="images/photos/DSC_0259_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0220.jpg">
+                        <img src="images/photos/DSC_0220_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0221.jpg">
+                        <img src="images/photos/DSC_0221_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0261.jpg">
+                        <img src="images/photos/DSC_0261_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0262.jpg">
+                        <img src="images/photos/DSC_0262_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_0230.jpg">
+                        <img src="images/photos/DSC_0230_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>
-                        <img src="images/photos/DSC_2267.jpg">
+                        <img src="images/photos/DSC_2267_thumb.jpg">
                     </div>
                     <div class="img">
                         <span class="helper"></span>                        
-                        <img src="images/photos/DSC_0013.jpg">
+                        <img src="images/photos/DSC_0013_thumb.jpg">
                     </div>
                 </div>
                     
@@ -128,8 +128,11 @@
         $(document).ready(function(){
             $("body").on("click touchend", ".grid .img .helper", function() {
                 if (!window.matchMedia('(max-device-width: 479px)').matches) {
+                    var img = $(this).parent().find("img");
+                    var newsrc = $(img).attr("src").replace('_thumb', '');
+                    $(img).attr("src", newsrc);
+                    $(img).addClass("selected");
                     $(this).parent().addClass("selected");
-                    $(this).parent().find("img").addClass("selected");
                     $(this).parent().siblings().addClass("hidden");
                     $(this).addClass("hidden");
                 }
