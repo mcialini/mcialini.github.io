@@ -154,6 +154,11 @@ nav a {
     vertical-align: middle;
 }
 
+#info img {
+    height:50px;
+    width:50px;
+}
+
 #copyright {
     padding:20px;
 }
@@ -248,9 +253,23 @@ nav a {
 
 
 /* ANIMATION STYLES */
-#main #video {
+#main #video-wrap {
     height:95%;
     height:calc(100% - 50px);
+}
+
+#main .video {
+    margin:auto;
+    height: 350px;
+    width:auto;
+    margin:10px 0;
+}
+
+@media (max-width:767px) {
+    #main .video {
+        width:100%;
+        height:auto;
+    }
 }
 
 /* PAINTINGS STYLES */
@@ -416,24 +435,6 @@ nav a {
     }
 }
 /* END PHOTOGRAPHY STYLES */
-
-
-/* ANIMATION STYLES */
-
-#main video {
-    max-height:400px;
-    max-width:540px;
-    width:100%;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
-}
-
-/* END ANIMATION STYLES */
-
 
 /* IMAGE HOVER OVER STYLES */
 
