@@ -265,10 +265,17 @@ nav a {
     margin:10px 0;
 }
 
+#main .video.mobile {
+    display:none;
+}
+
 @media (max-width:767px) {
-    #main .video {
-        width:100%;
-        height:auto;
+    #main .video:not(.mobile) {
+        display:none;
+    }
+
+    #main .video.mobile {
+        display:block;
     }
 }
 
