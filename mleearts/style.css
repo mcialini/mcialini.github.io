@@ -16,10 +16,10 @@ html, body {
 }
 
 body {
-    font-family: 'Comic Neue';
+    font-family: 'Comic Sans MS';
     color:white;
     background:rgb(0,0,0);
-    font-size:18px;
+    font-size:16px;
     line-height:25px;
 }
 
@@ -154,9 +154,9 @@ nav a {
     vertical-align: middle;
 }
 
-#info img {
-    height:50px;
-    width:50px;
+#social img {
+    height:30px;
+    width:30px;
 }
 
 #copyright {
