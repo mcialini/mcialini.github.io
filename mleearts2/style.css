@@ -30,10 +30,16 @@ body {
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment:fixed;
     height:95%;
     height:calc(100% - 50px);
+    min-height: 720px;
     text-align: center;
+}
+
+@media (max-width:767px) {
+    #home-wrapper {
+        min-height:0;
+    }
 }
 
 #home-wrapper img {
