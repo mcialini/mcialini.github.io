@@ -30,6 +30,7 @@ body {
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment:fixed;
     height:95%;
     height:calc(100% - 50px);
     text-align: center;
@@ -39,6 +40,10 @@ body {
     max-width:980px;
     width:100%;
     margin-top:60px;
+}
+
+#wrapper {
+    visibility:hidden;
 }
 nav {
     background:transparent;
