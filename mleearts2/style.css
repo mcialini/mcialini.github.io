@@ -26,7 +26,7 @@ body {
 /* HOME PAGE */
 
 #home-wrapper {
-    background: url('img/cows.jpg');
+    background: url('images/cows.jpg');
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,9 +48,6 @@ body {
     margin-top:60px;
 }
 
-#wrapper {
-    visibility:hidden;
-}
 nav {
     background:transparent;
 }
