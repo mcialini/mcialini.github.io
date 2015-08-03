@@ -19,60 +19,10 @@
 
     </script>
     <div id="container"> <!-- Wraps the whole screen -->
-        <div id="wrapper" style="max-width:1000px;"> <!-- Wraps the screen after left/right margins -->
+        <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
             <div id="main"> <!-- Wraps top half content -->
                 <div class="grid">
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0070_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0121_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0145_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0190_thumb.jpg">
-                    </div>
-
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0259_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0220_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0221_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0261_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0262_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_0230_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>
-                        <img src="images/photos/DSC_2267_thumb.jpg">
-                    </div>
-                    <div class="img">
-                        <span class="helper"></span>                        
-                        <img src="images/photos/DSC_0013_thumb.jpg">
-                    </div>
                 </div>
-                    
             </div>
         </div>
         <nav class="navigation">
@@ -123,7 +73,7 @@
             $("body").on("click touchend", ".grid .img .helper", function() {
                 if (!window.matchMedia('(max-device-width: 479px)').matches) {
                     var img = $(this).parent().find("img");
-                    var newsrc = $(img).attr("src").replace('_thumb', '');
+                    var newsrc = $(img).attr("src").replace('thumb', '900x');
                     $(img).attr("src", newsrc);
                     $(img).addClass("selected");
                     $(this).parent().addClass("selected");
@@ -137,8 +87,18 @@
                 $(this).find(".helper").removeClass("hidden");
                 $(this).siblings().removeClass("hidden");
                 $(this).removeClass("selected");
-                $(this).find("img").removeClass("selected");
+                var img = $(this).find("img");
+                var thumb = $(img).attr("src").replace("900x", "thumb");
+                $(img).removeClass("selected");
+                $(img).attr("src", thumb);
             });
+
+            for (var x = 1; x <= 12; x++) {
+                var path = "images/photography/set1/";
+                var name = path + "photo" + x + "-thumb.jpg";
+                var image_box = "<div class='img'><span class='helper'></span><img src='" + name + "'></div>";
+                $("#main .grid").append(image_box);
+            }
         });
     </script>
 </body>

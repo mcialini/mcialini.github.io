@@ -105,121 +105,7 @@
     <div id="container"> <!-- Wraps the whole screen -->
         <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
             <div id="main"> <!-- Wraps top half content -->
-                <div id="main-image">
-                    <div class="arrow-container">
-                        <img src="images/dove_prev.png" class="arrow prev">
-                    </div>
-                    <div class="arrow-container">
-                        <img src="images/dove_next.png" class="arrow next">
-                    </div>
-                    <img class="hero" src="images/paintings/DSC_0003.jpg">
-                    <div id="loader" class="hidden">
-                        <img src="images/ajax_loader.gif">
-                    </div>
-                </div>
-                <!-- <span class="caption">The White Tiger - 2008</span> -->
-
-                <div id="gallery">
-                    <div class="arrow-container">
-                        <img src="images/dove_prev.png" class="arrow prev">
-                    </div>
-
-                    <div class="group active">
-                        <div class="img">
-                            <span class="helper"></span>                        
-                            <img class="selected" src="images/paintings/DSC_0003_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/paintings/DSC_650_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/paintings/DSC_3015_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/paintings/DSC_7466_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/paintings/DSC_7503_thumb.jpg">
-                        </div>
-                    </div>
-
-                    <div class="group hidden">
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/paintings/morningwaterfall800_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_0335_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_7535_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_0145_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_0279-2_thumb.jpg">
-                        </div>
-                    </div>
-
-                    <div class="group hidden">
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_0356_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_3352_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_3366_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_3870_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_3936_thumb.jpg">
-                        </div>
-                    </div>
-
-                    <div class="group hidden">
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_0018_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/DSC_4082_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/Image_2_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/Image_6_thumb.jpg">
-                        </div>
-                        <div class="img">
-                            <span class="helper"></span>
-                            <img src="images/watercolors and drawings/newhampshire_journey_thumb.png">
-                        </div>
-                    </div>
-
-                    <div class="arrow-container">
-                        <img src="images/dove_next.png" class="arrow next">
-                    </div>
-                    
+                <div class="grid">
                 </div>
             </div>
         </div>
@@ -265,5 +151,39 @@
             </li>
         </ul>
     </div>
+
+    <script> 
+        $(document).ready(function(){
+            $("body").on("click touchend", ".grid .img .helper", function() {
+                if (!window.matchMedia('(max-device-width: 479px)').matches) {
+                    var img = $(this).parent().find("img");
+                    var newsrc = $(img).attr("src").replace('thumb', '900x');
+                    $(img).attr("src", newsrc);
+                    $(img).addClass("selected");
+                    $(this).parent().addClass("selected");
+                    $(this).parent().siblings().addClass("hidden");
+                    $(this).addClass("hidden");
+                }
+                return false;
+            });
+
+            $("body").on("click touchend", ".grid .img.selected", function() {
+                $(this).find(".helper").removeClass("hidden");
+                $(this).siblings().removeClass("hidden");
+                $(this).removeClass("selected");
+                var img = $(this).find("img");
+                var thumb = $(img).attr("src").replace("900x", "thumb");
+                $(img).removeClass("selected");
+                $(img).attr("src", thumb);
+            });
+
+            for (var x = 1; x <= 12; x++) {
+                var path = "images/paintings/";
+                var name = path + "painting" + x + "-thumb.jpg";
+                var image_box = "<div class='img'><span class='helper'></span><img src='" + name + "'></div>";
+                $("#main .grid").append(image_box);
+            }
+        });
+    </script>
 </body>
 </html>

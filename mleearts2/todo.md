@@ -1,13 +1,6 @@
 TODO
 ---
 
-penske truck
-
-- is there a lock
-- can i leave truck at lot overnight
-
-look at options for loan payments
-
 [Link to cambridge art association](http://cambridgeartassociation.blogspot.com/2015/05/artist-of-week-mary-lee.html)
 
 **Home Page**
@@ -23,16 +16,15 @@ look at options for loan payments
 - ~~Get assets~~
 - ~~Implement Standard View exactly the same~~ 
 - ~~Add responsiveness~~
-- Make sure the images open up the iTunes store links in a new tab
 
 **Animations Page**
 
 - ~~Find out what Mary expects~~
 - ~~Get assets~~
-- [Vaco the Whale is Worried About the Oceans](https://www.youtube.com/watch?v=J44eODc7y6c)
-- [Vaco the Whale Cleaning the Ocean for the People](https://www.youtube.com/watch?v=xvvBcdRDa6A)
-- [Island Dogs](https://www.youtube.com/watch?v=KsxT0l2nSqw)
-- Implement Standard View exactly the same the last site
+- ~~[Vaco the Whale is Worried About the Oceans](https://www.youtube.com/watch?v=J44eODc7y6c)~~
+- ~~[Vaco the Whale Cleaning the Ocean for the People](https://www.youtube.com/watch?v=xvvBcdRDa6A)~~
+- ~~[Island Dogs](https://www.youtube.com/watch?v=KsxT0l2nSqw)~~
+- Show one video at a time with a next button to view next video
 - Add responsiveness
 
 **Photography Page**
