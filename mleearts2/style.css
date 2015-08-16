@@ -297,6 +297,11 @@ nav a {
 
 
 /* ANIMATION STYLES */
+.video {
+    max-width: 800px;
+    margin:0 auto;
+}
+
 .video-wrap {
     position: relative;
     padding-bottom: 56.25%;
@@ -554,11 +559,11 @@ nav a {
 /* END IMAGE HOVER OVER STYLES */
 
 ::-webkit-scrollbar-track {
-      background-color: rgba(255,255,255,0.3);
+      background-color: rgba(255,255,255,0.4);
 }
  
 ::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.2); 
+      background-color: rgba(255,255,255,0.2); 
 }
 
 ::-webkit-scrollbar {
