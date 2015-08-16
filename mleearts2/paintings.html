@@ -6,90 +6,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="scripts/jquery.ui.touch-punch.min.js"></script>
     <script src="scripts/mobile-nav.js"></script>
-    <script> 
-        $(document).ready(function(){
-            $("body").on("click","#gallery .img .helper", function() {
-                var source = $(this).parent().find("img");
-                swapPicture($(source));
-            });
-
-            $("body").on("click",  "#main-image .arrow.prev", function() {
-                var thumbs = $("#gallery .img img").toArray();
-                var newimg = $("#main-image img.hero");
-                var i;
-                for (i = 0; i < $(thumbs).length; i++) {
-                    if ($(thumbs).eq(i).hasClass("selected")) {
-                        var newindex = (i - 1) % $(thumbs).length;
-                        newimg = $(thumbs).eq(newindex);
-                        swapPicture(newimg);
-                        break;
-                    }
-                }
-            });
-
-            $("body").on("click",  "#main-image .arrow.next", function() {
-                var thumbs = $("#gallery .img img").toArray();
-                var newimg = $("#main-image img.hero");
-                var i;
-                for (i = 0; i < $(thumbs).length; i++) {
-                    if ($(thumbs).eq(i).hasClass("selected")) {
-                        var newindex = (i + 1) % $(thumbs).length;
-                        newimg = $(thumbs).eq(newindex);
-                        swapPicture(newimg);
-                        break;
-                    }
-                }
-            });
-
-
-            function swapPicture(newpic) {
-                /* UPDATE CURRENTLY SELECTED PICTURE */
-                var newsrc = $(newpic).attr("src").replace('_thumb', '');
-                if (!$(newpic).hasClass("selected")) {
-                    $("#gallery img.selected").removeClass("selected");
-                    $(newpic).addClass("selected");
-
-                    /* MODIFY ATTRIBUTES OF MAIN IMAGE */
-                    var main = $("#main-image img.hero");
-                    $("#loader").removeClass("hidden");
-                    $(main).attr("data-content",$(newpic).attr("data-content"));
-                    $(main).attr("src",newsrc);
-                    $(main).attr("alt",$(newpic).attr("alt"));
-                }
-
-            }
-
-            $("body").on("click", "#gallery .arrow.prev", function() {
-                var thumbgrps = $("#gallery .group").toArray();
-                var i;
-                var len = $(thumbgrps).length;
-                for (i = 0; i < len; i++) {
-                    if ($(thumbgrps).eq(i).hasClass("active")) {
-                        $(thumbgrps).eq(i).removeClass("active").addClass("hidden");
-                        $(thumbgrps).eq((i - 1) % len).removeClass("hidden").addClass("active");
-                        break;
-                    }
-                }
-            });
-
-            $("body").on("click", "#gallery .arrow.next", function() {
-                var thumbgrps = $("#gallery .group").toArray();
-                var i;
-                var len = $(thumbgrps).length;
-                for (i = 0; i < len; i++) {
-                    if ($(thumbgrps).eq(i).hasClass("active")) {
-                        $(thumbgrps).eq(i).removeClass("active").addClass("hidden");
-                        $(thumbgrps).eq((i + 1) % len).removeClass("hidden").addClass("active");
-                        break;
-                    }
-                }
-            });
-
-            $("#main-image img.hero").on("load", function() {
-                $("#loader").addClass("hidden");
-            });
-        });
-    </script>
 </head>
 <body>
     <script>
@@ -154,33 +70,35 @@
 
     <script> 
         $(document).ready(function(){
+            // Blow up the clicked on image and hide the others.
             $("body").on("click touchend", ".grid .img .helper", function() {
                 if (!window.matchMedia('(max-device-width: 479px)').matches) {
                     var img = $(this).parent().find("img");
                     var newsrc = $(img).attr("src").replace('thumb', '900x');
                     $(img).attr("src", newsrc);
-                    $(img).addClass("selected");
                     $(this).parent().addClass("selected");
                     $(this).parent().siblings().addClass("hidden");
-                    $(this).addClass("hidden");
+                    $(this).css({'opacity': 1});
                 }
                 return false;
             });
 
-            $("body").on("click touchend", ".grid .img.selected", function() {
-                $(this).find(".helper").removeClass("hidden");
-                $(this).siblings().removeClass("hidden");
-                $(this).removeClass("selected");
-                var img = $(this).find("img");
+            // Shrink the selected image back down and show the others.
+            $("body").on("click touchend", ".grid .img.selected .helper", function() {
+                var parent = $(this).parent();
+                $(parent).siblings().removeClass("hidden");
+                $(parent).removeClass("selected");
+                var img = $(parent).find("img");
                 var thumb = $(img).attr("src").replace("900x", "thumb");
-                $(img).removeClass("selected");
                 $(img).attr("src", thumb);
+                $(parent).removeClass("selected");
+                $(this).css({'opacity': 0});
             });
 
             for (var x = 1; x <= 12; x++) {
                 var path = "images/paintings/";
                 var name = path + "painting" + x + "-thumb.jpg";
-                var image_box = "<div class='img'><span class='helper'></span><img src='" + name + "'></div>";
+                var image_box = "<div class='img'><span class='helper'>x</span><img src='" + name + "'></div>";
                 $("#main .grid").append(image_box);
             }
         });

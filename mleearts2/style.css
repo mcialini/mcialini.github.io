@@ -31,7 +31,7 @@ h1, h2, h3 {
 /* HOME PAGE */
 
 #home-wrapper {
-    background: url('images/cows.jpg');
+    background: url('images/home_background.jpg');
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,12 +45,6 @@ h1, h2, h3 {
     #home-wrapper {
         min-height:0;
     }
-}
-
-#home-wrapper img {
-    max-width:980px;
-    width:100%;
-    margin-top:60px;
 }
 
 nav {
@@ -171,7 +165,7 @@ nav a {
 
 #wrapper {
     margin:0 auto;
-    max-width:950px;
+    max-width:1200px;
 }
 
 #wrapper.wide {
@@ -179,7 +173,7 @@ nav a {
 }
 
 #main {
-    padding:30px 15px 0 15px;
+    padding:30px 15px 10px 15px;
     text-align: center;
     position:relative;
 }
@@ -458,11 +452,11 @@ nav a {
 }
 
 .grid img {
-    width:250px;
-    max-height:145px;
+    width:300px;
+    max-height:180px;
 }
 
-.grid img.selected {
+.grid .img.selected img {
     display:block;
     width:100%;
     max-height:100%;
@@ -480,6 +474,17 @@ nav a {
         height:auto;
     }
 }
+
+#set-links a {
+    color:#999;
+    margin:0 10px;
+}
+
+#set-links a.active, #set-links a:hover {
+    color:white;
+    cursor:pointer;
+}
+
 /* END PHOTOGRAPHY STYLES */
 
 /* IMAGE HOVER OVER STYLES */
@@ -490,14 +495,25 @@ nav a {
 
 .helper {
     position:absolute;
+    top:0;
+    right:0;
     opacity:0;
     height:100%;
     width:100%;
     z-index: 2;
+    text-align: right;
+    font-size:2em;
+    color:#555;
+    transition:color 0.3s ease-in-out;
 }
 
 .helper:hover {
     cursor:pointer;
+    color: #fff;
+}
+
+.img.selected .helper {
+    right: 10px;
 }
 
 .img:after, .img:before {
@@ -536,3 +552,15 @@ nav a {
     }
 }
 /* END IMAGE HOVER OVER STYLES */
+
+::-webkit-scrollbar-track {
+      background-color: rgba(255,255,255,0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2); 
+}
+
+::-webkit-scrollbar {
+    width:10px;
+}
