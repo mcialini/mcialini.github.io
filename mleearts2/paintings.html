@@ -7,7 +7,7 @@
     <script src="scripts/jquery.ui.touch-punch.min.js"></script>
     <script src="scripts/mobile-nav.js"></script>
 </head>
-<body>
+<body><!--
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -17,11 +17,26 @@
       ga('create', 'UA-53246825-1', 'auto');
       ga('send', 'pageview');
 
-    </script>
+    </script>-->
     <div id="container"> <!-- Wraps the whole screen -->
         <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
             <div id="main"> <!-- Wraps top half content -->
                 <div class="grid">
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting1-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting2-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting3-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting4-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting5-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting6-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting7-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting8-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting9-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting10-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting11-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting12-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting13-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting14-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="images/paintings/painting15-thumb.jpg"></div>
                 </div>
             </div>
         </div>
@@ -94,13 +109,6 @@
                 $(parent).removeClass("selected");
                 $(this).css({'opacity': 0});
             });
-
-            for (var x = 1; x <= 12; x++) {
-                var path = "images/paintings/";
-                var name = path + "painting" + x + "-thumb.jpg";
-                var image_box = "<div class='img'><span class='helper'>x</span><img src='" + name + "'></div>";
-                $("#main .grid").append(image_box);
-            }
         });
     </script>
 </body>

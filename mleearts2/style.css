@@ -454,11 +454,12 @@ nav a {
 .grid .img {
     display:inline-block;
     margin:10px;
+    vertical-align: middle;
 }
 
 .grid img {
     width:300px;
-    max-height:180px;
+    /*max-height:180px;*/
 }
 
 .grid .img.selected img {
