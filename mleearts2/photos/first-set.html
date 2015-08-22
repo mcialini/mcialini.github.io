@@ -1,0 +1,147 @@
+<html>
+<head>
+    <title>Photography - Mary R. Lee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../style.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../scripts/jquery.ui.touch-punch.min.js"></script>
+    <script src="../scripts/mobile-nav.js"></script>
+</head>
+<body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53246825-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <div id="container"> <!-- Wraps the whole screen -->
+        <div id="wrapper"> <!-- Wraps the screen after left/right margins -->
+            <div id="main"> <!-- Wraps top half content -->
+                <div id="set-links">
+                    <a id="set1-link" class="active" href="first-set.html">View First Set</a><a id="set2-link" href="second-set.html">View Second Set</a>
+                </div>
+                <div class="grid">
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo1-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo2-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo3-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo4-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo5-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo6-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo7-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo8-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo9-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo10-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo11-thumb.jpg"></div>
+                    <div class="img"><span class="helper">x</span><img src="../images/photography/set1/photo12-thumb.jpg"></div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul class="desktop">
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="first-set.html">Photography</a>
+                </li>
+                <li>
+                    <a href="../animation.html">Animations</a>
+                </li>
+                <li>
+                    <a href="../paintings.html">Paintings</a>
+                </li>
+                <li>
+                    <a href="../apps.html">Apps</a>
+                </li>
+                <p class="lower-nav">
+                    &copy; Mary Lee. Website created by Matt Cialini. "Paintball Cows" created by Danielle Chudolij.
+                </p>
+            </ul>
+            <ul class="mobile">
+                <li class="top">
+                    <ul id="inner-menu">
+                        <li>
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="first-set.html">Photography</a>
+                        </li>
+                        <li>
+                            <a href="../animation.html">Animations</a>
+                        </li>
+                        <li>
+                            <a href="../paintings.html">Paintings</a>
+                        </li>
+                        <li>
+                            <a href="../apps.html">Apps</a>
+                        </li>
+                    </ul>
+                    <a id="menu-link">MENU</a>
+                </li>
+                <p class="lower-nav">
+                    &copy; Mary Lee. Website created by Matt Cialini. "Paintball Cows" created by Danielle Chudolij.
+                </p>
+            </ul>
+        </nav>
+    </div>
+
+    <script> 
+        $(document).ready(function(){
+            // Blow up the clicked on image and hide the others.
+            $("body").on("click touchend", ".grid .img .helper", function() {
+                if (!window.matchMedia('(max-device-width: 479px)').matches) {
+                    var img = $(this).parent().find("img");
+                    var newsrc = $(img).attr("src").replace('thumb', '900x');
+                    $(img).attr("src", newsrc);
+                    $(this).parent().addClass("selected");
+                    $(this).parent().siblings().addClass("hidden");
+                    $(this).css({'opacity': 1});
+                }
+                return false;
+            });
+
+            // Shrink the selected image back down and show the others.
+            $("body").on("click touchend", ".grid .img.selected .helper", function() {
+                var parent = $(this).parent();
+                $(parent).siblings().removeClass("hidden");
+                $(parent).removeClass("selected");
+                var img = $(parent).find("img");
+                var thumb = $(img).attr("src").replace("900x", "thumb");
+                $(img).attr("src", thumb);
+                $(parent).removeClass("selected");
+                $(this).css({'opacity': 0});
+            });
+
+            // $("#set1-link").on("click touchend", function() {
+            //     $("#set2-link").removeClass("active");
+            //     $("#set1-link").addClass("active");
+            //     $(".grid .img").each(function() {
+            //         $(this).removeClass("hidden");
+            //         $(this).removeClass("selected");
+            //         var img = $(this).find("img");
+            //         var newsrc = $(img).attr('src').replace('set2', 'set1');
+            //         $(img).attr('src', newsrc);
+            //         $(this).find(".helper").css({'opacity': 0});
+            //     });
+            // });
+
+            // $("#set2-link").on("click touchend", function() {
+            //     $("#set1-link").removeClass("active");
+            //     $("#set2-link").addClass("active");
+            //     $(".grid .img").each(function() {
+            //         $(this).removeClass("hidden");
+            //         $(this).removeClass("selected");
+            //         var img = $(this).find("img");
+            //         var newsrc = $(img).attr('src').replace('set1', 'set2');
+            //         $(img).attr('src', newsrc);
+            //         $(this).find(".helper").css({'opacity': 0});
+            //     });
+            // });
+        });
+    </script>
+</body>
+</html>
