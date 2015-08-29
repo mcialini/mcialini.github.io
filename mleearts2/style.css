@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-    font-family: 'Comic Sans MS';
+    font-family: 'Comic Neue';
     color:white;
     background:rgb(0,0,0);
     font-size:16px;
@@ -58,10 +58,6 @@ nav {
 @media only screen and (max-width:479px) {
     body {
         background:black;
-    }
- 
-    #mobile-nav {
-        background:#111;
     }
 }
 
@@ -120,7 +116,7 @@ nav .mobile {
     display:none;
 }
 
-nav .lower-nav {
+nav .lower-nav, nav .lower-nav a, nav .lower-nav a:hover {
     font-size:12px;
     margin: 0;
     letter-spacing:2px;
@@ -134,7 +130,7 @@ nav .lower-nav {
         bottom:0;
         width:100%;
         text-align: center;
-        background:#111;
+        background:black;
         padding: 0;
         margin: 0;
         z-index:1;
