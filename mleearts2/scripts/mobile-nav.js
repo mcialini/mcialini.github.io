@@ -1,6 +1,12 @@
 $(document).ready(function(){
     $("body").on("click touchend", "nav .mobile #menu-link", function() {
-        $("#inner-menu").toggle(250);
+        $("#inner-menu").toggle(250, function() {
+            if ($("#inner-menu").is(":visible")) {
+                $("#menu-link").text("CLOSE MENU");
+            } else {
+                $("#menu-link").text("MENU");
+            }            
+        });
         return false;
     });
 });
