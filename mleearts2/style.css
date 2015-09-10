@@ -82,7 +82,6 @@ nav {
     background:radial-gradient(farthest-corner at 50% 50%,#222,#000);
     height:calc(100% - 75px);
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 
 #wrapper {
