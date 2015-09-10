@@ -15,6 +15,19 @@ html, body {
     src: url(media/comic-neue/ComicNeue-Regular.ttf);
 }
 
+::-webkit-scrollbar-track {
+      background-color: #666;
+}
+ 
+::-webkit-scrollbar-thumb {
+      background-color: #999; 
+      border-radius:10px;
+}
+
+::-webkit-scrollbar {
+    width:10px;
+}
+
 body {
     font-family: 'Comic Neue';
     color:white;
@@ -68,8 +81,8 @@ nav {
     background:-webkit-radial-gradient(50% 50%,#222,#000);
     background:radial-gradient(farthest-corner at 50% 50%,#222,#000);
     height:calc(100% - 75px);
-    margin-bottom:50px;
-    overflow:auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 #wrapper {
@@ -77,8 +90,6 @@ nav {
     max-width:1200px;
     position: relative;
     z-index: 0;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 
 #wrapper.wide {
@@ -154,12 +165,15 @@ nav .lower-nav, nav .lower-nav a, nav .lower-nav a:hover {
 
 @media (max-width: 700px) {
     nav .lower-nav, nav .lower-nav a, nav .lower-nav a:hover {
-        font-size:11px;
+        font-size:10px;
         letter-spacing:0px;
     }
 }
 
 @media only screen and (max-width:980px) {
+    ::-webkit-scrollbar {
+        width:7px;
+    }
     nav .mobile {
         display:block;
         text-align: center;
@@ -168,9 +182,17 @@ nav .lower-nav, nav .lower-nav a, nav .lower-nav a:hover {
         margin: 0;
         z-index:1;
     }
-
     #container {
-        height:calc(100% - 75px);
+        height:calc(100% - 80px);
+    }
+
+    nav .lower-nav span {
+        display:block;
+        line-height:15px;
+    }
+
+    #main {
+        padding:30px 25px 10px 25px;
     }
 
     nav .mobile li.top {
@@ -577,16 +599,3 @@ nav .lower-nav, nav .lower-nav a, nav .lower-nav a:hover {
     }
 }
 /* END IMAGE HOVER OVER STYLES */
-
-::-webkit-scrollbar-track {
-      background-color: #666;
-}
- 
-::-webkit-scrollbar-thumb {
-      background-color: #999; 
-      border-radius:10px;
-}
-
-::-webkit-scrollbar {
-    width:10px;
-}
