@@ -18,6 +18,7 @@ $(document).ready(function(){
 $(document).bind(
       'touchmove',
           function(e) {
+            e.stopPropagation();
             e.preventDefault();
           }
 );
