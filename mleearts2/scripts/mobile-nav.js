@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("body").on("click touchend", "nav .mobile #menu-link", function() {
+    $("body").on("touchend", "nav .mobile #menu-link", function() {
         $("#inner-menu").toggle(250, function() {
             if ($("#inner-menu").is(":visible")) {
                 $("#menu-link").text("CLOSE MENU");
