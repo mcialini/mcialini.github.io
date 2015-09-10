@@ -15,10 +15,3 @@ $(document).ready(function(){
         return false;
     });
 });
-$(document).bind(
-      'touchmove',
-          function(e) {
-            e.stopPropagation();
-            e.preventDefault();
-          }
-);

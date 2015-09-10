@@ -6,6 +6,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="scripts/jquery.ui.touch-punch.min.js"></script>
     <script src="scripts/mobile-nav.js"></script>
+    <script src="scripts/grid_helper.js"></script>
 </head>
 <body>
     <script>
@@ -85,60 +86,5 @@
             </ul>
         </nav>
     </div>
-
-    <script> 
-        $(document).ready(function(){
-            // Blow up the clicked on image and hide the others.
-            $("body").on("click touchend", ".grid .img .helper", function() {
-                if (!window.matchMedia('(max-device-width: 479px)').matches) {
-                    var img = $(this).parent().find("img");
-                    var newsrc = $(img).attr("src").replace('thumb', '900x');
-                    $(img).attr("src", newsrc);
-                    $(this).parent().addClass("selected");
-                    $(this).parent().siblings().addClass("hidden");
-                    $(this).css({'opacity': 1});
-                }
-                return false;
-            });
-
-            // Shrink the selected image back down and show the others.
-            $("body").on("click touchend", ".grid .img.selected .helper", function() {
-                var parent = $(this).parent();
-                $(parent).siblings().removeClass("hidden");
-                $(parent).removeClass("selected");
-                var img = $(parent).find("img");
-                var thumb = $(img).attr("src").replace("900x", "thumb");
-                $(img).attr("src", thumb);
-                $(parent).removeClass("selected");
-                $(this).css({'opacity': 0});
-            });
-
-            $("#set1-link").on("click touchend", function() {
-                $("#set2-link").removeClass("active");
-                $("#set1-link").addClass("active");
-                $(".grid .img").each(function() {
-                    $(this).removeClass("hidden");
-                    $(this).removeClass("selected");
-                    var img = $(this).find("img");
-                    var newsrc = $(img).attr('src').replace('set2', 'set1');
-                    $(img).attr('src', newsrc);
-                    $(this).find(".helper").css({'opacity': 0});
-                });
-            });
-
-            $("#set2-link").on("click touchend", function() {
-                $("#set1-link").removeClass("active");
-                $("#set2-link").addClass("active");
-                $(".grid .img").each(function() {
-                    $(this).removeClass("hidden");
-                    $(this).removeClass("selected");
-                    var img = $(this).find("img");
-                    var newsrc = $(img).attr('src').replace('set1', 'set2');
-                    $(img).attr('src', newsrc);
-                    $(this).find(".helper").css({'opacity': 0});
-                });
-            });
-        });
-    </script>
 </body>
 </html>
