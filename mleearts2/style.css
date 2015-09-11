@@ -44,9 +44,9 @@ h1, h2, h3 {
 /* HOME PAGE */
 
 #home-wrapper {
-    background: url('images/PaintballCows.jpg');
+    background: url('images/paintball_cows_1600x.jpg');
     background-size:cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     height:95%;
     height:calc(100% - 50px);
@@ -334,7 +334,7 @@ nav .lower-nav, nav .lower-nav a, nav .lower-nav a:hover {
 /* ANIMATION STYLES */
 .video {
     max-width: 800px;
-    margin:0 auto;
+    margin:0 auto 5em;
 }
 
 .video video {
