@@ -16,11 +16,26 @@ html, body {
 }
 
 body {
-    font-family: 'Comic Sans MS';
+    font-family: 'Comic Neue';
     color:white;
     background:rgb(0,0,0);
     font-size:16px;
     line-height:25px;
+    height:100%;
+    position:relative;
+}
+
+::-webkit-scrollbar-track {
+      background-color: #666;
+}
+ 
+::-webkit-scrollbar-thumb {
+      background-color: #999; 
+      border-radius:10px;
+}
+
+::-webkit-scrollbar {
+    width:10px;
 }
 
 a {
@@ -122,6 +137,7 @@ nav a {
 #wrapper {
     margin:0 auto;
     max-width:950px;
+    height:100%;
 }
 
 #wrapper.wide {
@@ -253,30 +269,14 @@ nav a {
 
 
 /* ANIMATION STYLES */
-#main #video-wrap {
-    height:95%;
-    height:calc(100% - 50px);
+.video {
+    max-width: 800px;
+    margin:0 auto 50px;
 }
 
-#main .video {
-    margin:auto;
-    height: 350px;
-    width:auto;
-    margin:10px 0;
-}
-
-#main .video.mobile {
-    display:none;
-}
-
-@media (max-width:767px) {
-    #main .video:not(.mobile) {
-        display:none;
-    }
-
-    #main .video.mobile {
-        display:block;
-    }
+.video video {
+    width:100% !important;
+    height: auto !important;
 }
 
 /* PAINTINGS STYLES */

@@ -1,0 +1,16 @@
+# Redirect to our custom error pages
+ErrorDocument 403 http://www.mleearts.net
+ErrorDocument 404 http://www.mleearts.net
+ErrorDocument 500 http://www.mleearts.net
+# [ CP Global Redirection - Start ]
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteCond %{SERVER_NAME} ^www\.(.*)$
+RewriteRule ^(.*)$ http://%1/$1 [R]
+RewriteCond %{SERVER_PORT} ^443$
+RewriteCond %{SERVER_NAME} ^www\.(.*)$
+RewriteRule ^(.*)$ https://%1/$1 [R]
+</IfModule>
+# [ CP Global Redirection - End ]
+AddType video/mp4 .mp4

@@ -34,6 +34,7 @@ body {
     background:rgb(0,0,0);
     font-size:16px;
     line-height:25px;
+    height:100%;
 }
 
 h1, h2, h3 {
@@ -334,7 +335,7 @@ nav .lower-nav, nav .lower-nav a, nav .lower-nav a:hover {
 /* ANIMATION STYLES */
 .video {
     max-width: 800px;
-    margin:0 auto 5em;
+    margin:0 auto 50px;
 }
 
 .video video {
