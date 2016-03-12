@@ -10,31 +10,11 @@ html, body {
     src: url(media/comicsans.ttf);
 }
 
-@font-face {
-    font-family: 'Comic Neue';
-    src: url(media/comic-neue/ComicNeue-Regular.ttf);
-}
-
 body {
-    font-family: 'Comic Neue';
+    font-family: 'Comic Sans MS';
     color:white;
     background:rgb(0,0,0);
-    font-size:16px;
-    line-height:25px;
-    height:100%;
-}
-
-::-webkit-scrollbar-track {
-      background-color: #666;
-}
- 
-::-webkit-scrollbar-thumb {
-      background-color: #999; 
-      border-radius:10px;
-}
-
-::-webkit-scrollbar {
-    width:10px;
+    /*overflow:hidden;*/
 }
 
 a {
@@ -136,7 +116,6 @@ nav a {
 #wrapper {
     margin:0 auto;
     max-width:950px;
-    height:100%;
 }
 
 #wrapper.wide {
@@ -167,11 +146,6 @@ nav a {
     width:49%;
     display: inline-block;
     vertical-align: middle;
-}
-
-#social img {
-    height:30px;
-    width:30px;
 }
 
 #copyright {
@@ -268,14 +242,9 @@ nav a {
 
 
 /* ANIMATION STYLES */
-.video {
-    max-width: 800px;
-    margin:0 auto 5em;
-}
-
-.video video {
-    width:100% !important;
-    height: auto !important;
+#main #video {
+    height:95%;
+    height:calc(100% - 50px);
 }
 
 /* PAINTINGS STYLES */
@@ -441,6 +410,24 @@ nav a {
     }
 }
 /* END PHOTOGRAPHY STYLES */
+
+
+/* ANIMATION STYLES */
+
+#main video {
+    max-height:400px;
+    max-width:540px;
+    width:100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+/* END ANIMATION STYLES */
+
 
 /* IMAGE HOVER OVER STYLES */
 
