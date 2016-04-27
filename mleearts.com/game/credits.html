@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Credit Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="js/jquery.js"></script>
+        
+    </head>
+    
+    <body>
+        <div id="background_container">
+            <img id="credit_background" class="background center" style="visibility:hidden" src="images/Cow%20Game%20Credits.png" onclick="window.location.href = '../index.html'">
+        </div>
+    </body>
+    
+    
+    
+    <script>
+        $( window ).load(function() {
+            initialization();
+            
+            $("#credit_background").css("visibility", "visible")
+            
+            window.addEventListener('resize', initialization, true);
+        });
+                         
+        function initialization()
+        {
+            console.log("initialization");
+            var w = window.innerWidth
+                    || document.documentElement.clientWidth
+                    || document.body.clientWidth;
+
+            var h = window.innerHeight
+                    || document.documentElement.clientHeight
+                    || document.body.clientHeight;
+            console.log("window width: ", w);
+            console.log("window height: ", h);
+            
+            //setBackground
+            if (w/h > $("#background_container").width() / $("#background_container").height()){
+                $("#background_container").height(h);
+                $("#background_container").width('auto');
+            } else {
+                $("#background_container").width(w);
+                $("#background_container").height('auto');
+            }
+            
+             $(".center").css({
+                "margin-left": ($("#background_container").width() - $(".background").width()) / 2,
+            });
+            
+        }
+        
+        
+    </script>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cow Game</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/jQueryRotate.js"></script>
+        <script src="js/jquery.transit.js"></script>
+
+    </head>
+
+    <body>
+        <div id="background_container">
+            <img id="instruction_background" class="background center" style="visibility:hidden" src="images/Cow%20Game%20Instruction%20Page.png">
+            <img id="game_background" class="background center" style="visibility:hidden" src="images/background.png">
+            <img id="win_background" class="background center" style="visibility:hidden" src="images/Cow%20Game%20You%20Win.png">
+
+            <div>
+                <img class="balls" id="ball1" src="images/paint_ball_1.png">
+                <img class="balls" id="ball2" src="images/paint_ball_2.png">
+                <img class="balls" id="ball3" src="images/paint_ball_3.png">
+                <img class="balls" id="ball4" src="images/paint_ball_4.png">
+                <img class="balls" id="ball5" src="images/paint_ball_5.png">
+                <img class="balls" id="ball6" src="images/paint_ball_6.png">
+                <img class="balls" id="ball7" src="images/paint_ball_7.png">
+                <img class="balls" id="ball8" src="images/paint_ball_8.png">
+                <img class="balls" id="ball9" src="images/paint_ball_9.png">
+                <img class="balls" id="ball10" src="images/paint_ball_10.png">
+                <img class="balls" id="ball11" src="images/paint_ball_11.png">
+                <img class="balls" id="ball12" src="images/paint_ball_12.png">
+                <img class="balls" id="ball13" src="images/paint_ball_13.png">
+            </div>
+
+            <img id="tail" src="images/cow_tail.png" style="border:1px solid trasnparent;">
+
+
+            <div id="hoof_container">
+                <img id="hoof" src="images/cow_hoof.png">
+            </div>
+
+            <div id = "points" style="">
+                <img id="words" src="images/points.png">
+                <p id="numbers">0</p>
+            </div>
+
+        </div>
+        <div id="whileBackground"></div>
+        <p id="prompt" style="visibility:hidden;top:0px">Yes!</p>
+        <audio id="game-audio" loop autoplay src="music/Cow%20Game%20take1.mp3"></audio>
+    </body>
+
+
+
+    <script>
+
+         var balls = ["#ball1", "#ball2", "#ball3", "#ball4", "#ball5", "#ball6", "#ball7",
+                    "#ball8", "#ball9", "#ball10", "#ball11", "#ball12", "#ball13"];
+        var index = 0;
+
+        var direction = {
+                startX: 0,
+                startY: 0,
+                endX: 0,
+                endY: 0,
+            };
+
+        $( window ).load(function() {
+            initialization();
+             window.addEventListener('resize', initialization, true);
+
+            $("#instruction_background").css("visibility", "visible");
+
+            $("#instruction_background").on("click", function(e) {
+
+                $("#instruction_background").css("visibility", "hidden");
+                $("#game_background").css("visibility", "visible");
+
+                setHoofPosition();
+                setTailPosition();
+                setPromptPosition();
+                setBallsPositon();
+
+                setTouchListener("#game_background");
+                setTouchListener("#tail");
+                setTouchListener("#hoof");
+                for(var i=0; i < balls.length; i++)
+                    setTouchListener(balls[i]);
+
+                swingTail(80);
+            });
+        });
+
+        function initialization()
+        {
+            console.log("initialization");
+            var w = window.innerWidth
+                    || document.documentElement.clientWidth
+                    || document.body.clientWidth;
+
+            var h = window.innerHeight
+                    || document.documentElement.clientHeight
+                    || document.body.clientHeight;
+            console.log("window width: ", w);
+            console.log("window height: ", h);
+
+            //setBackground
+            if (w/h > $("#background_container").width() / $("#background_container").height()){
+                $("#background_container").height(h);
+                $("#background_container").width('auto');
+            } else {
+                $("#background_container").width(w);
+                $("#background_container").height('auto');
+            }
+
+            $(".center").css({
+                "margin-left": ($("#background_container").width() - $(".background").width()) / 2,
+            });
+
+
+        }
+
+
+
+        function audioPlaybackRequiresUserInput() {
+             var audio = document.getElementById('game-audio');
+             audio.play();
+             return audio.paused;
+        }
+
+        function removeBehaviorsRestrictions() {
+            var audio = document.getElementById('game-audio');
+            audio.play();
+            window.removeEventListener('keydown', removeBehaviorsRestrictions);
+            window.removeEventListener('mousedown', removeBehaviorsRestrictions);
+            window.removeEventListener('touchstart', removeBehaviorsRestrictions);
+        }
+
+        if (audioPlaybackRequiresUserInput()) {
+            window.addEventListener('keydown', removeBehaviorsRestrictions);
+            window.addEventListener('mousedown', removeBehaviorsRestrictions);
+            window.addEventListener('touchstart', removeBehaviorsRestrictions);
+        }
+
+
+        function setBallsPositon()
+        {
+            var width = $("#game_background").width();
+            var height = $("#game_background").height();
+            var left = $("#game_background").offset().left;
+            var top = $("#game_background").offset().top;
+            var position = [left +width * 0.5, top + height * 0.83, width / 14];
+
+            for(var i=0; i<balls.length; i++)
+            {
+                $(balls[i]).css({
+                    "left": position[0] - i * position[2],
+                    "top": position[1],
+                    "width": position[2],
+                    "height": "auto",
+                    "position": "absolute",
+                });
+            }
+
+            $(".balls").css("visibility", "visible");
+
+            $("#whileBackground").css({
+                left: 0,
+                top: position[1],
+                height: position[2] + 10,
+                width: $("#game_background").offset().left,
+                position: "absolute",
+                background: "black",
+            });
+            //console.log("l: ", $("#game_background").offset().left);
+            //console.log("l: ", $("##game_background").outerWidth(true));
+        }
+
+
+        // set the position of tail
+        function setTailPosition()
+        {
+            var width = $("#game_background").width();
+            var height = $("#game_background").height();
+            var left = $("#game_background").offset().left;
+            var top = $("#game_background").offset().top;
+
+            var position = [left + width * 0.5, top + height * 0.33, height * 0.4];
+            //console.log(position);
+            $("#tail").css({
+                "left": position[0],
+                "top":  position[1],
+                "height": position[2],
+                "width": "auto",
+                "visibility": "visible"
+            });
+            return position;
+        }
+
+
+        // set the position of hoof
+        function setHoofPosition()
+        {
+            var width = $("#game_background").width();
+            var height = $("#game_background").height();
+            var left = $("#game_background").offset().left;
+            var top = $("#game_background").offset().top;
+
+            $("#hoof_container").css({
+                position: "absolute",
+                top: height * 0.8,
+                height: height * 0.193,
+                left: left + width * 0.52,
+                marginBottom: 0,
+            });
+        }
+
+        function setPromptPosition()
+        {
+            var rec = $("#game_background")[0].getBoundingClientRect();
+            var left = $("#game_background").offset().left;
+            var top = $("#game_background").offset().top;
+            var width = $("#game_background").width();
+            var height = $("#game_background").height();
+            //$("#prompt").css('visibility','visible');
+            $("#prompt").css({
+                "left": left,
+                "top": height * 0.4,
+                "width": width,
+                "font-size": width / 10,
+                "margin": 0,
+                "-webkit-text-stroke-width": "5px",
+                "-webkit-text-stroke-color": "#FF0000"
+            });
+
+            $("#points").css({
+                "top": rec.top,
+                "left": rec.right - $(window).width() / 7,
+                "width": $(window).width() / 7,
+                "margin-left": -5,
+                "margin-top": 10,
+                "visibility": "visible",
+            });
+
+            $("#words").css({
+                "width": "inherit",
+            });
+
+            $("#numbers").css({
+                "width": "inherit",
+                "font-size": width / 15,
+            });
+        }
+
+
+        // set the touch listner to the elem
+        function setTouchListener(elem)
+        {
+            elem = document.getElementById(elem.substring(1));
+            elem.addEventListener("mousedown", function(event) {
+                event.preventDefault();
+                console.log("down");
+                console.log(event.pageX, event.pageY);
+                direction.startX = event.pageX;
+                direction.startY = event.pageY;
+            }, false);
+            elem.addEventListener("touchstart", function(event) {
+                event.preventDefault();
+                console.log("touchstart");
+                console.log(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+                direction.startX = event.changedTouches[0].pageX;
+                direction.startY = event.changedTouches[0].pageY;
+            }, false);
+            elem.addEventListener("mouseup", function(event) {
+                event.preventDefault();
+                console.log("up");
+                console.log(event.pageX, event.pageY);
+                direction.endX = event.pageX;
+                direction.endY = event.pageY;
+                if(direction.endY > direction.startY)
+                    console.log("wrong direction");
+                else
+                    kickBall(index, direction);
+            }, false);
+            elem.addEventListener("touchend", function(event) {
+                event.preventDefault();
+                console.log("touchend");
+                console.log(event.changedTouches[0].pageX, event.changedTouches[0].pageY);
+                direction.endX = event.changedTouches[0].pageX;
+                direction.endY = event.changedTouches[0].pageY;
+                if(direction.endY > direction.startY)
+                    console.log("wrong direction");
+                else
+                    kickBall(index, direction);
+            }, false);
+        }
+
+
+        // swing the tail
+        function swingTail(maxAngle)
+        {
+            var angle = 0;
+            var dif = 6;
+            setInterval(function(){
+                if(angle > maxAngle || angle < -maxAngle)
+                    dif = -dif;
+                angle+=dif;
+                $("#tail").rotate({
+                    angle: angle,
+                    center: ["34%", "0%"]
+                });
+            },50);
+        }
+
+
+        // call after ball is kicked
+        function kickBall(index, direction)
+        {
+            if(index >= balls.length)
+                return;
+            var ball = balls[index];
+            var timerId = setInterval(function(){
+                var left = $(ball).position().left;
+                var top = $(ball).position().top;
+                if(hittingHole(left, top)) {
+                    $(ball).stop(true);
+                    showPrompt(true);
+                    nextRound();
+                    $(ball).fadeOut();
+                    clearInterval(timerId);
+                } else if(hittingTail(left, top)) {
+                    $(ball).stop(true);
+                    showPrompt(false);
+                    nextRound();
+                    sweptByTail(ball);
+                    clearInterval(timerId);
+                } else if(hittingSky(left, top)) {
+                    $(ball).fadeOut();
+                    showPrompt(false);
+                    clearInterval(timerId);
+                }
+            },100);
+
+            $("#hoof").addClass("kicked").delay(300).queue(function(next){
+                $(this).removeClass("kicked");
+                next();
+            });
+
+            $(ball).animate({
+                left:  "+=" + (direction.endX - direction.startX),
+                top: "+=" + (direction.endY - direction.startY)
+            }, "slow", function(){
+                clearInterval(timerId);
+                var left = $(this).position().left;
+                var top = $(this).position().top;
+                if(hittingWall(left, top)){
+                    console.log("Make Splatter");
+                    var src = $(this).attr("src");
+                    src = src.replace("paint_ball_", "paint_splatter_");
+                    $(this).attr("src", src);
+                }
+                nextRound();
+            });
+        }
+
+
+        function sweptByTail(ball)
+        {
+            console.log("Ball is Dropping");
+            var left = $(ball).position().left;
+            var top = $(ball).position().top;
+            $(ball).animate({
+                top: $("#game_background").height() - $(ball).height(),
+                opacity: 0,
+            },1000);
+        }
+
+
+
+        function hittingHole(ball_left, ball_top)
+        {
+            var center_left = $("#game_background").width() / 2 + $("#game_background").offset().left;
+            var center_top = $("#game_background").height() * 0.4;
+            var distance = Math.sqrt(Math.pow(ball_left - center_left, 2) + Math.pow(ball_top - center_top, 2));
+            //console.log("distance: ", distance);
+            //console.log("standard: ",$("#game_background").width() / 11);
+            if(distance < $("#game_background").width() / 9)
+            {
+                console.log("Hitting Hole");
+                return true;
+            }
+            return false
+
+        }
+
+        function hittingTail(ball_left, ball_top)
+        {
+            var tail_height = $("#tail").height();
+            var tail_width = $("#tail").width();
+            var tail_top = $("#game_background").height() * 0.33;
+            var tail_left = $("#game_background").width() / 2 + $("#game_background").offset().left;
+            //console.log("tail top: ", tail_top, "tail left: ", tail_left);
+            //console.log("ball top: ", ball_top, "ball_left: ", ball_left);
+            var distance = Math.sqrt(Math.pow(tail_left - ball_left,2) + Math.pow(ball_top - tail_top, 2));
+            var angle = Math.atan(-(tail_left - ball_left) / (tail_top - ball_top)) / Math.PI * 180;
+            //console.log("distance: ", distance, "angle: ", angle);
+            //console.log("tail angle: ", $("#tail").getRotateAngle()[0]);
+            if(Math.abs(angle - $("#tail").getRotateAngle()[0]) < 15 && distance < tail_height) {
+                console.log("Hitting Tail!", angle, $("#tail").getRotateAngle()[0]);
+                return true;
+            }
+            return false;
+        }
+
+        function hittingWall(ball_left, ball_top)
+        {
+            var wall_left = $("#game_background").width() * 0.25 + $("#game_background").offset().left;
+            var wall_right = $("#game_background").width() * 0.72 + $("#game_background").offset().left;
+            var wall_top = $("#game_background").height() * 0.2;
+            var wall_bottom = $("#game_background").height() * 0.85;
+            if(ball_left >= wall_left && ball_left <= wall_right &&
+              ball_top >= wall_top){
+                console.log("Hitting Wall!");
+                return true;
+            }
+            return false;
+            /*$("#test").css({
+               "position": "absolute",
+                "left": $("#game_background").width() * 0.75 + $("#game_background").offset().left,
+                "top": $("#game_background").height() * 0.85 ,
+            });*/
+        }
+
+        function hittingSky(ball_left, ball_top)
+        {
+            var wall_left = $("#game_background").width() * 0.25 + $("#game_background").offset().left;
+            var wall_right = $("#game_background").width() * 0.72 + $("#game_background").offset().left;
+            var wall_top = $("#game_background").height() * 0.2;
+            var wall_bottom = $("#game_background").height() * 0.85;
+            if((ball_left <= wall_left && direction.endX - direction.startX <= 0) ||
+               (ball_left >= wall_right && direction.endX - direction.startX >= 0) ||
+               (ball_top <= wall_top)) {
+                console.log("Hitting Sky!");
+                return true;
+            }
+            return false;
+        }
+
+        function showPrompt(positive)
+        {
+            var word;
+            if(positive){
+                var num = Number($("#numbers").html());
+                $("#numbers").html(++num);
+                word = "Great!";
+                if(num > 6) {
+                    word = "Awesome";
+                }
+            }else{
+                word = "Oops!"
+            }
+
+            $("#prompt").html(word).css('visibility','visible').hide()
+                .fadeIn("fast").delay(500).fadeOut();
+            console.log(word);
+        }
+
+        function nextRound(){
+            if(++index < balls.length) {
+                var width = $(balls[index]).width();
+                for(var i = index; i < balls.length; i++) {
+                    $(balls[i]).animate({
+                        left: "+=" +  width,
+                    }, "slow");
+                }
+            } else {
+                setTimeout(function() {
+                    $("#game_background").unbind();
+                    $("#game_background").css("visibility", "hidden");
+                    $(".balls").css("visibility", "hidden");
+                    $("#hoof").css("visibility", "hidden");
+                    $("#tail").css("visibility", "hidden");
+                    $("#points").css("visibility", "hidden");
+                    $("#win_background").css("visibility", "visible");
+
+                    var audio = document.getElementById('game-audio');
+                    audio.src = "music/Win Sound 5.mp3"
+                    audio.load();
+                    audio.play();
+                    audio.loop = false;
+
+                    var num = Number($("#numbers").html());
+                    $("#prompt")
+                        .css("top", $("#win_background").height() * 0.7)
+                        .html(num)
+                        .css('visibility','visible')
+                        .hide()
+                        .fadeIn("fast")
+                        .on("click", function() {
+                        window.open("credits.html","_self", "false");
+                    });
+                    console.log(num);
+
+                    $("#win_background").on("click", function(){
+                        window.open("credits.html","_self", "false");
+                    });
+
+
+                }, 1000);
+
+            }
+        }
+
+
+
+    </script>
+</html>

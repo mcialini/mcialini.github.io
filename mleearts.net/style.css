@@ -1,0 +1,498 @@
+.hidden {
+    display:none!important;
+}
+
+html, body {
+    margin:0;
+}
+@font-face {
+    font-family:'Comic Sans MS';
+    src: url(media/comicsans.ttf);
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: url(media/comic-neue/ComicNeue-Regular.ttf);
+}
+
+body {
+    font-family: 'Comic Neue';
+    color:white;
+    background:rgb(0,0,0);
+    font-size:16px;
+    line-height:25px;
+    height:100%;
+}
+
+::-webkit-scrollbar-track {
+      background-color: #666;
+}
+ 
+::-webkit-scrollbar-thumb {
+      background-color: #999; 
+      border-radius:10px;
+}
+
+::-webkit-scrollbar {
+    width:10px;
+}
+
+a {
+    color:deepskyblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color:lightskyblue;
+}
+
+nav {
+    height:50px;
+    margin: 0 auto;
+    position:fixed;
+    bottom:0;
+    width:100%; 
+    background:black;
+}
+
+nav > ul {
+    margin:0 auto;
+    padding:0;
+    text-align: center;
+}
+
+nav > ul > li {
+    list-style-type:none;
+    padding: 0 10px;
+    display: inline-block;
+    line-height:50px;
+    text-align:center;
+}
+
+nav a {
+    width:100%;
+    text-decoration: none;
+    letter-spacing:4px;
+    color: white;
+    text-align:center;
+    padding:10px 0;
+    font-size:16px;
+}
+
+.navigation a {
+    color:white;
+}
+
+.navigation a:hover {
+    color:#aaa;
+}
+
+#mobile-nav {
+    display:none;
+}
+
+@media only screen and (max-width:980px) {
+    #mobile-nav {
+        display:block;
+        position:fixed;
+        bottom:0;
+        width:100%;
+        text-align: center;
+        background:#111;
+        padding: 0;
+        margin: 0;
+        z-index:1;
+    }
+
+    #mobile-nav li.top {
+        line-height:50px;
+    }
+
+    #mobile-nav li.top:hover {
+        cursor:pointer;
+    }
+
+    #inner-menu {
+        list-style:none;
+        padding:0;
+        margin:0 auto!important;
+        display:none;
+    }
+
+    nav {
+        display:none;
+    }
+}
+
+#container {
+    background:black;
+    background:-webkit-radial-gradient(50% 50%,#222,#000);
+    background:radial-gradient(farthest-corner at 50% 50%,#222,#000);
+    height:calc(100% - 50px);
+    margin-bottom:50px;
+    overflow:auto;
+}
+
+#wrapper {
+    margin:0 auto;
+    max-width:950px;
+    height:100%;
+}
+
+#wrapper.wide {
+    max-width:1400px;
+}
+
+#main {
+    padding:30px 15px 0 15px;
+    text-align: center;
+    position:relative;
+}
+
+
+/* ABOUT STYLES */
+
+#about {
+    margin:0 auto;
+    text-align: justify;
+}
+
+#contact img#self {
+    width:50%;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+#contact #info {
+    width:49%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#social img {
+    height:30px;
+    width:30px;
+}
+
+#copyright {
+    padding:20px;
+}
+
+#copyright a {
+    color:white;
+}
+
+@media only screen and (max-width: 600px) {
+    #contact img#self, #contact #info {
+        width:100%;
+    }
+}
+
+/* END ABOUT STYLES */
+
+
+/* APPS STYLES */
+
+.row {
+    height:200px;
+    margin: 30px 0;
+    clear: both;
+}
+
+.row .img {
+    display:inline-block;
+    height:100%;
+    width:auto;
+    vertical-align: middle;
+}
+
+.row .img:first-child {
+    float: left;
+}
+
+.row .img:last-child {
+    float:right;
+}
+
+.row .img img {
+    height:100%;
+    width:auto;
+}
+
+.row .img:hover {
+    cursor:pointer;
+}
+
+.row .description {
+    display:inline-block;
+    width: calc(100% - 527px);
+    margin: 0 0 20px 30px;
+    float: left;
+    text-align: left;
+}
+
+.row .description ul, .row .description p {
+    margin:0;
+}
+
+@media only screen and (max-width:980px) {
+    .row {
+        height: auto;
+        padding-bottom:20px;
+        border-bottom: 1px solid #333;
+    }
+
+    .row .img {
+        float:none!important;
+        display:block;
+        width:100%;
+        max-width:200px;
+        height:auto;
+        margin:0 auto;
+    }
+
+    .row .img img {
+        width:100%;
+        height:auto;
+    }
+
+    .row .description {
+        display:block;
+        width:90%;
+        margin: 20px auto;
+        float:none;
+    }
+}
+
+/* END APPS STYLES */
+
+
+/* ANIMATION STYLES */
+.video {
+    max-width: 800px;
+    margin:0 auto 5em;
+}
+
+.video video {
+    width:100% !important;
+    height: auto !important;
+}
+
+/* PAINTINGS STYLES */
+
+#main-image {
+    max-width:900px;
+    margin: 0 auto 50px;
+    position:relative;
+    height:65%;
+}
+
+#main-image .hero, #main-image #loader img {
+    max-width:100%;
+    max-height:100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+
+#main-image .hero {
+    -webkit-box-shadow: 0px 10px 13px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow:    0px 10px 13px 0px rgba(0, 0, 0, 0.75);
+    box-shadow:         0px 10px 13px 0px rgba(0, 0, 0, 0.75);
+}
+
+#main-image .arrow {
+    opacity: 0;
+}
+
+.arrow {
+    height: 50px;
+    position: absolute; 
+    top: 50%; 
+    z-index: 1; 
+    margin-top: -24px; 
+    -moz-transition: all 0.4s ease-in-out; 
+    -webkit-transition: all 0.4s ease-in-out; 
+    transition: all 0.4s ease-in-out; 
+}
+
+.arrow.next {
+    right:-15px;
+}
+
+.arrow.prev {
+    left:-15px;
+}
+
+#main-image:hover .arrow.next {
+    opacity:1;
+    right:-15px;
+}
+
+#main-image:hover .arrow.prev {
+    opacity:1;
+    left:-15px;
+}
+
+.arrow.prev:hover {
+    cursor:pointer;
+}
+
+.arrow.next:hover {
+    cursor:pointer;
+}
+
+.caption {
+    display:block;
+    text-align:center;
+    color:white;
+    padding:30px 0;
+}
+
+#gallery {
+    position:relative;
+    text-align: center;
+    height:150px;
+    max-width:900px;
+    margin:0 auto;
+}
+
+#gallery .img {
+    display:inline-block;
+}
+
+#gallery .overlay {
+    background:rgba(0,0,0,0.5);
+}
+
+#gallery img:hover .overlay {
+    height:100%;
+}
+
+#loader img {
+    box-shadow:none;
+}
+
+@media only screen and (max-width:800px) {
+    #main-image {
+        height:50%;
+    }
+
+    #gallery img {
+        max-height:50px;
+    }
+
+    #gallery {
+        height:50px;
+    }
+
+    .arrow-container img {
+        max-height:30px!important;
+    }
+
+    .arrow {
+        margin-top:-13px;
+    }
+
+    .arrow.next {
+        right:-15px!important;
+    }
+
+    .arrow.prev {
+        left:-15px!important;
+    }
+
+}
+
+/* END PAINTINGS STYLES */
+
+
+/* PHOTOGRAPHY STYLES */
+
+.grid .img {
+    display:inline-block;
+    margin:10px;
+}
+
+.grid img {
+    max-width:250px;
+    max-height:145px;
+}
+
+.grid img.selected {
+    display:block;
+    max-width:100%;
+    max-height:100%;
+}
+
+.grid .img.selected:before, .grid .img.selected:after {
+    display:none;
+}
+
+@media only screen and (max-width:479px) {
+    .grid img {
+        max-width:none;
+        max-height:none;
+        width:100%;
+        height:auto;
+    }
+}
+/* END PHOTOGRAPHY STYLES */
+
+/* IMAGE HOVER OVER STYLES */
+
+.img {
+    position:relative;
+}
+
+.helper {
+    position:absolute;
+    opacity:0;
+    height:100%;
+    width:100%;
+    z-index: 2;
+}
+
+.helper:hover {
+    cursor:pointer;
+}
+
+.img:after, .img:before {
+    position:absolute;
+    opacity:0;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+.img:after {
+    content:'\A';
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+}
+
+.img:before {
+    content: attr(data-content);
+    width:100%;
+    color:#fff;
+    z-index:1;
+    bottom:0;
+    padding:4px 10px;
+    text-align:center;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
+.img:hover:after, .img:hover:before {
+    opacity:1;
+}
+
+@media only screen and (max-width:479px) {
+    .grid .helper, .grid .img:before, .grid .img:after {
+        display:none;
+    }
+}
+/* END IMAGE HOVER OVER STYLES */
