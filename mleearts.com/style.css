@@ -600,7 +600,7 @@ nav .lower-nav, nav .lower-nav a, nav .lower-nav a:hover {
 }
 /* END IMAGE HOVER OVER STYLES */
 
-@media screen and (max-height: 450px) {
+@media screen and (min-device-aspect-ratio: 3/2) {
     #home-wrapper {
         background-size: contain;
     }
