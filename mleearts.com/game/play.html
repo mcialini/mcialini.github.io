@@ -32,7 +32,7 @@
                 <img class="balls" id="ball13" src="images/paint_ball_13.png">
             </div>
 
-            <img id="tail" src="images/cow_tail.png" style="border:1px solid trasnparent;">
+            <img id="tail" src="images/cow_tail.png" style="border:1px solid transparent;">
 
 
             <div id="hoof_container">
@@ -47,7 +47,7 @@
         </div>
         <div id="whileBackground"></div>
         <p id="prompt" style="visibility:hidden;top:0px">Yes!</p>
-        <audio id="game-audio" loop autoplay src="music/Cow%20Game%20take1.mp3"></audio>
+        <audio id="game-audio" autoplay src="music/instructions.mp3"></audio>
     </body>
 
 
@@ -73,6 +73,11 @@
 
             $("#instruction_background").on("click", function(e) {
 
+                var audio = document.getElementById('game-audio');
+                    audio.src = "music/play.mp3"
+                    audio.load();
+                    audio.play();
+                    audio.loop = true;
                 $("#instruction_background").css("visibility", "hidden");
                 $("#game_background").css("visibility", "visible");
 
@@ -116,6 +121,7 @@
             $(".center").css({
                 "margin-left": ($("#background_container").width() - $(".background").width()) / 2,
             });
+
 
 
         }
@@ -484,7 +490,7 @@
                     $("#win_background").css("visibility", "visible");
 
                     var audio = document.getElementById('game-audio');
-                    audio.src = "music/Win Sound 5.mp3"
+                    audio.src = "music/win_combined.mp3"
                     audio.load();
                     audio.play();
                     audio.loop = false;
