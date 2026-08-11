@@ -1,4 +1,4 @@
-const CACHE_NAME = 'food-tracker-20260811-firestore-2';
+const CACHE_NAME = 'food-tracker-20260811222542';
 
 const PRECACHE = [
     '/food-tracker/',

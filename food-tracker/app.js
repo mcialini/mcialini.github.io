@@ -1,57 +1,49 @@
 // ============================================================
 // app.js — Food Tracker
 //
-// 0. Auth gate (Google sign-in, locked to one account by Firestore rules)
+// 0. Auth gate (email/password sign-in)
 // 1. Service worker registration
-// 2. Install prompt (iOS banner + Android beforeinstallprompt)
-// 3. Bottom sheet / FAB interaction
-// 4. Entry form with autocomplete
-// 5. Feed rendering (grouped by day)
-// 6. Delete entries
+// 2. Bottom sheet / FAB interaction
+// 3. Entry form with autocomplete
+// 4. Feed rendering (grouped by day)
+// 5. Delete entries
 // ============================================================
 
 import { FoodDB } from './db.js';
 
 // ---- 0. Auth Gate ----
 const authGate = document.getElementById('auth-gate');
-const authDenied = document.getElementById('auth-denied');
 const appRoot = document.getElementById('app-root');
-const signInBtn = document.getElementById('sign-in-btn');
-const signOutBtn = document.getElementById('sign-out-btn');
+const loginForm = document.getElementById('login-form');
 const authError = document.getElementById('auth-error');
 
-FoodDB.whenRedirectSettled().then(() => {
-    const lastError = FoodDB.lastAuthError();
-    if (lastError && authError) {
-        authError.textContent = `Sign-in error: ${lastError.code || lastError.message}`;
+loginForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const btn = document.getElementById('sign-in-btn');
+
+    btn.disabled = true;
+    authError.style.display = 'none';
+
+    try {
+        await FoodDB.signIn(email, password);
+    } catch (err) {
+        authError.textContent = err.code === 'auth/invalid-credential'
+            ? 'Invalid email or password.'
+            : `Sign-in error: ${err.message}`;
         authError.style.display = '';
+        btn.disabled = false;
     }
 });
 
-signInBtn.addEventListener('click', () => {
-    signInBtn.disabled = true;
-    FoodDB.signIn().catch(err => {
-        console.error('[Auth] Sign-in failed:', err);
-        signInBtn.disabled = false;
-    });
-});
-
-signOutBtn.addEventListener('click', () => FoodDB.signOut());
-
 FoodDB.onAuthChange(user => {
-    if (user && FoodDB.isAllowed()) {
+    if (user) {
         authGate.style.display = 'none';
-        authDenied.style.display = 'none';
         appRoot.style.display = 'flex';
         renderFeed();
-    } else if (user) {
-        // Signed in, but not the allowed account.
-        authGate.style.display = 'none';
-        authDenied.style.display = '';
-        appRoot.style.display = 'none';
     } else {
         authGate.style.display = '';
-        authDenied.style.display = 'none';
         appRoot.style.display = 'none';
     }
 });

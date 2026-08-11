@@ -381,16 +381,20 @@
     <!-- Signed-out state -->
     <div class="auth-screen" id="auth-gate" style="display: none;">
         <div class="icon">🔒</div>
-        <p>Sign in with Google to view and add entries.</p>
-        <button class="btn btn-primary" id="sign-in-btn">Sign in with Google</button>
+        <p>Sign in to access your food tracker.</p>
+        <form id="login-form" autocomplete="on" style="width: 100%; max-width: 280px;">
+            <div class="form-group">
+                <input type="email" id="login-email" placeholder="Email" required autocomplete="email"
+                    style="width:100%; padding:10px 12px; border:1px solid var(--color-border); border-radius:var(--radius-sm); font-size:var(--font-size-base); background:var(--color-bg); color:var(--color-text);">
+            </div>
+            <div class="form-group">
+                <input type="password" id="login-password" placeholder="Password" required
+                    autocomplete="current-password"
+                    style="width:100%; padding:10px 12px; border:1px solid var(--color-border); border-radius:var(--radius-sm); font-size:var(--font-size-base); background:var(--color-bg); color:var(--color-text);">
+            </div>
+            <button type="submit" class="btn btn-primary" id="sign-in-btn" style="width:100%;">Sign In</button>
+        </form>
         <p id="auth-error" style="display: none; color: #e53935;"></p>
-    </div>
-
-    <!-- Signed in, but not the allowed account -->
-    <div class="auth-screen" id="auth-denied" style="display: none;">
-        <div class="icon">🚫</div>
-        <p>This account isn't authorized to use this app.</p>
-        <button class="btn btn-primary" id="sign-out-btn">Sign out</button>
     </div>
 
     <div id="app-root">
