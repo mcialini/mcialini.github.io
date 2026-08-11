@@ -58,6 +58,15 @@ FoodDB.onAuthChange(user => {
 
 // ---- 1. Service Worker Registration ----
 if ('serviceWorker' in navigator) {
+    // Reload the page when a new SW takes over (ensures fresh assets are used)
+    let refreshing = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+            refreshing = true;
+            window.location.reload();
+        }
+    });
+
     navigator.serviceWorker
         .register('/food-tracker/sw.js', { scope: '/food-tracker/', updateViaCache: 'none' })
         .then(reg => {
