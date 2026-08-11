@@ -29,6 +29,7 @@ import {
     getAuth,
     GoogleAuthProvider,
     signInWithRedirect,
+    getRedirectResult,
     onAuthStateChanged,
     signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -57,10 +58,25 @@ enableIndexedDbPersistence(firestore).catch(err => {
 });
 
 let _currentUser = null;
+let _lastAuthError = null;
 
 onAuthStateChanged(auth, user => {
     _currentUser = user;
 });
+
+// Surface whether a pending redirect sign-in actually completed, and
+// capture any error instead of failing silently. This is especially
+// useful for diagnosing iOS-standalone-PWA storage/redirect quirks.
+// Exposed as a promise (redirectSettled) since callers need to wait
+// for this to finish before lastAuthError() is meaningful.
+const redirectSettled = getRedirectResult(auth)
+    .then(result => {
+        console.log("[Auth] getRedirectResult:", result ? result.user.email : "no pending redirect");
+    })
+    .catch(err => {
+        _lastAuthError = err;
+        console.error("[Auth] Redirect sign-in failed:", err.code, err.message);
+    });
 
 const FoodDB = (() => {
     function isAllowed() {
@@ -69,6 +85,16 @@ const FoodDB = (() => {
 
     function currentUser() {
         return _currentUser;
+    }
+
+    function lastAuthError() {
+        return _lastAuthError;
+    }
+
+    /** Resolves once any pending redirect sign-in has been checked
+     *  (whether it succeeded, failed, or there was none to check). */
+    function whenRedirectSettled() {
+        return redirectSettled;
     }
 
     /** Subscribe to sign-in state changes. Returns an unsubscribe function. */
@@ -187,6 +213,8 @@ const FoodDB = (() => {
         signIn,
         signOut: signOutUser,
         currentUser,
+        lastAuthError,
+        whenRedirectSettled,
         isAllowed,
         onAuthChange,
     };

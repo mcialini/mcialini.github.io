@@ -18,6 +18,15 @@ const authDenied = document.getElementById('auth-denied');
 const appRoot = document.getElementById('app-root');
 const signInBtn = document.getElementById('sign-in-btn');
 const signOutBtn = document.getElementById('sign-out-btn');
+const authError = document.getElementById('auth-error');
+
+FoodDB.whenRedirectSettled().then(() => {
+    const lastError = FoodDB.lastAuthError();
+    if (lastError && authError) {
+        authError.textContent = `Sign-in error: ${lastError.code || lastError.message}`;
+        authError.style.display = '';
+    }
+});
 
 signInBtn.addEventListener('click', () => {
     signInBtn.disabled = true;
