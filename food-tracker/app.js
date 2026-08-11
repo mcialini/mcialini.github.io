@@ -11,6 +11,14 @@
 
 import { FoodDB } from './db.js';
 
+// ---- Version indicator (derived from SW cache name) ----
+caches.keys().then(keys => {
+    const appCache = keys.find(k => k.startsWith('food-tracker-'));
+    if (appCache) {
+        document.getElementById('version-indicator').textContent = appCache.replace('food-tracker-', 'v');
+    }
+});
+
 // ---- 0. Auth Gate ----
 const authGate = document.getElementById('auth-gate');
 const appRoot = document.getElementById('app-root');
