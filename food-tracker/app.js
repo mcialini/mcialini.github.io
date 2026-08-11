@@ -12,7 +12,15 @@
 // ---- 1. Service Worker Registration ----
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-        .register('/food-tracker/sw.js', { scope: '/food-tracker/' })
+        .register('/food-tracker/sw.js', { scope: '/food-tracker/', updateViaCache: 'none' })
+        .then(reg => {
+            // Check for a new SW on every page load
+            reg.update();
+            // Also check whenever the user returns to the tab
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') reg.update();
+            });
+        })
         .catch(err => console.warn('[SW] Registration failed:', err));
 }
 
