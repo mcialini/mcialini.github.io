@@ -94,7 +94,7 @@ const FoodDB = (() => {
         if (!isSignedIn()) return Promise.reject(new Error("Not signed in"));
 
         const record = {
-            timestamp: Date.now(),
+            timestamp: entry.timestamp || Date.now(),
             name: entry.name.trim(),
             source: entry.source, // "cooked" | "premade" | "takeout"
             recipeUrl: entry.recipeUrl ? entry.recipeUrl.trim() : "",

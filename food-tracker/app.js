@@ -72,12 +72,26 @@ const foodNameInput = document.getElementById('food-name');
 const recipeGroup = document.getElementById('recipe-group');
 const acList = document.getElementById('autocomplete-list');
 
+const datetimeInput = document.getElementById('entry-datetime');
+
 function openSheet() {
     sheet.classList.add('open');
     overlay.classList.add('open');
     fab.style.display = 'none';
+    // Default to current date/time
+    const now = new Date();
+    datetimeInput.value = toLocalISOString(now);
     // Small delay so the sheet animation finishes before focusing
     setTimeout(() => foodNameInput.focus(), 260);
+}
+
+function toLocalISOString(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    const h = String(date.getHours()).padStart(2, '0');
+    const min = String(date.getMinutes()).padStart(2, '0');
+    return `${y}-${m}-${d}T${h}:${min}`;
 }
 
 function closeSheet() {
@@ -195,11 +209,16 @@ form.addEventListener('submit', async e => {
     const name = foodNameInput.value.trim();
     if (!name) return;
 
+    // Use the user-selected datetime, or fallback to now
+    const dtValue = datetimeInput.value;
+    const timestamp = dtValue ? new Date(dtValue).getTime() : Date.now();
+
     const entry = {
         name,
         source: form.elements['source'].value,
         recipeUrl: form.elements['source'].value === 'cooked' ? document.getElementById('recipe-url').value : '',
         notes: document.getElementById('notes').value,
+        timestamp,
     };
 
     await FoodDB.add(entry);
