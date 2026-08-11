@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Template App</title>
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/template/manifest.webmanifest">
+
+    <!-- Browser chrome / status bar color -->
+    <meta name="theme-color" content="#1a73e8">
+
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Template">
+    <!--
+    apple-touch-icon must be a PNG for iOS home screen.
+    Replace icon.svg with icon-180.png once icons are generated.
+  -->
+    <link rel="apple-touch-icon" href="/template/icons/icon-180.png">
+
+    <link rel="stylesheet" href="/shared/styles.css">
+    <style>
+        /* App-specific styles */
+        body {
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- iOS install banner (rendered by Web Component in app.js) -->
+    <install-banner app-name="Template"></install-banner>
+
+    <header class="app-header">
+        <a href="/" class="back-btn" aria-label="Go to home">&#8592;</a>
+        <h1>Template</h1>
+        <!-- Android install button (hidden until beforeinstallprompt fires) -->
+        <button id="install-btn" class="btn btn-primary" hidden aria-label="Install app">
+            Install
+        </button>
+    </header>
+
+    <main class="app-main">
+        <!--
+      App content goes here.
+      This file is a starting template — copy the entire /template/ folder,
+      rename it, and update: title, apple-mobile-web-app-title, manifest href,
+      apple-touch-icon href, and the app-name attribute on <install-banner>.
+    -->
+        <p style="color: var(--color-text-muted);">Replace this with your app content.</p>
+    </main>
+
+    <script src="/template/app.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!--
+    Source icon for the Template app.
+    Generate PNG exports from this file:
+      icon-180.png   — 180×180  (iOS apple-touch-icon)
+      icon-192.png   — 192×192  (Android home screen)
+      icon-512.png   — 512×512  (Android splash / store listing)
+      icon-maskable-512.png — 512×512 with extra padding inside the "safe zone"
+                              (centered content within the inner 400×400 circle)
+
+    Tools: Inkscape, Figma, or the CLI pwa-asset-generator.
+    For maskable icons the content should stay within the center 80% (410×410px).
+  -->
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#1a73e8"/>
+
+  <!-- Letter "T" — replace with your app's icon content -->
+  <text
+    x="256"
+    y="360"
+    font-size="300"
+    font-weight="700"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    fill="#ffffff"
+  >T</text>
+</svg>
