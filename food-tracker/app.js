@@ -48,27 +48,7 @@ class InstallBanner extends HTMLElement {
 }
 customElements.define('install-banner', InstallBanner);
 
-// Android install prompt
-let _deferredPrompt = null;
-window.addEventListener('beforeinstallprompt', e => {
-    e.preventDefault();
-    _deferredPrompt = e;
-    const btn = document.getElementById('install-btn');
-    if (!btn) return;
-    btn.hidden = false;
-    btn.addEventListener('click', async () => {
-        if (!_deferredPrompt) return;
-        _deferredPrompt.prompt();
-        const { outcome } = await _deferredPrompt.userChoice;
-        if (outcome === 'accepted') btn.hidden = true;
-        _deferredPrompt = null;
-    }, { once: true });
-});
-window.addEventListener('appinstalled', () => {
-    const btn = document.getElementById('install-btn');
-    if (btn) btn.hidden = true;
-    _deferredPrompt = null;
-});
+
 
 // ---- 3. Bottom Sheet ----
 const fab = document.getElementById('fab-btn');
