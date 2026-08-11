@@ -1,6 +1,7 @@
 // ============================================================
 // app.js — Food Tracker
 //
+// 0. Auth gate (Google sign-in, locked to one account by Firestore rules)
 // 1. Service worker registration
 // 2. Install prompt (iOS banner + Android beforeinstallprompt)
 // 3. Bottom sheet / FAB interaction
@@ -8,6 +9,43 @@
 // 5. Feed rendering (grouped by day)
 // 6. Delete entries
 // ============================================================
+
+import { FoodDB } from './db.js';
+
+// ---- 0. Auth Gate ----
+const authGate = document.getElementById('auth-gate');
+const authDenied = document.getElementById('auth-denied');
+const appRoot = document.getElementById('app-root');
+const signInBtn = document.getElementById('sign-in-btn');
+const signOutBtn = document.getElementById('sign-out-btn');
+
+signInBtn.addEventListener('click', () => {
+    signInBtn.disabled = true;
+    FoodDB.signIn().catch(err => {
+        console.error('[Auth] Sign-in failed:', err);
+        signInBtn.disabled = false;
+    });
+});
+
+signOutBtn.addEventListener('click', () => FoodDB.signOut());
+
+FoodDB.onAuthChange(user => {
+    if (user && FoodDB.isAllowed()) {
+        authGate.style.display = 'none';
+        authDenied.style.display = 'none';
+        appRoot.style.display = 'flex';
+        renderFeed();
+    } else if (user) {
+        // Signed in, but not the allowed account.
+        authGate.style.display = 'none';
+        authDenied.style.display = '';
+        appRoot.style.display = 'none';
+    } else {
+        authGate.style.display = '';
+        authDenied.style.display = 'none';
+        appRoot.style.display = 'none';
+    }
+});
 
 // ---- 1. Service Worker Registration ----
 if ('serviceWorker' in navigator) {
@@ -276,4 +314,5 @@ function escapeAttr(str) {
 }
 
 // ---- Init ----
-FoodDB.open().then(() => renderFeed());
+// Rendering is now driven by FoodDB.onAuthChange() above, once the
+// signed-in user is confirmed to be the allowed account.

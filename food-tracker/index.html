@@ -340,6 +340,34 @@
             width: 100%;
             margin-top: var(--space-sm);
         }
+
+        /* ---- Auth Gate ---- */
+        .auth-screen {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-xl) var(--space-lg);
+            gap: var(--space-md);
+        }
+
+        .auth-screen .icon {
+            font-size: 48px;
+        }
+
+        .auth-screen p {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            max-width: 320px;
+        }
+
+        #app-root {
+            display: none;
+            flex: 1;
+            flex-direction: column;
+        }
     </style>
 </head>
 
@@ -350,61 +378,76 @@
         <h1>Food Tracker</h1>
     </header>
 
-    <div class="feed" id="feed">
-        <div class="empty-state" id="empty-state">
-            <div class="icon">🍽️</div>
-            <p>No entries yet. Tap + to add your first meal.</p>
+    <!-- Signed-out state -->
+    <div class="auth-screen" id="auth-gate" style="display: none;">
+        <div class="icon">🔒</div>
+        <p>Sign in with Google to view and add entries.</p>
+        <button class="btn btn-primary" id="sign-in-btn">Sign in with Google</button>
+    </div>
+
+    <!-- Signed in, but not the allowed account -->
+    <div class="auth-screen" id="auth-denied" style="display: none;">
+        <div class="icon">🚫</div>
+        <p>This account isn't authorized to use this app.</p>
+        <button class="btn btn-primary" id="sign-out-btn">Sign out</button>
+    </div>
+
+    <div id="app-root">
+        <div class="feed" id="feed">
+            <div class="empty-state" id="empty-state">
+                <div class="icon">🍽️</div>
+                <p>No entries yet. Tap + to add your first meal.</p>
+            </div>
+        </div>
+
+        <!-- FAB -->
+        <button class="fab" id="fab-btn" aria-label="Add food entry">+</button>
+
+        <!-- Bottom Sheet Overlay -->
+        <div class="sheet-overlay" id="sheet-overlay"></div>
+
+        <!-- Bottom Sheet -->
+        <div class="sheet" id="sheet">
+            <div class="sheet-handle"></div>
+            <h2>Add Entry</h2>
+            <form id="entry-form" autocomplete="off">
+
+                <div class="form-group">
+                    <label for="food-name">What did you eat?</label>
+                    <div class="autocomplete-wrapper">
+                        <input type="text" id="food-name" name="name" required placeholder="e.g. Chicken stir fry"
+                            enterkeyhint="done">
+                        <div class="autocomplete-list" id="autocomplete-list"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Source</label>
+                    <div class="radio-group">
+                        <input type="radio" name="source" id="src-cooked" value="cooked" checked>
+                        <label for="src-cooked">🍳 Cooked</label>
+                        <input type="radio" name="source" id="src-premade" value="premade">
+                        <label for="src-premade">📦 Premade</label>
+                        <input type="radio" name="source" id="src-takeout" value="takeout">
+                        <label for="src-takeout">🥡 Takeout</label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="recipe-group">
+                    <label for="recipe-url">Recipe URL</label>
+                    <input type="url" id="recipe-url" name="recipeUrl" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes (optional)</label>
+                    <textarea id="notes" name="notes" placeholder="How was it? What would you change?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary submit-btn">Add Entry</button>
+            </form>
         </div>
     </div>
 
-    <!-- FAB -->
-    <button class="fab" id="fab-btn" aria-label="Add food entry">+</button>
-
-    <!-- Bottom Sheet Overlay -->
-    <div class="sheet-overlay" id="sheet-overlay"></div>
-
-    <!-- Bottom Sheet -->
-    <div class="sheet" id="sheet">
-        <div class="sheet-handle"></div>
-        <h2>Add Entry</h2>
-        <form id="entry-form" autocomplete="off">
-
-            <div class="form-group">
-                <label for="food-name">What did you eat?</label>
-                <div class="autocomplete-wrapper">
-                    <input type="text" id="food-name" name="name" required placeholder="e.g. Chicken stir fry"
-                        enterkeyhint="done">
-                    <div class="autocomplete-list" id="autocomplete-list"></div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Source</label>
-                <div class="radio-group">
-                    <input type="radio" name="source" id="src-cooked" value="cooked" checked>
-                    <label for="src-cooked">🍳 Cooked</label>
-                    <input type="radio" name="source" id="src-premade" value="premade">
-                    <label for="src-premade">📦 Premade</label>
-                    <input type="radio" name="source" id="src-takeout" value="takeout">
-                    <label for="src-takeout">🥡 Takeout</label>
-                </div>
-            </div>
-
-            <div class="form-group" id="recipe-group">
-                <label for="recipe-url">Recipe URL</label>
-                <input type="url" id="recipe-url" name="recipeUrl" placeholder="https://...">
-            </div>
-
-            <div class="form-group">
-                <label for="notes">Notes (optional)</label>
-                <textarea id="notes" name="notes" placeholder="How was it? What would you change?"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary submit-btn">Add Entry</button>
-        </form>
-    </div>
-
-    <script src="/food-tracker/db.js"></script>
     <script src="/food-tracker/app.js" type="module"></script>
 </body>
 

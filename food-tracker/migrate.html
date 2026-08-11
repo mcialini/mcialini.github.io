@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Tracker — One-time Migration</title>
+    <link rel="stylesheet" href="/shared/styles.css">
+    <style>
+        body {
+            padding: var(--space-lg);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #log {
+            font-family: monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            padding: var(--space-md);
+            margin-top: var(--space-md);
+            min-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Food Tracker — Migrate to Firestore</h1>
+    <p>Run this <strong>once</strong>, on the device where your existing entries live. It reads the old
+        on-device IndexedDB store and copies every entry into Firestore. Safe to run more than once if
+        something goes wrong — but it will create duplicates on a second run, so delete this page after
+        a successful migration.</p>
+    <button class="btn btn-primary" id="run-btn">Sign in &amp; Migrate</button>
+    <div id="log">Waiting…</div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import {
+            getFirestore, collection, addDoc,
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import {
+            getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, onAuthStateChanged,
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCM3QQ25DT1RG5sPKuOFWStsyksXckeeWE",
+            authDomain: "food-tracker-a266c.firebaseapp.com",
+            projectId: "food-tracker-a266c",
+            storageBucket: "food-tracker-a266c.firebasestorage.app",
+            messagingSenderId: "594747422251",
+            appId: "1:594747422251:web:b4a9adc3acb47f47d0dc6e",
+        };
+
+        const ALLOWED_EMAIL = "matt.cialini@gmail.com";
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const firestore = getFirestore(app);
+
+        const logEl = document.getElementById('log');
+        const runBtn = document.getElementById('run-btn');
+
+        function log(msg) {
+            logEl.textContent += `\n${msg}`;
+        }
+
+        function readOldEntries() {
+            return new Promise((resolve, reject) => {
+                const req = indexedDB.open('food-tracker', 1);
+                req.onupgradeneeded = () => {
+                    // No existing DB found on this device — nothing to migrate.
+                    resolve([]);
+                };
+                req.onsuccess = () => {
+                    const db = req.result;
+                    if (!db.objectStoreNames.contains('entries')) {
+                        resolve([]);
+                        return;
+                    }
+                    const tx = db.transaction('entries', 'readonly');
+                    const store = tx.objectStore('entries');
+                    const getAllReq = store.getAll();
+                    getAllReq.onsuccess = () => resolve(getAllReq.result);
+                    getAllReq.onerror = () => reject(getAllReq.error);
+                };
+                req.onerror = () => reject(req.error);
+            });
+        }
+
+        async function migrate() {
+            log('Reading old IndexedDB entries…');
+            const oldEntries = await readOldEntries();
+            log(`Found ${oldEntries.length} local entries.`);
+
+            if (oldEntries.length === 0) {
+                log('Nothing to migrate.');
+                return;
+            }
+
+            let count = 0;
+            for (const entry of oldEntries) {
+                await addDoc(collection(firestore, 'entries'), {
+                    timestamp: entry.timestamp,
+                    name: entry.name,
+                    source: entry.source,
+                    recipeUrl: entry.recipeUrl || '',
+                    notes: entry.notes || '',
+                });
+                count++;
+                log(`Migrated ${count}/${oldEntries.length}: ${entry.name}`);
+            }
+
+            log(`\nDone. Migrated ${count} entries to Firestore.`);
+            log('You can now delete this migrate.html page from the repo.');
+        }
+
+        runBtn.addEventListener('click', () => {
+            runBtn.disabled = true;
+            signInWithRedirect(auth, new GoogleAuthProvider());
+        });
+
+        onAuthStateChanged(auth, user => {
+            if (!user) {
+                log('Not signed in yet. Click the button to sign in with Google.');
+                return;
+            }
+            if (user.email !== ALLOWED_EMAIL) {
+                log(`Signed in as ${user.email}, which is not the allowed account. Migration blocked.`);
+                return;
+            }
+            log(`Signed in as ${user.email}.`);
+            migrate().catch(err => log(`ERROR: ${err.message}`));
+        });
+    </script>
+</body>
+
+</html>
