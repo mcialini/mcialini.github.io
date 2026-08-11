@@ -16,41 +16,7 @@ if ('serviceWorker' in navigator) {
         .catch(err => console.warn('[SW] Registration failed:', err));
 }
 
-// ---- 2. iOS Install Banner (reused from template) ----
-class InstallBanner extends HTMLElement {
-    connectedCallback() {
-        if (this._shouldShow()) this._render();
-    }
-
-    _shouldShow() {
-        if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) return false;
-        if (localStorage.getItem('install-dismissed')) return false;
-        const ua = navigator.userAgent;
-        return /iP(hone|od|ad)/.test(ua) && /WebKit/.test(ua) && !/(CriOS|FxiOS|OPiOS)/.test(ua);
-    }
-
-    _render() {
-        const name = this.getAttribute('app-name') || 'this app';
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.innerHTML = `
-            <style>
-                .banner{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:16px;right:16px;background:#e8601a;color:#fff;border-radius:14px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,.25);z-index:9999;font-family:-apple-system,sans-serif;font-size:14px;line-height:1.45;animation:su .25s ease-out}
-                @keyframes su{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-                .icon{font-size:22px;flex-shrink:0;margin-top:1px}.text{flex:1}.title{font-weight:600;margin-bottom:2px}
-                .close{background:none;border:none;color:rgba(255,255,255,.75);font-size:22px;cursor:pointer;padding:0;line-height:1;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:flex-end}
-            </style>
-            <div class="banner" role="status"><span class="icon">📲</span><div class="text"><div class="title">Install ${name}</div><div>Tap <strong>Share</strong> &#x2197; then <strong>Add to Home Screen</strong></div></div><button class="close" aria-label="Dismiss">&times;</button></div>`;
-        this.shadowRoot.querySelector('.close').addEventListener('click', () => {
-            localStorage.setItem('install-dismissed', '1');
-            this.remove();
-        });
-    }
-}
-customElements.define('install-banner', InstallBanner);
-
-
-
-// ---- 3. Bottom Sheet ----
+// ---- 2. Bottom Sheet ----
 const fab = document.getElementById('fab-btn');
 const sheet = document.getElementById('sheet');
 const overlay = document.getElementById('sheet-overlay');
