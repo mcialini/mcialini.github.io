@@ -246,8 +246,6 @@
 
         .form-group input[type="text"],
         .form-group input[type="url"],
-        .form-group input[type="date"],
-        .form-group input[type="time"],
         .form-group textarea {
             width: 100%;
             display: block;
@@ -262,6 +260,23 @@
             transition: border-color 0.15s;
         }
 
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-sans);
+            font-size: var(--font-size-base);
+            background: var(--color-bg);
+            color: var(--color-text);
+            outline: none;
+            transition: border-color 0.15s;
+            box-sizing: border-box;
+        }
+
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--color-primary);
@@ -273,8 +288,9 @@
         }
 
         .datetime-row .form-group {
-            flex: 1;
+            flex: 1 1 0;
             min-width: 0;
+            overflow: hidden;
         }
 
         .form-group textarea {
