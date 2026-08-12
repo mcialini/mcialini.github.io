@@ -15,6 +15,7 @@ import {
     collection,
     addDoc,
     deleteDoc,
+    updateDoc,
     doc,
     getDocs,
     query,
@@ -111,6 +112,19 @@ const FoodDB = (() => {
         return deleteDoc(doc(firestore, ENTRIES_COLLECTION, id));
     }
 
+    /** Update an existing entry by id. */
+    function update(id, fields) {
+        if (!isSignedIn()) return Promise.reject(new Error("Not signed in"));
+        const data = {
+            timestamp: fields.timestamp || Date.now(),
+            name: fields.name.trim(),
+            source: fields.source,
+            recipeUrl: fields.recipeUrl ? fields.recipeUrl.trim() : "",
+            notes: fields.notes ? fields.notes.trim() : "",
+        };
+        return updateDoc(doc(firestore, ENTRIES_COLLECTION, id), data);
+    }
+
     /** Get all entries, sorted newest-timestamp-first. */
     function getAll() {
         if (!isSignedIn()) return Promise.resolve([]);
@@ -169,6 +183,7 @@ const FoodDB = (() => {
     return {
         open,
         add,
+        update,
         remove,
         getAll,
         getSuggestions,

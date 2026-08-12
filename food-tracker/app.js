@@ -88,17 +88,43 @@ const form = document.getElementById('entry-form');
 const foodNameInput = document.getElementById('food-name');
 const recipeGroup = document.getElementById('recipe-group');
 const acList = document.getElementById('autocomplete-list');
+const sheetTitle = document.getElementById('sheet-title');
+const submitBtn = document.getElementById('submit-btn');
+const sheetDeleteBtn = document.getElementById('sheet-delete-btn');
 
 const datetimeInput = document.getElementById('entry-datetime');
 
-function openSheet() {
+// Track whether we're editing an existing entry
+let _editingId = null;
+
+function openSheet(entry) {
+    if (entry) {
+        // Edit mode
+        _editingId = entry.id;
+        sheetTitle.textContent = 'Edit Entry';
+        submitBtn.textContent = 'Save Changes';
+        sheetDeleteBtn.style.display = '';
+
+        // Pre-fill form
+        foodNameInput.value = entry.name;
+        datetimeInput.value = toLocalISOString(new Date(entry.timestamp));
+        const sourceRadio = form.querySelector(`input[name="source"][value="${entry.source}"]`);
+        if (sourceRadio) sourceRadio.checked = true;
+        updateRecipeVisibility();
+        document.getElementById('recipe-url').value = entry.recipeUrl || '';
+        document.getElementById('notes').value = entry.notes || '';
+    } else {
+        // Add mode
+        _editingId = null;
+        sheetTitle.textContent = 'Add Entry';
+        submitBtn.textContent = 'Add Entry';
+        sheetDeleteBtn.style.display = 'none';
+        datetimeInput.value = toLocalISOString(new Date());
+    }
+
     sheet.classList.add('open');
     overlay.classList.add('open');
     fab.style.display = 'none';
-    // Default to current date/time
-    const now = new Date();
-    datetimeInput.value = toLocalISOString(now);
-    // Small delay so the sheet animation finishes before focusing
     setTimeout(() => foodNameInput.focus(), 260);
 }
 
@@ -117,10 +143,11 @@ function closeSheet() {
     fab.style.display = '';
     form.reset();
     acList.classList.remove('visible');
+    _editingId = null;
     updateRecipeVisibility();
 }
 
-fab.addEventListener('click', openSheet);
+fab.addEventListener('click', () => openSheet());
 overlay.addEventListener('click', closeSheet);
 
 // ---- 4. Source radio → recipe URL visibility ----
@@ -238,7 +265,20 @@ form.addEventListener('submit', async e => {
         timestamp,
     };
 
-    await FoodDB.add(entry);
+    if (_editingId) {
+        await FoodDB.update(_editingId, entry);
+    } else {
+        await FoodDB.add(entry);
+    }
+    closeSheet();
+    renderFeed();
+});
+
+// ---- Delete (from edit sheet) ----
+sheetDeleteBtn.addEventListener('click', async () => {
+    if (!_editingId) return;
+    if (!confirm('Delete this entry?')) return;
+    await FoodDB.remove(_editingId);
     closeSheet();
     renderFeed();
 });
@@ -313,8 +353,7 @@ async function renderFeed() {
         html += `<div class="day-group">`;
         html += `<div class="day-label">${formatDayLabel(day)}</div>`;
         for (const e of dayEntries) {
-            html += `<div class="entry-card" data-id="${e.id}">`;
-            html += `<button class="entry-delete" aria-label="Delete entry" data-id="${e.id}">&times;</button>`;
+            html += `<div class="entry-card" data-id="${e.id}" data-entry='${escapeAttr(JSON.stringify(e))}'>`;
             html += `<div class="entry-name">${escapeHtml(e.name)}</div>`;
             html += `<div class="entry-meta">`;
             html += `<span class="entry-source">${SOURCE_LABELS[e.source] || e.source}</span>`;
@@ -336,16 +375,19 @@ async function renderFeed() {
     feed.insertAdjacentHTML('beforeend', html);
 }
 
-// ---- 8. Delete ----
-feed.addEventListener('click', async e => {
-    const btn = e.target.closest('.entry-delete');
-    if (!btn) return;
+// ---- 8. Tap entry to edit ----
+feed.addEventListener('click', e => {
+    const card = e.target.closest('.entry-card');
+    if (!card) return;
+    // Don't open edit if user tapped a link inside the card
+    if (e.target.closest('a')) return;
 
-    const id = btn.dataset.id;
-    if (!confirm('Delete this entry?')) return;
-
-    await FoodDB.remove(id);
-    renderFeed();
+    try {
+        const entry = JSON.parse(card.dataset.entry);
+        openSheet(entry);
+    } catch (err) {
+        console.warn('[Edit] Could not parse entry data:', err);
+    }
 });
 
 // ---- Helpers ----
