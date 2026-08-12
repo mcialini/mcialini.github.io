@@ -264,6 +264,14 @@
             border-color: var(--color-primary);
         }
 
+        /* iOS datetime-local overflows without this */
+        .form-group input[type="datetime-local"] {
+            max-width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
         .form-group textarea {
             resize: vertical;
             min-height: 60px;
