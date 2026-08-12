@@ -233,6 +233,8 @@
         /* ---- Form ---- */
         .form-group {
             margin-bottom: var(--space-md);
+            display: block;
+            overflow: hidden;
         }
 
         .form-group label {
@@ -248,6 +250,7 @@
         .form-group input[type="datetime-local"],
         .form-group textarea {
             width: 100%;
+            display: block;
             padding: 10px 12px;
             border: 1px solid var(--color-border);
             border-radius: var(--radius-sm);
@@ -257,20 +260,6 @@
             color: var(--color-text);
             outline: none;
             transition: border-color 0.15s;
-        }
-
-        /*
-         * Safari ignores width:100% unless display:block is set,
-         * but display:block adds broken padding on temporal inputs.
-         * So we only set it on non-temporal inputs.
-         */
-        .form-group input:not([type="date"],
-            [type="time"],
-            [type="datetime-local"],
-            [type="month"],
-            [type="week"]),
-        .form-group textarea {
-            display: block;
         }
 
         .form-group input:focus,
