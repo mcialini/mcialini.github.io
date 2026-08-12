@@ -274,7 +274,16 @@ function formatTime(timestamp) {
 }
 
 async function renderFeed() {
+    const spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'flex';
+    emptyState.style.display = 'none';
+
+    // Force a paint so the spinner is visible before the async fetch
+    await new Promise(r => setTimeout(r, 0));
+
     const entries = await FoodDB.getAll(); // newest day first
+
+    spinner.style.display = 'none';
 
     if (entries.length === 0) {
         emptyState.style.display = '';
