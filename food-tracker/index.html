@@ -464,6 +464,15 @@
             <h2 id="sheet-title">Add Entry</h2>
             <form id="entry-form" autocomplete="off">
 
+                <div class="form-group">
+                    <label for="food-name">What did you eat?</label>
+                    <div class="autocomplete-wrapper">
+                        <input type="text" id="food-name" name="name" required placeholder="e.g. Chicken stir fry"
+                            enterkeyhint="done">
+                        <div class="autocomplete-list" id="autocomplete-list"></div>
+                    </div>
+                </div>
+
                 <div class="datetime-row">
                     <div class="form-group">
                         <label for="entry-date">Date</label>
@@ -472,15 +481,6 @@
                     <div class="form-group">
                         <label for="entry-time">Time</label>
                         <input type="time" id="entry-time" name="time">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="food-name">What did you eat?</label>
-                    <div class="autocomplete-wrapper">
-                        <input type="text" id="food-name" name="name" required placeholder="e.g. Chicken stir fry"
-                            enterkeyhint="done">
-                        <div class="autocomplete-list" id="autocomplete-list"></div>
                     </div>
                 </div>
 
