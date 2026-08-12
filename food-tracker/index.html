@@ -259,6 +259,20 @@
             transition: border-color 0.15s;
         }
 
+        /*
+         * Safari ignores width:100% unless display:block is set,
+         * but display:block adds broken padding on temporal inputs.
+         * So we only set it on non-temporal inputs.
+         */
+        .form-group input:not([type="date"],
+            [type="time"],
+            [type="datetime-local"],
+            [type="month"],
+            [type="week"]),
+        .form-group textarea {
+            display: block;
+        }
+
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--color-primary);
