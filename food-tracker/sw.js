@@ -1,4 +1,4 @@
-const CACHE_NAME = 'food-tracker-20260812034214';
+const CACHE_NAME = 'food-tracker-20260812035400';
 
 const PRECACHE = [
     '/food-tracker/',
