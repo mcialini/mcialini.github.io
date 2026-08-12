@@ -246,7 +246,8 @@
 
         .form-group input[type="text"],
         .form-group input[type="url"],
-        .form-group input[type="datetime-local"],
+        .form-group input[type="date"],
+        .form-group input[type="time"],
         .form-group textarea {
             width: 100%;
             display: block;
@@ -266,31 +267,14 @@
             border-color: var(--color-primary);
         }
 
-        /* iOS datetime-local overflows without this */
-        .form-group input[type="datetime-local"] {
-            max-width: 100%;
+        .datetime-row {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .datetime-row .form-group {
+            flex: 1;
             min-width: 0;
-        }
-
-        /*
-         * Safari styles temporal fields with inconsistent inner padding.
-         * This removes it, normalizing the fields with regular inputs.
-         * @see https://gomakethings.com/articles/fixing-temporal-input-styling-in-safari/
-         */
-        ::-webkit-datetime-edit,
-        ::-webkit-datetime-edit-fields-wrapper,
-        ::-webkit-datetime-edit-text,
-        ::-webkit-datetime-edit-minute-field,
-        ::-webkit-datetime-edit-hour-field,
-        ::-webkit-datetime-edit-meridiem-field,
-        ::-webkit-datetime-edit-day-field,
-        ::-webkit-datetime-edit-month-field,
-        ::-webkit-datetime-edit-year-field {
-            padding: 0;
-        }
-
-        input::-webkit-inner-spin-button {
-            height: auto;
         }
 
         .form-group textarea {
@@ -480,9 +464,15 @@
             <h2 id="sheet-title">Add Entry</h2>
             <form id="entry-form" autocomplete="off">
 
-                <div class="form-group">
-                    <label for="entry-datetime">Date &amp; Time</label>
-                    <input type="datetime-local" id="entry-datetime" name="datetime">
+                <div class="datetime-row">
+                    <div class="form-group">
+                        <label for="entry-date">Date</label>
+                        <input type="date" id="entry-date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="entry-time">Time</label>
+                        <input type="time" id="entry-time" name="time">
+                    </div>
                 </div>
 
                 <div class="form-group">

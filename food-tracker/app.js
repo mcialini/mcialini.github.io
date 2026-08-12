@@ -92,7 +92,8 @@ const sheetTitle = document.getElementById('sheet-title');
 const submitBtn = document.getElementById('submit-btn');
 const sheetDeleteBtn = document.getElementById('sheet-delete-btn');
 
-const datetimeInput = document.getElementById('entry-datetime');
+const dateInput = document.getElementById('entry-date');
+const timeInput = document.getElementById('entry-time');
 
 // Track whether we're editing an existing entry
 let _editingId = null;
@@ -107,7 +108,7 @@ function openSheet(entry) {
 
         // Pre-fill form
         foodNameInput.value = entry.name;
-        datetimeInput.value = toLocalISOString(new Date(entry.timestamp));
+        setDateTimeInputs(new Date(entry.timestamp));
         const sourceRadio = form.querySelector(`input[name="source"][value="${entry.source}"]`);
         if (sourceRadio) sourceRadio.checked = true;
         updateRecipeVisibility();
@@ -119,7 +120,7 @@ function openSheet(entry) {
         sheetTitle.textContent = 'Add Entry';
         submitBtn.textContent = 'Add Entry';
         sheetDeleteBtn.style.display = 'none';
-        datetimeInput.value = toLocalISOString(new Date());
+        setDateTimeInputs(new Date());
     }
 
     sheet.classList.add('open');
@@ -128,13 +129,14 @@ function openSheet(entry) {
     setTimeout(() => foodNameInput.focus(), 260);
 }
 
-function toLocalISOString(date) {
+function setDateTimeInputs(date) {
     const y = date.getFullYear();
     const m = String(date.getMonth() + 1).padStart(2, '0');
     const d = String(date.getDate()).padStart(2, '0');
     const h = String(date.getHours()).padStart(2, '0');
     const min = String(date.getMinutes()).padStart(2, '0');
-    return `${y}-${m}-${d}T${h}:${min}`;
+    dateInput.value = `${y}-${m}-${d}`;
+    timeInput.value = `${h}:${min}`;
 }
 
 function closeSheet() {
@@ -253,9 +255,10 @@ form.addEventListener('submit', async e => {
     const name = foodNameInput.value.trim();
     if (!name) return;
 
-    // Use the user-selected datetime, or fallback to now
-    const dtValue = datetimeInput.value;
-    const timestamp = dtValue ? new Date(dtValue).getTime() : Date.now();
+    // Use the user-selected date + time, or fallback to now
+    const timestamp = (dateInput.value && timeInput.value)
+        ? new Date(`${dateInput.value}T${timeInput.value}`).getTime()
+        : Date.now();
 
     const entry = {
         name,
