@@ -15,7 +15,11 @@ import { FoodDB } from './db.js';
 caches.keys().then(keys => {
     const appCache = keys.find(k => k.startsWith('food-tracker-'));
     if (appCache) {
-        document.getElementById('version-indicator').textContent = appCache.replace('food-tracker-', 'v');
+        const ts = appCache.replace('food-tracker-', '');
+        const fmt = ts.length === 14
+            ? `v${ts.slice(0, 4)}-${ts.slice(4, 6)}-${ts.slice(6, 8)}-${ts.slice(8, 10)}-${ts.slice(10, 12)}-${ts.slice(12, 14)}`
+            : `v${ts}`;
+        document.getElementById('version-indicator').textContent = fmt;
     }
 });
 

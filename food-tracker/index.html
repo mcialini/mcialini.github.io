@@ -262,9 +262,11 @@
 
         .form-group input[type="date"],
         .form-group input[type="time"] {
+            -webkit-appearance: none;
+            appearance: none;
+            display: block;
             width: 100%;
             min-width: 0;
-            max-width: 100%;
             padding: 10px 12px;
             border: 1px solid var(--color-border);
             border-radius: var(--radius-sm);
@@ -290,7 +292,6 @@
         .datetime-row .form-group {
             flex: 1 1 0;
             min-width: 0;
-            overflow: hidden;
         }
 
         .form-group textarea {
