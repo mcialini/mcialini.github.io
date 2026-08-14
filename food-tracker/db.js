@@ -134,7 +134,8 @@ const FoodDB = (() => {
     }
 
     /**
-     * Get autocomplete suggestions for a prefix.
+     * Get autocomplete suggestions for a prefix, matching against
+     * individual comma-separated tokens from past entries.
      * Returns an array of { name, source, recipeUrl, notes, count }
      * sorted by frequency (most frequent first).
      */
@@ -147,13 +148,39 @@ const FoodDB = (() => {
         return getDocs(collection(firestore, ENTRIES_COLLECTION)).then(snap => {
             const rows = snap.docs.map(d => d.data());
 
-            const map = new Map();
+            // Build a frequency map of individual comma-separated tokens
+            const tokenMap = new Map();
+            for (const row of rows) {
+                const tokens = row.name.split(',').map(t => t.trim()).filter(Boolean);
+                for (const token of tokens) {
+                    const key = token.toLowerCase();
+                    if (!key.startsWith(lower)) continue;
+
+                    if (tokenMap.has(key)) {
+                        const existing = tokenMap.get(key);
+                        existing.count++;
+                        if (row.timestamp > existing.timestamp) {
+                            existing.name = token;
+                            existing.timestamp = row.timestamp;
+                        }
+                    } else {
+                        tokenMap.set(key, {
+                            name: token,
+                            count: 1,
+                            timestamp: row.timestamp,
+                        });
+                    }
+                }
+            }
+
+            // Also match full entry names (for single-item or first-token use)
+            const fullMap = new Map();
             for (const row of rows) {
                 const key = row.name.toLowerCase();
                 if (!key.startsWith(lower)) continue;
 
-                if (map.has(key)) {
-                    const existing = map.get(key);
+                if (fullMap.has(key)) {
+                    const existing = fullMap.get(key);
                     existing.count++;
                     if (row.timestamp > existing.timestamp) {
                         existing.source = row.source;
@@ -163,7 +190,7 @@ const FoodDB = (() => {
                         existing.timestamp = row.timestamp;
                     }
                 } else {
-                    map.set(key, {
+                    fullMap.set(key, {
                         name: row.name,
                         source: row.source,
                         recipeUrl: row.recipeUrl,
@@ -174,9 +201,16 @@ const FoodDB = (() => {
                 }
             }
 
-            return Array.from(map.values())
-                .sort((a, b) => b.count - a.count)
-                .slice(0, 10);
+            // Merge: full entries first, then individual tokens (deduped)
+            const results = Array.from(fullMap.values())
+                .sort((a, b) => b.count - a.count);
+
+            const usedKeys = new Set(results.map(r => r.name.toLowerCase()));
+            const tokenResults = Array.from(tokenMap.values())
+                .filter(t => !usedKeys.has(t.name.toLowerCase()))
+                .sort((a, b) => b.count - a.count);
+
+            return results.concat(tokenResults).slice(0, 10);
         });
     }
 

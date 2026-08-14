@@ -170,14 +170,22 @@ updateRecipeVisibility();
 // ---- 5. Autocomplete ----
 let acActiveIndex = -1;
 
+/** Extract the current comma-separated token being typed. */
+function getCurrentToken() {
+    const val = foodNameInput.value;
+    const before = val.slice(0, foodNameInput.selectionStart || val.length);
+    const parts = before.split(',');
+    return parts[parts.length - 1].trim();
+}
+
 foodNameInput.addEventListener('input', async () => {
-    const val = foodNameInput.value.trim();
-    if (val.length < 1) {
+    const token = getCurrentToken();
+    if (token.length < 1) {
         acList.classList.remove('visible');
         return;
     }
 
-    const suggestions = await FoodDB.getSuggestions(val);
+    const suggestions = await FoodDB.getSuggestions(token);
     if (suggestions.length === 0) {
         acList.classList.remove('visible');
         return;
@@ -232,17 +240,29 @@ function selectSuggestion(index) {
     const s = acList._suggestions[index];
     if (!s) return;
 
-    // Pre-fill form with previous entry data
-    foodNameInput.value = s.name;
+    // Replace only the current comma-separated token
+    const val = foodNameInput.value;
+    const cursorPos = foodNameInput.selectionStart || val.length;
+    const before = val.slice(0, cursorPos);
+    const after = val.slice(cursorPos);
 
-    const sourceRadio = form.querySelector(`input[name="source"][value="${s.source}"]`);
-    if (sourceRadio) sourceRadio.checked = true;
-    updateRecipeVisibility();
+    const lastComma = before.lastIndexOf(',');
+    const prefix = lastComma >= 0 ? before.slice(0, lastComma + 1) + ' ' : '';
 
-    document.getElementById('recipe-url').value = s.recipeUrl || '';
-    document.getElementById('notes').value = s.notes || '';
+    foodNameInput.value = prefix + s.name + after;
+
+    // Pre-fill source/recipe/notes only for full-entry suggestions (ones with source data)
+    if (s.source) {
+        const sourceRadio = form.querySelector(`input[name="source"][value="${s.source}"]`);
+        if (sourceRadio) sourceRadio.checked = true;
+        updateRecipeVisibility();
+
+        document.getElementById('recipe-url').value = s.recipeUrl || '';
+        document.getElementById('notes').value = s.notes || '';
+    }
 
     acList.classList.remove('visible');
+    foodNameInput.focus();
 }
 
 // Close autocomplete when clicking outside
