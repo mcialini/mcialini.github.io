@@ -170,11 +170,11 @@ updateRecipeVisibility();
 // ---- 5. Autocomplete ----
 let acActiveIndex = -1;
 
-/** Extract the current comma-separated token being typed. */
+/** Extract the current semicolon-separated token being typed. */
 function getCurrentToken() {
     const val = foodNameInput.value;
     const before = val.slice(0, foodNameInput.selectionStart || val.length);
-    const parts = before.split(',');
+    const parts = before.split(';');
     return parts[parts.length - 1].trim();
 }
 
@@ -240,14 +240,14 @@ function selectSuggestion(index) {
     const s = acList._suggestions[index];
     if (!s) return;
 
-    // Replace only the current comma-separated token
+    // Replace only the current semicolon-separated token
     const val = foodNameInput.value;
     const cursorPos = foodNameInput.selectionStart || val.length;
     const before = val.slice(0, cursorPos);
     const after = val.slice(cursorPos);
 
-    const lastComma = before.lastIndexOf(',');
-    const prefix = lastComma >= 0 ? before.slice(0, lastComma + 1) + ' ' : '';
+    const lastSemi = before.lastIndexOf(';');
+    const prefix = lastSemi >= 0 ? before.slice(0, lastSemi + 1) + ' ' : '';
 
     foodNameInput.value = prefix + s.name + after;
 

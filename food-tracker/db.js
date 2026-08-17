@@ -148,10 +148,10 @@ const FoodDB = (() => {
         return getDocs(collection(firestore, ENTRIES_COLLECTION)).then(snap => {
             const rows = snap.docs.map(d => d.data());
 
-            // Build a frequency map of individual comma-separated tokens
+            // Build a frequency map of individual semicolon-separated tokens
             const tokenMap = new Map();
             for (const row of rows) {
-                const tokens = row.name.split(',').map(t => t.trim()).filter(Boolean);
+                const tokens = row.name.split(';').map(t => t.trim()).filter(Boolean);
                 for (const token of tokens) {
                     const key = token.toLowerCase();
                     if (!key.startsWith(lower)) continue;
