@@ -299,6 +299,7 @@ form.addEventListener('submit', async e => {
     }
     closeSheet();
     renderFeed();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ---- Delete (from edit sheet) ----
