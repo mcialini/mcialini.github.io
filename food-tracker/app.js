@@ -102,6 +102,51 @@ const timeInput = document.getElementById('entry-time');
 // Track whether we're editing an existing entry
 let _editingId = null;
 
+// ---- Meal time presets ----
+const MEALS = [
+    { name: 'Breakfast', hour: 9, minute: 0 },
+    { name: 'Lunch', hour: 12, minute: 30 },
+    { name: 'Dinner', hour: 19, minute: 0 },
+];
+
+const mealChipsContainer = document.getElementById('meal-chips');
+
+/** Build the 6 most recent meal slots going backwards from now. */
+function buildMealChips() {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    // Generate meal timestamps for today and the previous 2 days
+    const slots = [];
+    for (let daysBack = 0; daysBack <= 2; daysBack++) {
+        for (const meal of MEALS) {
+            const d = new Date(today);
+            d.setDate(d.getDate() - daysBack);
+            d.setHours(meal.hour, meal.minute, 0, 0);
+            if (d <= now) {
+                slots.push({
+                    label: meal.name + (daysBack > 0 ? ` -${daysBack}` : ''),
+                    date: d,
+                });
+            }
+        }
+    }
+
+    // Sort by most recent first, take 6
+    slots.sort((a, b) => b.date - a.date);
+    const recent = slots.slice(0, 6);
+
+    mealChipsContainer.innerHTML = recent.map(s =>
+        `<button type="button" class="meal-chip" data-ts="${s.date.getTime()}">${s.label}</button>`
+    ).join('');
+}
+
+mealChipsContainer.addEventListener('click', e => {
+    const chip = e.target.closest('.meal-chip');
+    if (!chip) return;
+    setDateTimeInputs(new Date(parseInt(chip.dataset.ts, 10)));
+});
+
 function openSheet(entry) {
     if (entry) {
         // Edit mode
@@ -130,6 +175,7 @@ function openSheet(entry) {
     sheet.classList.add('open');
     overlay.classList.add('open');
     fab.style.display = 'none';
+    buildMealChips();
     setTimeout(() => foodNameInput.focus(), 260);
 }
 
